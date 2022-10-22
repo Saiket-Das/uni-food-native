@@ -1,14 +1,12 @@
 const mongoose = require("mongoose");
-const validator = require("validator");
-const bcrypt = require("bcrypt");
 
-const userSchema = mongoose.Schema(
+const foodSchema = mongoose.Schema(
   {
     name: {
       type: String,
-      required: [true, "Please provide food's name"],
       trim: true,
-      lowercase: true,
+      required: [true, "Please provide food's name"],
+      unique: [true, "Please provide unique food's name"],
       minLength: [3, "Name must be at least 3 characters"],
       maxLength: [100, "Name is too large"],
     },
@@ -46,16 +44,6 @@ const userSchema = mongoose.Schema(
   }
 );
 
-userSchema.pre("save", async function (next) {
-  if (!this.isModified("password")) {
-    return next();
-  }
-  const salt = await bcrypt.genSalt(10);
-  this.password = await bcrypt.hash(this.password, salt);
+const Food = mongoose.model("Food", foodSchema);
 
-  next();
-});
-
-const User = mongoose.model("User", userSchema);
-
-module.exports = User;
+module.exports = Food;
