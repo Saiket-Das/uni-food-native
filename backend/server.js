@@ -15,6 +15,7 @@ app.use(express.json());
 dbConnection();
 
 const userRoutes = require("./routes/user.route");
+const foodRoutes = require("./routes/food.route");
 
 // ------> Routes
 app.get("/", (req, res) => {
@@ -22,6 +23,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/user", userRoutes);
+app.use("/api/food", foodRoutes);
 
 // ------> Middlewares
 app.use(notFound);

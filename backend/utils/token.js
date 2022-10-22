@@ -7,7 +7,6 @@ exports.generateToken = (id) => {
   //   email: userInfo.email,
   //   role: userInfo.role,
   //   imageURL: userInfo.imageURL,
-
   // };
 
   const token = jwt.sign({ data: id }, process.env.JWT_SECRET, {
