@@ -6,7 +6,7 @@ const userSchema = mongoose.Schema(
   {
     name: {
       type: String,
-      require: [true, "Please provide your name"],
+      required: [true, "Please provide your name"],
       trim: true,
       lowercase: true,
       minLength: [3, "Name must be at least 3 characters"],
@@ -15,7 +15,7 @@ const userSchema = mongoose.Schema(
 
     email: {
       type: String,
-      require: [true, "Please provide your email"],
+      required: [true, "Please provide your email"],
       trim: true,
       unique: true,
       lowercase: true,
