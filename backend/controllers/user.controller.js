@@ -67,3 +67,24 @@ exports.signin = async (req, res, next) => {
     });
   }
 };
+
+// -------> Update profile
+exports.profileUpdate = async (req, res, next) => {
+  try {
+    const result = await User.findById({ _id: req.user.data._id }, req.body, {
+      runValidators: true,
+    });
+
+    res.status(200).json({
+      success: true,
+      message: "Successfully update user info",
+      data: result,
+    });
+  } catch (error) {
+    res.status(400).send({
+      success: false,
+      message: "Something went wrong",
+      error: error.message,
+    });
+  }
+};

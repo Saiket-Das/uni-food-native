@@ -7,8 +7,8 @@ router.post("/signup", userController.signup);
 
 router.post("/signin", userController.signin);
 
-// router
-//   .route("/profile-update")
-//   .patch(verifyToken, authController.userProfileUpdate);
+router
+  .route("/profile-update")
+  .patch(verifyToken, userController.profileUpdate);
 
 module.exports = router;
