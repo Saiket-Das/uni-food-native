@@ -3,9 +3,9 @@ const router = express.Router();
 const userController = require("../controllers/user.controller");
 const verifyToken = require("../middlewares/verifyToken");
 
-router.post("/register", userController.register);
+router.post("/signup", userController.signup);
 
-// router.post("/login", authController.login);
+router.post("/signin", userController.signin);
 
 // router
 //   .route("/profile-update")
