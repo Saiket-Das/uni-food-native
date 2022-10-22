@@ -14,10 +14,14 @@ app.use(express.json());
 // ------> Database
 dbConnection();
 
+const userRoutes = require("./routes/user.route");
+
 // ------> Routes
 app.get("/", (req, res) => {
   res.send("Unifood is running");
 });
+
+app.use("/api/user", userRoutes);
 
 // ------> Middlewares
 app.use(notFound);
