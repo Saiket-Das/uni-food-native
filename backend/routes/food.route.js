@@ -6,6 +6,7 @@ const authorization = require("../middlewares/authorization");
 
 router
   .route("/")
+  .get(foodController.getAllFood)
   .post(verifyToken, authorization("owner"), foodController.addFood);
 
 module.exports = router;

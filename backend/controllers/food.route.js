@@ -13,7 +13,26 @@ exports.addFood = async (req, res, next) => {
   } catch (error) {
     res.status(400).json({
       success: false,
-      message: "Something went wrong to sign up",
+      message: "Something went wrong to add new food",
+      error: error.message,
+    });
+  }
+};
+
+// -------> Add new Food
+exports.getAllFood = async (req, res, next) => {
+  try {
+    const foods = await Food.find({});
+
+    res.status(201).json({
+      success: true,
+      message: "Get all foods",
+      data: foods,
+    });
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      message: "Something went wrong to get all foods",
       error: error.message,
     });
   }

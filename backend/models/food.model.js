@@ -13,7 +13,7 @@ const foodSchema = mongoose.Schema(
 
     description: {
       type: String,
-      required: [true, "Please provide food's name"],
+      required: [true, "Please provide food's description"],
       trim: true,
       maxLength: [300, "Food description is too large"],
     },
@@ -25,7 +25,7 @@ const foodSchema = mongoose.Schema(
 
     imageURL: {
       type: String,
-      required: true,
+      required: [true, "Please provide food's imgae URL"],
     },
 
     available: {
