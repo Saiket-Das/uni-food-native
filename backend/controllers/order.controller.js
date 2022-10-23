@@ -65,3 +65,22 @@ exports.getOrderById = async (req, res, next) => {
     });
   }
 };
+
+// -------> Delete order by Id
+exports.deleteOrderById = async (req, res, next) => {
+  try {
+    const result = await Order.deleteOne({ _id: req.params.id });
+
+    res.status(201).json({
+      success: true,
+      message: "Get all orders",
+      data: result,
+    });
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      message: "Something went wrong to get all orders",
+      error: error.message,
+    });
+  }
+};

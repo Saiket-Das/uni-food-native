@@ -11,7 +11,7 @@ router
 
 router
   .route("/:id")
-  .get(verifyToken, authorization("owner"), orderController.getOrderById);
-//   .delete(verifyToken, authorization("owner"), orderController.deleteFoodById)
+  .get(verifyToken, authorization("owner"), orderController.getOrderById)
+  .delete(verifyToken, authorization("owner"), orderController.deleteOrderById);
 
 module.exports = router;
