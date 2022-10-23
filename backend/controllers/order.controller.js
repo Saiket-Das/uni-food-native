@@ -6,6 +6,14 @@ exports.AddOrder = async (req, res, next) => {
   try {
     const order = await Order.create(req.body);
 
+    order?.orderItems.forEach(async (item) => {
+      const orderCount = await Food.findByIdAndUpdate(
+        { _id: item.foodId },
+        { $inc: { orderCount: 1 } }
+      );
+      return orderCount;
+    });
+
     res.status(201).json({
       success: true,
       message: "New food added",
