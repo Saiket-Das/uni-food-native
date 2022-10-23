@@ -9,7 +9,9 @@ router
   .get(foodController.getAllFood)
   .post(verifyToken, authorization("owner"), foodController.addFood);
 
-router.route("/:id").get(foodController.getFoodById);
-//   .delete(verifyToken, authorization("owner"), foodController.addFood);
+router
+  .route("/:id")
+  .get(foodController.getFoodById)
+  .delete(verifyToken, authorization("owner"), foodController.deleteFoodById);
 
 module.exports = router;

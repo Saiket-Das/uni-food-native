@@ -71,7 +71,7 @@ exports.signin = async (req, res, next) => {
 // -------> Update profile
 exports.profileUpdate = async (req, res, next) => {
   try {
-    const result = await User.findById({ _id: req.user.data._id }, req.body, {
+    const result = await User.updateOne({ _id: req.user.data._id }, req.body, {
       runValidators: true,
     });
 

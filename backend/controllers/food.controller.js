@@ -1,6 +1,6 @@
 const Food = require("../models/food.model");
 
-// -------> Add new Food
+// -------> Add new food (Authorization - Owner)
 exports.addFood = async (req, res, next) => {
   try {
     const food = await Food.create(req.body);
@@ -19,7 +19,7 @@ exports.addFood = async (req, res, next) => {
   }
 };
 
-// -------> Add new Food
+// -------> Get all foods
 exports.getAllFood = async (req, res, next) => {
   try {
     const foods = await Food.find({});
@@ -38,7 +38,7 @@ exports.getAllFood = async (req, res, next) => {
   }
 };
 
-// -------> Add new Food
+// -------> Get food by Id
 exports.getFoodById = async (req, res, next) => {
   try {
     const food = await Food.findById(req.params.id);
@@ -52,6 +52,35 @@ exports.getFoodById = async (req, res, next) => {
     res.status(400).json({
       success: false,
       message: "Something went wrong to get food by Id",
+      error: error.message,
+    });
+  }
+};
+
+// -------> Delete a Food by Id (Authorization - Owner)
+exports.deleteFoodById = async (req, res, next) => {
+  try {
+    const food = await Food.deleteOne({ _id: req.params.id });
+
+    console.log(food);
+
+    if (food.deletedCount > 0) {
+      res.status(201).json({
+        success: true,
+        message: "Delete food by Id",
+        data: food,
+      });
+    } else {
+      res.status(201).json({
+        success: true,
+        message: "Already deleted",
+        data: food,
+      });
+    }
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      message: "Something went wrong to delete food by Id",
       error: error.message,
     });
   }
