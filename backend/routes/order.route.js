@@ -8,9 +8,10 @@ router
   .route("/")
   .get(verifyToken, authorization("owner"), orderController.getAllOrder)
   .post(verifyToken, authorization("customer"), orderController.AddOrder);
-// router
-//   .route("/:id")
-//   .get(foodController.getFoodById)
+
+router
+  .route("/:id")
+  .get(verifyToken, authorization("owner"), orderController.getOrderById);
 //   .delete(verifyToken, authorization("owner"), orderController.deleteFoodById)
 
 module.exports = router;

@@ -46,3 +46,22 @@ exports.getAllOrder = async (req, res, next) => {
     });
   }
 };
+
+// -------> Get order by Id
+exports.getOrderById = async (req, res, next) => {
+  try {
+    const order = await Order.findById(req.params.id);
+
+    res.status(201).json({
+      success: true,
+      message: "Get all orders",
+      data: order,
+    });
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      message: "Something went wrong to get all orders",
+      error: error.message,
+    });
+  }
+};
