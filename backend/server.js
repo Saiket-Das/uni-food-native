@@ -16,6 +16,7 @@ dbConnection();
 
 const userRoutes = require("./routes/user.route");
 const foodRoutes = require("./routes/food.route");
+const orderRoutes = require("./routes/order.route");
 
 // ------> Routes
 app.get("/", (req, res) => {
@@ -24,6 +25,7 @@ app.get("/", (req, res) => {
 
 app.use("/api/user", userRoutes);
 app.use("/api/food", foodRoutes);
+app.use("/api/order", orderRoutes);
 
 // ------> Middlewares
 app.use(notFound);
