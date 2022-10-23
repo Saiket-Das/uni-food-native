@@ -29,20 +29,20 @@ exports.AddOrder = async (req, res, next) => {
 };
 
 // -------> Get all orders
-// exports.getAllOrder = async (req, res, next) => {
-//   try {
-//     const orders = await Order.find({});
+exports.getAllOrder = async (req, res, next) => {
+  try {
+    const orders = await Order.find({});
 
-//     res.status(201).json({
-//       success: true,
-//       message: "Get all foods",
-//       data: orders,
-//     });
-//   } catch (error) {
-//     res.status(400).json({
-//       success: false,
-//       message: "Something went wrong to get all foods",
-//       error: error.message,
-//     });
-//   }
-// };
+    res.status(201).json({
+      success: true,
+      message: "Get all orders",
+      data: orders,
+    });
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      message: "Something went wrong to get all orders",
+      error: error.message,
+    });
+  }
+};

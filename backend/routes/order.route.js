@@ -6,8 +6,8 @@ const authorization = require("../middlewares/authorization");
 
 router
   .route("/")
+  .get(verifyToken, authorization("owner"), orderController.getAllOrder)
   .post(verifyToken, authorization("customer"), orderController.AddOrder);
-// .get(orderController.getAllOrder);
 // router
 //   .route("/:id")
 //   .get(foodController.getFoodById)
