@@ -37,3 +37,22 @@ exports.getAllFood = async (req, res, next) => {
     });
   }
 };
+
+// -------> Add new Food
+exports.getFoodById = async (req, res, next) => {
+  try {
+    const food = await Food.findById(req.params.id);
+
+    res.status(201).json({
+      success: true,
+      message: "Get food by Id",
+      data: food,
+    });
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      message: "Something went wrong to get food by Id",
+      error: error.message,
+    });
+  }
+};
