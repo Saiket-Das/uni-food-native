@@ -72,7 +72,7 @@ exports.signin = async (req, res, next) => {
 exports.profileUpdate = async (req, res, next) => {
   try {
     const result = await User.updateOne({ _id: req.user.data._id }, req.body, {
-      runValidators: true,
+      runValidator: true,
     });
 
     res.status(200).json({

@@ -12,6 +12,7 @@ router
 router
   .route("/:id")
   .get(foodController.getFoodById)
-  .delete(verifyToken, authorization("owner"), foodController.deleteFoodById);
+  .delete(verifyToken, authorization("owner"), foodController.deleteFoodById)
+  .patch(verifyToken, authorization("owner"), foodController.updateFoodById);
 
 module.exports = router;

@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const validator = require("validator");
 
 const foodSchema = mongoose.Schema(
   {
@@ -26,6 +27,7 @@ const foodSchema = mongoose.Schema(
     imageURL: {
       type: String,
       required: [true, "Please provide food's imgae URL"],
+      validate: [validator.isURL, "You provide a wrong url"],
     },
 
     available: {
