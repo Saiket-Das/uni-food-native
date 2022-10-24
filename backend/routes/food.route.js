@@ -9,6 +9,8 @@ router
   .get(foodController.getAllFood)
   .post(verifyToken, authorization("owner"), foodController.addFood);
 
+router.route("/favourite").get(foodController.studentFavourite);
+
 router
   .route("/:id")
   .get(foodController.getFoodById)

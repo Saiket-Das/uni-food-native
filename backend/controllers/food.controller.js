@@ -103,3 +103,22 @@ exports.updateFoodById = async (req, res, next) => {
     });
   }
 };
+
+// -------> Get top 5 student's favourite Foods
+exports.studentFavourite = async (req, res, next) => {
+  try {
+    const result = await Food.find({}).sort({ orderCount: -1 }).limit(3);
+
+    res.status(200).json({
+      success: true,
+      message: "Get top 5 student's favourite Foods",
+      data: result,
+    });
+  } catch (error) {
+    res.status(400).json({
+      success: false,
+      message: "Something went wrong to get foods",
+      error: error.message,
+    });
+  }
+};
