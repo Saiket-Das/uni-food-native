@@ -1,5 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View } from "react-native";
+import AppButton from "./app/components/common/AppButton";
 import Text from "./app/components/common/AppText";
 
 export default function App() {
@@ -8,7 +9,8 @@ export default function App() {
       <Text style={{ color: "red" }}>
         Open up App.js to start working on your app!
       </Text>
-      <StatusBar style="auto" />
+      <AppButton title="Add to cart" />
+      {/* <StatusBar style="auto" /> */}
     </View>
   );
 }
