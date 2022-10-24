@@ -5,7 +5,9 @@ import Text from "./app/components/common/AppText";
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>pen up App.js to start working on your app!</Text>
+      <Text style={{ color: "red" }}>
+        Open up App.js to start working on your app!
+      </Text>
       <StatusBar style="auto" />
     </View>
   );
