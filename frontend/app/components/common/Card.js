@@ -26,7 +26,7 @@ export default function Card() {
         <View style={styles.detailsConTainer}>
           <View style={styles.textConTainer}>
             <Text style={{ fontWeight: "500" }}>Nasi Goreng Ayam</Text>
-            <Text style={{ fontWeight: "800" }}>RM12.00</Text>
+            <Text style={{ fontWeight: "800", marginTop: 5 }}>RM12.00</Text>
           </View>
 
           <TouchableOpacity>
