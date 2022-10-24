@@ -11,22 +11,24 @@ import Text from "./AppText";
 import Icon from "./Icon";
 import colors from "../../confiq/colors";
 
-export default function Card() {
+export default function Card({ name, price, imageURL }) {
   return (
     <TouchableWithoutFeedback>
       <View style={styles.card}>
         <Image
           style={styles.image}
           tint="light"
-          source={{
-            uri: "https://images.unsplash.com/photo-1512058564366-18510be2db19?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2072&q=80",
-          }}
+          //   uri={{ imageURL }}
+          //   preview={{ uri: imageURL }}
+          source={{ uri: imageURL }}
         />
 
         <View style={styles.detailsConTainer}>
           <View style={styles.textConTainer}>
-            <Text style={{ fontWeight: "500" }}>Nasi Goreng Ayam</Text>
-            <Text style={{ fontWeight: "800", marginTop: 5 }}>RM12.00</Text>
+            <Text style={{ fontWeight: "500" }}>{name}</Text>
+            <Text style={{ fontWeight: "800", marginTop: 5 }}>
+              RM{price.toFixed(2)}
+            </Text>
           </View>
 
           <TouchableOpacity>
@@ -45,6 +47,7 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     overflow: "hidden",
     backgroundColor: colors.light,
+    marginRight: 20,
   },
 
   image: {

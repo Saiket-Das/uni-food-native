@@ -1,4 +1,4 @@
-import { StyleSheet, View } from "react-native";
+import { FlatList, ScrollView, StyleSheet, View } from "react-native";
 import Button from "./app/components/common/AppButton";
 import Text from "./app/components/common/AppText";
 import TextInput from "./app/components/common/AppTextInput";
@@ -54,20 +54,34 @@ const foods = [
 export default function App() {
   return (
     <Screen>
-      {/* <Icon name="lock" iconColor="#F95F1D" /> */}
+      {/* <Icon name="lock" iconColor="white" /> */}
 
       <View style={{ marginHorizontal: 15 }}>
         <Text style={{ fontWeight: "600", fontSize: 20, marginVertical: 10 }}>
           Student's favourite
         </Text>
-        <Card />
+        {/* <ScrollView horizontal showsHorizontalScrollIndicator={false}> */}
+        <FlatList
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          data={foods}
+          keyExtractor={(listing) => listing._id}
+          renderItem={({ item }) => (
+            <Card
+              style={styles.card}
+              name={item.name}
+              price={item.price}
+              imageURL={item.imageURL}
+            />
+          )}
+        />
+        {/* </ScrollView> */}
       </View>
+
       <View style={styles.buttonContainer}>
         <TextInput icon="email" placeholder="Enter your email" />
         <Button title="Add to cart" />
       </View>
-
-      {/* <StatusBar style="auto" /> */}
     </Screen>
   );
 }
@@ -85,5 +99,9 @@ const styles = StyleSheet.create({
     width: "100%",
     padding: 15,
     alignItems: "center",
+  },
+
+  card: {
+    padding: 20,
   },
 });

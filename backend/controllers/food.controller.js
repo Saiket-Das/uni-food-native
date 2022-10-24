@@ -24,7 +24,7 @@ exports.getAllFood = async (req, res, next) => {
   try {
     const foods = await Food.find({});
 
-    res.status(201).json({
+    res.status(201).send({
       success: true,
       message: "Get all foods",
       data: foods,
