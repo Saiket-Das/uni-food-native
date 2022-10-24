@@ -2,6 +2,7 @@ import { StyleSheet, View } from "react-native";
 import Button from "./app/components/common/AppButton";
 import Text from "./app/components/common/AppText";
 import AppTextInput from "./app/components/common/AppTextInput";
+import Icon from "./app/components/common/Icon";
 
 export default function App() {
   return (
@@ -10,9 +11,13 @@ export default function App() {
         Student's favourite
       </Text>
 
-      <AppTextInput icon="email" placeholder="Enter your email" />
+      <Icon name="lock" />
 
-      <Button title="Add to cart" />
+      <View style={styles.buttonContainer}>
+        <AppTextInput icon="email" placeholder="Enter your email" />
+        <Button title="Add to cart" />
+      </View>
+
       {/* <StatusBar style="auto" /> */}
     </View>
   );
@@ -24,5 +29,11 @@ const styles = StyleSheet.create({
     backgroundColor: "#fff",
     alignItems: "center",
     justifyContent: "center",
+  },
+
+  buttonContainer: {
+    width: "100%",
+    padding: 15,
+    alignItems: "center",
   },
 });
