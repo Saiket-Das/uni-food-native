@@ -1,15 +1,18 @@
-import { StatusBar } from "expo-status-bar";
 import { StyleSheet, View } from "react-native";
-import AppButton from "./app/components/common/AppButton";
+import Button from "./app/components/common/AppButton";
 import Text from "./app/components/common/AppText";
+import AppTextInput from "./app/components/common/AppTextInput";
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text style={{ color: "red" }}>
-        Open up App.js to start working on your app!
+      <Text style={{ fontSize: 20, fontWeight: "600" }}>
+        Student's favourite
       </Text>
-      <AppButton title="Add to cart" />
+
+      <AppTextInput icon="email" placeholder="Enter your email" />
+
+      <Button title="Add to cart" />
       {/* <StatusBar style="auto" /> */}
     </View>
   );
