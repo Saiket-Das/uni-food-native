@@ -7,6 +7,7 @@ import Card from "./app/components/common/Card";
 import Icon from "./app/components/common/Icon";
 import ImageInput from "./app/components/common/ImageInput";
 import Screen from "./app/components/common/Screen";
+// import ActivityIndicator from "./app/components/common/ActivityIndicator";
 
 const foods = [
   {
@@ -55,38 +56,41 @@ const foods = [
 
 export default function App() {
   return (
-    <Screen>
-      {/* <Icon name="lock" iconColor="white" /> */}
+    <>
+      {/* <ActivityIndicator visible={true} /> */}
+      <Screen>
+        {/* <Icon name="lock" iconColor="white" /> */}
 
-      <View style={{ marginHorizontal: 15 }}>
-        <Text style={{ fontWeight: "700", fontSize: 22, marginVertical: 10 }}>
-          Students favourite
-        </Text>
-        <FlatList
-          horizontal
-          showsHorizontalScrollIndicator={false}
-          data={foods}
-          keyExtractor={(listing) => listing._id}
-          renderItem={({ item }) => (
-            <Card
-              style={styles.card}
-              name={item.name}
-              price={item.price}
-              imageURL={item.imageURL}
-            />
-          )}
-        />
-      </View>
+        <View style={{ marginHorizontal: 15 }}>
+          <Text style={{ fontWeight: "700", fontSize: 22, marginVertical: 10 }}>
+            Students favourite
+          </Text>
+          <FlatList
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            data={foods}
+            keyExtractor={(listing) => listing._id}
+            renderItem={({ item }) => (
+              <Card
+                style={styles.card}
+                name={item.name}
+                price={item.price}
+                imageURL={item.imageURL}
+              />
+            )}
+          />
+        </View>
 
-      <View style={{ padding: 15 }}>
-        <ImageInput />
-      </View>
+        <View style={{ padding: 15 }}>
+          <ImageInput />
+        </View>
 
-      <View style={styles.buttonContainer}>
-        <TextInput icon="email" placeholder="Enter your email" />
-        <Button title="Add to cart" />
-      </View>
-    </Screen>
+        <View style={styles.buttonContainer}>
+          <TextInput icon="email" placeholder="Enter your email" />
+          <Button title="Add to cart" />
+        </View>
+      </Screen>
+    </>
   );
 }
 

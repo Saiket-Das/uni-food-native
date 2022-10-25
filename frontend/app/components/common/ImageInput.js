@@ -36,20 +36,20 @@ export default function ImageInput() {
   //   };
 
   const selectImage = async () => {
-    // try {
-    const result = await ImagePicker.launchImageLibraryAsync({
-      mediaTypes: ImagePicker.MediaTypeOptions.All,
-      quality: 0.5,
-    });
+    try {
+      const result = await ImagePicker.launchImageLibraryAsync({
+        mediaTypes: ImagePicker.MediaTypeOptions.All,
+        quality: 0.5,
+      });
 
-    console.log(result);
+      console.log(result);
 
-    if (!result.cancelled) {
-      setImageUri(result.uri);
+      if (!result.cancelled) {
+        setImageUri(result.uri);
+      }
+    } catch (error) {
+      console.log(error);
     }
-    // } catch (error) {
-    //   console.log(error);
-    // }
   };
 
   return (
@@ -76,7 +76,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.light,
     alignItems: "center",
     justifyContent: "center",
-    borderRadius: 15,
+    borderRadius: 10,
     overflow: "hidden",
   },
 
