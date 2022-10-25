@@ -3,6 +3,7 @@ import {
   Image,
   StyleSheet,
   TouchableWithoutFeedback,
+  TouchableOpacity,
 } from "react-native";
 import React from "react";
 
@@ -10,11 +11,19 @@ import Text from "../common/AppText";
 import Icon from "../common/Icon";
 import colors from "../../confiq/colors";
 
-export default function ListItem({ imageUri, title, subTitle, price }) {
+export default function ListItem({
+  imageUri,
+  title,
+  subTitle,
+  price,
+  IconComponent,
+  icon,
+}) {
   return (
     <TouchableWithoutFeedback>
       <View style={styles.container}>
         {imageUri && <Image style={styles.image} source={{ uri: imageUri }} />}
+        {IconComponent}
 
         <View style={styles.detailsContainer}>
           <Text style={{ fontSize: 16, fontWeight: "700" }}>{title}</Text>
@@ -26,10 +35,14 @@ export default function ListItem({ imageUri, title, subTitle, price }) {
               {subTitle}
             </Text>
           )}
-          <Text style={{ fontWeight: "700" }}>RM{price.toFixed(2)}</Text>
+          {price && (
+            <Text style={{ fontWeight: "700" }}>RM{price.toFixed(2)}</Text>
+          )}
         </View>
 
-        <Icon name="plus" iconColor="white" size={28} />
+        <TouchableOpacity>
+          <Icon name={icon} iconColor="white" size={28} />
+        </TouchableOpacity>
       </View>
     </TouchableWithoutFeedback>
   );
@@ -41,7 +54,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     padding: 10,
     backgroundColor: colors.light,
-    alignItems: "flex-end",
+    // alignItems: "flex-end",
     borderRadius: 10,
   },
 
@@ -55,6 +68,6 @@ const styles = StyleSheet.create({
     flex: 1,
     marginHorizontal: 15,
     justifyContent: "center",
-    height: 80,
+    // height: 80,
   },
 });

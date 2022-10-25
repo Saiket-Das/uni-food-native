@@ -4,6 +4,7 @@ import Button from "./app/components/common/AppButton";
 import Text from "./app/components/common/AppText";
 import TextInput from "./app/components/common/AppTextInput";
 import Card from "./app/components/common/Card";
+import Icon from "./app/components/common/Icon";
 import ImageInput from "./app/components/common/ImageInput";
 import Screen from "./app/components/common/Screen";
 import FoodItem from "./app/components/list/ListItem";
@@ -69,6 +70,19 @@ export default function App() {
             <Button title="Add to cart" />
           </View>
 
+          <FoodItem
+            title="Logout"
+            IconComponent={
+              <Icon
+                name="logout"
+                size={40}
+                backgroundColor="#ffe66d"
+                // onPress={() => logOut()}
+              />
+            }
+            icon="chevron-right"
+          />
+
           <View>
             <Text
               style={{ fontWeight: "700", fontSize: 22, marginVertical: 10 }}
@@ -86,6 +100,7 @@ export default function App() {
                   name={item.name}
                   price={item.price}
                   imageURL={item.imageURL}
+                  x
                 />
               )}
             />
@@ -104,6 +119,7 @@ export default function App() {
                   subTitle={item.description}
                   price={item.price}
                   imageUri={item.imageURL}
+                  icon="plus"
                 />
               )}
               ItemSeparatorComponent={ListItemSperator}
