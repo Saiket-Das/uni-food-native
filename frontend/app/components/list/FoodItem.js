@@ -19,7 +19,10 @@ export default function ListItem({ imageUri, title, subTitle, price }) {
         <View style={styles.detailsContainer}>
           <Text style={{ fontSize: 16, fontWeight: "700" }}>{title}</Text>
           {subTitle && (
-            <Text style={{ fontSize: 16, color: colors.darkGray }}>
+            <Text
+              style={{ fontSize: 16, color: colors.darkGray }}
+              numberOfLines={1}
+            >
               {subTitle}
             </Text>
           )}

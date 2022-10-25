@@ -90,13 +90,6 @@ export default function App() {
             />
           </View>
 
-          {/* <FoodItem
-            imageUri="https://images.unsplash.com/photo-1512058564366-18510be2db19?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2072&q=80"
-            title="Nasi Goreng Ayam"
-            subTitle="Malsyain Cusine"
-            price={9}
-          /> */}
-
           <View>
             <Text
               style={{ fontWeight: "700", fontSize: 22, marginVertical: 10 }}
@@ -108,7 +101,6 @@ export default function App() {
               keyExtractor={(listing) => listing._id}
               renderItem={({ item }) => (
                 <FoodItem
-                  // style={styles.card}
                   title={item.name}
                   subTitle={item.description}
                   price={item.price}
