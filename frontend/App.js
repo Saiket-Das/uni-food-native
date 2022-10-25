@@ -6,7 +6,8 @@ import TextInput from "./app/components/common/AppTextInput";
 import Card from "./app/components/common/Card";
 import ImageInput from "./app/components/common/ImageInput";
 import Screen from "./app/components/common/Screen";
-import FoodItem from "./app/components/list/FoodItem";
+import FoodItem from "./app/components/list/ListItem";
+import ListItemSperator from "./app/components/list/ListItemSperator";
 // import Icon from "./app/components/common/Icon";
 // import ActivityIndicator from "./app/components/common/ActivityIndicator";
 
@@ -91,10 +92,8 @@ export default function App() {
           </View>
 
           <View>
-            <Text
-              style={{ fontWeight: "700", fontSize: 22, marginVertical: 10 }}
-            >
-              Students favourite
+            <Text style={{ fontWeight: "700", marginVertical: 10 }}>
+              All items
             </Text>
             <FlatList
               data={foods}
@@ -107,6 +106,7 @@ export default function App() {
                   imageUri={item.imageURL}
                 />
               )}
+              ItemSeparatorComponent={ListItemSperator}
             />
           </View>
 

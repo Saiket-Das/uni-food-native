@@ -42,6 +42,7 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: colors.light,
     alignItems: "flex-end",
+    borderRadius: 10,
   },
 
   image: {
