@@ -7,7 +7,7 @@ export default function Icon({
   name,
   backgroundColor = colors.primary,
   size = 50,
-  iconColor = "#000",
+  iconColor = "#fff",
 }) {
   return (
     <View

@@ -9,6 +9,7 @@ import ImageInput from "./app/components/common/ImageInput";
 import Screen from "./app/components/common/Screen";
 import FoodItem from "./app/components/list/ListItem";
 import ListItemSperator from "./app/components/list/ListItemSperator";
+import colors from "./app/confiq/colors";
 // import Icon from "./app/components/common/Icon";
 // import ActivityIndicator from "./app/components/common/ActivityIndicator";
 
@@ -81,6 +82,9 @@ export default function App() {
               />
             }
             icon="chevron-right"
+            size={40}
+            iconColor={colors.dark}
+            backgroundColor={colors.light}
           />
 
           <View>
@@ -100,7 +104,6 @@ export default function App() {
                   name={item.name}
                   price={item.price}
                   imageURL={item.imageURL}
-                  x
                 />
               )}
             />

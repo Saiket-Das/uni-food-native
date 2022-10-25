@@ -18,6 +18,9 @@ export default function ListItem({
   price,
   IconComponent,
   icon,
+  backgroundColor,
+  iconColor,
+  size = 28,
 }) {
   return (
     <TouchableWithoutFeedback>
@@ -41,7 +44,12 @@ export default function ListItem({
         </View>
 
         <TouchableOpacity>
-          <Icon name={icon} iconColor="white" size={28} />
+          <Icon
+            name={icon}
+            size={size}
+            backgroundColor={backgroundColor}
+            iconColor={iconColor}
+          />
         </TouchableOpacity>
       </View>
     </TouchableWithoutFeedback>
