@@ -15,13 +15,7 @@ export default function Card({ name, price, imageURL }) {
   return (
     <TouchableWithoutFeedback>
       <View style={styles.card}>
-        <Image
-          style={styles.image}
-          tint="light"
-          //   uri={{ imageURL }}
-          //   preview={{ uri: imageURL }}
-          source={{ uri: imageURL }}
-        />
+        <Image style={styles.image} tint="light" source={{ uri: imageURL }} />
 
         <View style={styles.detailsConTainer}>
           <View style={styles.textConTainer}>

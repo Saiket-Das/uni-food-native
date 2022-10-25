@@ -1,15 +1,17 @@
 import { FlatList, ScrollView, StyleSheet, View } from "react-native";
+
 import Button from "./app/components/common/AppButton";
 import Text from "./app/components/common/AppText";
 import TextInput from "./app/components/common/AppTextInput";
 import Card from "./app/components/common/Card";
 import Icon from "./app/components/common/Icon";
+import ImageInput from "./app/components/common/ImageInput";
 import Screen from "./app/components/common/Screen";
 
 const foods = [
   {
     _id: "635424e06bdb24a70bf4f736",
-    name: "Nasi",
+    name: "Nasi Goreng Ayam",
     description:
       "Nasi goreng ayam is a traditional Indonesian fried rice dish that's also popular in Singapore, Brunei, and Malaysia. Nasi goreng ayam is actually fried rice usually served with crispy fried chicken with sweet chilli sauce.",
     price: 9,
@@ -57,10 +59,9 @@ export default function App() {
       {/* <Icon name="lock" iconColor="white" /> */}
 
       <View style={{ marginHorizontal: 15 }}>
-        <Text style={{ fontWeight: "600", fontSize: 20, marginVertical: 10 }}>
-          Student's favourite
+        <Text style={{ fontWeight: "700", fontSize: 22, marginVertical: 10 }}>
+          Students favourite
         </Text>
-        {/* <ScrollView horizontal showsHorizontalScrollIndicator={false}> */}
         <FlatList
           horizontal
           showsHorizontalScrollIndicator={false}
@@ -75,7 +76,10 @@ export default function App() {
             />
           )}
         />
-        {/* </ScrollView> */}
+      </View>
+
+      <View style={{ padding: 15 }}>
+        <ImageInput />
       </View>
 
       <View style={styles.buttonContainer}>
