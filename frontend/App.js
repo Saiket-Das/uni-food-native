@@ -4,9 +4,10 @@ import Button from "./app/components/common/AppButton";
 import Text from "./app/components/common/AppText";
 import TextInput from "./app/components/common/AppTextInput";
 import Card from "./app/components/common/Card";
-import Icon from "./app/components/common/Icon";
 import ImageInput from "./app/components/common/ImageInput";
 import Screen from "./app/components/common/Screen";
+import FoodItem from "./app/components/list/FoodItem";
+// import Icon from "./app/components/common/Icon";
 // import ActivityIndicator from "./app/components/common/ActivityIndicator";
 
 const foods = [
@@ -59,36 +60,68 @@ export default function App() {
     <>
       {/* <ActivityIndicator visible={true} /> */}
       <Screen>
-        {/* <Icon name="lock" iconColor="white" /> */}
+        <ScrollView showsVerticalScrollIndicator={false} style={{ margin: 15 }}>
+          {/* <Icon name="lock" iconColor="white" /> */}
 
-        <View style={{ marginHorizontal: 15 }}>
-          <Text style={{ fontWeight: "700", fontSize: 22, marginVertical: 10 }}>
-            Students favourite
-          </Text>
-          <FlatList
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            data={foods}
-            keyExtractor={(listing) => listing._id}
-            renderItem={({ item }) => (
-              <Card
-                style={styles.card}
-                name={item.name}
-                price={item.price}
-                imageURL={item.imageURL}
-              />
-            )}
-          />
-        </View>
+          <View style={styles.buttonContainer}>
+            <TextInput icon="email" placeholder="Enter your email" />
+            <Button title="Add to cart" />
+          </View>
 
-        <View style={{ padding: 15 }}>
-          <ImageInput />
-        </View>
+          <View>
+            <Text
+              style={{ fontWeight: "700", fontSize: 22, marginVertical: 10 }}
+            >
+              Students favourite
+            </Text>
+            <FlatList
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              data={foods}
+              keyExtractor={(listing) => listing._id}
+              renderItem={({ item }) => (
+                <Card
+                  style={styles.card}
+                  name={item.name}
+                  price={item.price}
+                  imageURL={item.imageURL}
+                />
+              )}
+            />
+          </View>
 
-        <View style={styles.buttonContainer}>
-          <TextInput icon="email" placeholder="Enter your email" />
-          <Button title="Add to cart" />
-        </View>
+          {/* <FoodItem
+            imageUri="https://images.unsplash.com/photo-1512058564366-18510be2db19?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2072&q=80"
+            title="Nasi Goreng Ayam"
+            subTitle="Malsyain Cusine"
+            price={9}
+          /> */}
+
+          <View>
+            <Text
+              style={{ fontWeight: "700", fontSize: 22, marginVertical: 10 }}
+            >
+              Students favourite
+            </Text>
+            <FlatList
+              data={foods}
+              keyExtractor={(listing) => listing._id}
+              renderItem={({ item }) => (
+                <FoodItem
+                  // style={styles.card}
+                  title={item.name}
+                  subTitle={item.description}
+                  price={item.price}
+                  imageUri={item.imageURL}
+                />
+              )}
+            />
+          </View>
+
+          <View style={{ paddingTop: 15 }}>
+            <ImageInput />
+          </View>
+        </ScrollView>
       </Screen>
     </>
   );
@@ -105,7 +138,6 @@ const styles = StyleSheet.create({
 
   buttonContainer: {
     width: "100%",
-    padding: 15,
     alignItems: "center",
   },
 

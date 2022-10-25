@@ -26,7 +26,7 @@ export default function Card({ name, price, imageURL }) {
           </View>
 
           <TouchableOpacity>
-            <Icon name="plus" iconColor="white" size={24} />
+            <Icon name="plus" iconColor="white" size={28} />
           </TouchableOpacity>
         </View>
       </View>
