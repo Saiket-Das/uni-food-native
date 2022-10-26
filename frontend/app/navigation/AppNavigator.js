@@ -61,7 +61,7 @@ export default function AppNavigator() {
         }}
       />
 
-      <Tab.Screen
+      {/* <Tab.Screen
         name="Account"
         component={AccountScreen}
         options={{
@@ -69,7 +69,7 @@ export default function AppNavigator() {
             <MaterialCommunityIcons name="account" size={size} color={color} />
           ),
         }}
-      />
+      /> */}
     </Tab.Navigator>
   );
 }
