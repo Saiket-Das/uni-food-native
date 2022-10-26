@@ -7,7 +7,7 @@ import routes from "../navigation/routes";
 export default function HomeScreen({ navigation }) {
   return (
     <Screen>
-      <View>
+      <View style={{ padding: 20 }}>
         <Text>HomeScreen</Text>
         <Button
           title="Account"

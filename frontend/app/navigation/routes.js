@@ -1,8 +1,8 @@
 export default Object.freeze({
   Homme: "Home",
   ADDFOOD: "Add Food",
-  LOGIN: "Login",
   ACCOUNT: "Account",
-  REGISTER: "Register",
+  SIGNIN: "Signin",
+  SIGNUP: "Signup",
   // LISTING_DETAILS: "",
 });

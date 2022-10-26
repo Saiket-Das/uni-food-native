@@ -4,8 +4,9 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import HomeScreen from "../screens/HomeScreen";
 import AddFoodScreen from "../screens/AddFoodScreen";
-import AccountScreen from "../screens/AccountScreen";
 import AddFoodButton from "./AddFoodButton";
+import HomeNavigator from "./HomeNavigator";
+import AccountScreen from "../screens/AccountScreen";
 
 const Tab = createBottomTabNavigator();
 
@@ -14,7 +15,7 @@ export default function AppNavigator() {
     <Tab.Navigator screenOptions={{ headerShown: false }}>
       <Tab.Screen
         name="Home"
-        component={HomeScreen}
+        component={HomeNavigator}
         options={{
           tabBarIcon: ({ size, color }) => (
             <MaterialCommunityIcons name="home" size={size} color={color} />
@@ -61,7 +62,7 @@ export default function AppNavigator() {
         }}
       />
 
-      {/* <Tab.Screen
+      <Tab.Screen
         name="Account"
         component={AccountScreen}
         options={{
@@ -69,7 +70,7 @@ export default function AppNavigator() {
             <MaterialCommunityIcons name="account" size={size} color={color} />
           ),
         }}
-      /> */}
+      />
     </Tab.Navigator>
   );
 }
