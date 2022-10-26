@@ -1,0 +1,81 @@
+import React from "react";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+
+import HomeScreen from "../screens/HomeScreen";
+import AddFoodScreen from "../screens/AddFoodScreen";
+import AccountScreen from "../screens/AccountScreen";
+
+const Tab = createBottomTabNavigator();
+
+export default function AppNavigator() {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen
+        name="Home"
+        component={HomeScreen}
+        options={{
+          tabBarIcon: ({ size, color }) => (
+            <MaterialCommunityIcons name="home" size={size} color={color} />
+          ),
+        }}
+      />
+
+      <Tab.Screen
+        name="Location"
+        component={HomeScreen}
+        options={{
+          tabBarIcon: ({ size, color }) => (
+            <MaterialCommunityIcons
+              name="map-marker"
+              size={size}
+              color={color}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Add Food"
+        component={HomeScreen}
+        options={{
+          tabBarIcon: ({ size, color }) => (
+            <MaterialCommunityIcons
+              name="plus-circle"
+              size={size}
+              color={color}
+            />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="Favourite"
+        component={AddFoodScreen}
+        options={{
+          tabBarIcon: ({ size, color }) => (
+            <MaterialCommunityIcons name="heart" size={size} color={color} />
+          ),
+        }}
+      />
+
+      {/* <Tab.Screen
+        name="Heart"
+        component={HomeScreen}
+        options={{
+          tabBarIcon: ({ size, color }) => {
+            <MaterialCommunityIcons name="heart" size={size} color={color} />;
+          },
+        }}
+      /> */}
+
+      <Tab.Screen
+        name="Account"
+        component={AccountScreen}
+        options={{
+          tabBarIcon: ({ size, color }) => (
+            <MaterialCommunityIcons name="account" size={size} color={color} />
+          ),
+        }}
+      />
+    </Tab.Navigator>
+  );
+}
