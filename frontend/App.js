@@ -1,17 +1,23 @@
 import { FlatList, ScrollView, StyleSheet, View } from "react-native";
 
-import Button from "./app/components/common/AppButton";
-import Text from "./app/components/common/AppText";
-import TextInput from "./app/components/common/AppTextInput";
-import Card from "./app/components/common/Card";
-import Icon from "./app/components/common/Icon";
-import ImageInput from "./app/components/common/ImageInput";
-import Screen from "./app/components/common/Screen";
-import FoodItem from "./app/components/lists/ListItem";
-import ListItemSperator from "./app/components/lists/ListItemSperator";
-import colors from "./app/confiq/colors";
+// import Button from "./app/components/common/AppButton";
+// import Text from "./app/components/common/AppText";
+// import TextInput from "./app/components/common/AppTextInput";
+// import Card from "./app/components/common/Card";
 // import Icon from "./app/components/common/Icon";
+// import ImageInput from "./app/components/common/ImageInput";
+// import Screen from "./app/components/common/Screen";
+// import SubmitButton from "./app/components/forms/SubmitButton";
+// // import useLocation from "./app/hooks/useLocation";
+// import FoodItem from "./app/components/lists/ListItem";
+// import ListItemSperator from "./app/components/lists/ListItemSperator";
+// import colors from "./app/confiq/colors";
+// import Icon from "./app/components/common/Icon";
+
 // import ActivityIndicator from "./app/components/common/ActivityIndicator";
+import HomeScreen from "./app/screens/HomeScreen";
+import AccountScreen from "./app/screens/AccountScreen";
+import AddFood from "./app/screens/AddFood";
 
 const foods = [
   {
@@ -60,81 +66,82 @@ const foods = [
 
 export default function App() {
   return (
-    <>
-      {/* <ActivityIndicator visible={true} /> */}
-      <Screen>
-        <ScrollView showsVerticalScrollIndicator={false} style={{ margin: 15 }}>
-          {/* <Icon name="lock" iconColor="white" /> */}
+    // <Screen>
+    //   <ScrollView showsVerticalScrollIndicator={false} style={{ margin: 15 }}>
+    //     {/* <Icon name="lock" iconColor="white" /> */}
 
-          <View style={styles.buttonContainer}>
-            <TextInput icon="email" placeholder="Enter your email" />
-            <Button title="Add to cart" />
-          </View>
+    //     <View style={styles.buttonContainer}>
+    //       <TextInput icon="email" placeholder="Enter your email" />
+    //       <Button title="Add to cart" />
+    //     </View>
 
-          <FoodItem
-            title="Logout"
-            IconComponent={
-              <Icon
-                name="logout"
-                size={40}
-                backgroundColor="#ffe66d"
-                // onPress={() => logOut()}
-              />
-            }
-            icon="chevron-right"
-            size={40}
-            iconColor={colors.dark}
-            backgroundColor={colors.light}
-          />
+    //     <FoodItem
+    //       title="Logout"
+    //       IconComponent={
+    //         <Icon
+    //           name="logout"
+    //           size={40}
+    //           backgroundColor="#ffe66d"
+    //           // onPress={() => logOut()}
+    //         />
+    //       }
+    //       icon="chevron-right"
+    //       size={40}
+    //       iconColor={colors.dark}
+    //       backgroundColor={colors.light}
+    //     />
 
-          <View>
-            <Text
-              style={{ fontWeight: "700", fontSize: 22, marginVertical: 10 }}
-            >
-              Students favourite
-            </Text>
-            <FlatList
-              horizontal
-              showsHorizontalScrollIndicator={false}
-              data={foods}
-              keyExtractor={(listing) => listing._id}
-              renderItem={({ item }) => (
-                <Card
-                  style={styles.card}
-                  name={item.name}
-                  price={item.price}
-                  imageURL={item.imageURL}
-                />
-              )}
-            />
-          </View>
+    //     <View>
+    //       <Text
+    //         style={{ fontWeight: "700", fontSize: 22, marginVertical: 10 }}
+    //       >
+    //         Students favourite
+    //       </Text>
+    //       <FlatList
+    //         horizontal
+    //         showsHorizontalScrollIndicator={false}
+    //         data={foods}
+    //         keyExtractor={(listing) => listing._id}
+    //         renderItem={({ item }) => (
+    //           <Card
+    //             style={styles.card}
+    //             name={item.name}
+    //             price={item.price}
+    //             imageURL={item.imageURL}
+    //           />
+    //         )}
+    //       />
+    //     </View>
 
-          <View>
-            <Text style={{ fontWeight: "700", marginVertical: 10 }}>
-              All items
-            </Text>
-            <FlatList
-              data={foods}
-              keyExtractor={(listing) => listing._id}
-              renderItem={({ item }) => (
-                <FoodItem
-                  title={item.name}
-                  subTitle={item.description}
-                  price={item.price}
-                  imageUri={item.imageURL}
-                  icon="plus"
-                />
-              )}
-              ItemSeparatorComponent={ListItemSperator}
-            />
-          </View>
+    //     <View>
+    //       <Text style={{ fontWeight: "700", marginVertical: 10 }}>
+    //         All items
+    //       </Text>
+    //       <FlatList
+    //         data={foods}
+    //         keyExtractor={(listing) => listing._id}
+    //         renderItem={({ item }) => (
+    //           <FoodItem
+    //             title={item.name}
+    //             subTitle={item.description}
+    //             price={item.price}
+    //             imageUri={item.imageURL}
+    //             icon="plus"
+    //           />
+    //         )}
+    //         ItemSeparatorComponent={ListItemSperator}
+    //       />
+    //     </View>
 
-          <View style={{ paddingTop: 15 }}>
-            <ImageInput />
-          </View>
-        </ScrollView>
-      </Screen>
-    </>
+    //     <View style={{ paddingTop: 15 }}>
+    //       <ImageInput />
+    //     </View>
+    //   </ScrollView>
+    // </Screen>
+
+    <HomeScreen />
+    // <AddFood />
+    // <AccountScreen />
   );
 }
 
