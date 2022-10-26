@@ -5,6 +5,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import HomeScreen from "../screens/HomeScreen";
 import AddFoodScreen from "../screens/AddFoodScreen";
 import AccountScreen from "../screens/AccountScreen";
+import AddFoodButton from "./AddFoodButton";
 
 const Tab = createBottomTabNavigator();
 
@@ -15,6 +16,7 @@ export default function AppNavigator() {
         name="Home"
         component={HomeScreen}
         options={{
+          headerShown: false,
           tabBarIcon: ({ size, color }) => (
             <MaterialCommunityIcons name="home" size={size} color={color} />
           ),
@@ -36,8 +38,11 @@ export default function AppNavigator() {
       />
       <Tab.Screen
         name="Add Food"
-        component={HomeScreen}
-        options={{
+        component={AddFoodScreen}
+        options={({ navigation }) => ({
+          tabBarButton: () => (
+            <AddFoodButton onPress={() => navigation.navigate("Add Food")} />
+          ),
           tabBarIcon: ({ size, color }) => (
             <MaterialCommunityIcons
               name="plus-circle"
@@ -45,27 +50,17 @@ export default function AppNavigator() {
               color={color}
             />
           ),
-        }}
+        })}
       />
       <Tab.Screen
         name="Favourite"
-        component={AddFoodScreen}
+        component={HomeScreen}
         options={{
           tabBarIcon: ({ size, color }) => (
             <MaterialCommunityIcons name="heart" size={size} color={color} />
           ),
         }}
       />
-
-      {/* <Tab.Screen
-        name="Heart"
-        component={HomeScreen}
-        options={{
-          tabBarIcon: ({ size, color }) => {
-            <MaterialCommunityIcons name="heart" size={size} color={color} />;
-          },
-        }}
-      /> */}
 
       <Tab.Screen
         name="Account"
