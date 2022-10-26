@@ -17,7 +17,7 @@ import { FlatList, ScrollView, StyleSheet, View } from "react-native";
 // import ActivityIndicator from "./app/components/common/ActivityIndicator";
 import HomeScreen from "./app/screens/HomeScreen";
 import AccountScreen from "./app/screens/AccountScreen";
-import AddFood from "./app/screens/AddFood";
+import AddFood from "./app/screens/AddFoodScreen";
 
 const foods = [
   {
@@ -140,8 +140,8 @@ export default function App() {
     // </Screen>
 
     // <HomeScreen />
-    <AddFood />
-    // <AccountScreen />
+    // <AddFood />
+    <AccountScreen />
   );
 }
 
