@@ -139,8 +139,8 @@ export default function App() {
     //   </ScrollView>
     // </Screen>
 
-    <HomeScreen />
-    // <AddFood />
+    // <HomeScreen />
+    <AddFood />
     // <AccountScreen />
   );
 }
