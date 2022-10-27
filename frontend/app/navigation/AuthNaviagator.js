@@ -17,8 +17,20 @@ export default function AuthNavigator() {
           headerShown: false,
         }}
       />
-      <Stack.Screen name="Signin" component={SigninScreen} />
-      <Stack.Screen name="Signup" component={SignupScreen} />
+      <Stack.Screen
+        name="Signin"
+        component={SigninScreen}
+        options={{
+          title: "Sign in",
+        }}
+      />
+      <Stack.Screen
+        name="Signup"
+        component={SignupScreen}
+        options={{
+          title: "Sign up",
+        }}
+      />
     </Stack.Navigator>
   );
 }

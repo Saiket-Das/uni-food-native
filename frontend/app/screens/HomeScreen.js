@@ -2,17 +2,16 @@ import { View, StyleSheet, ScrollView, FlatList } from "react-native";
 import React from "react";
 
 import Screen from "../components/common/Screen";
-import Button from "../components/common/AppButton";
 import TextInput from "../components/common/AppTextInput";
 import Text from "../components/common/AppText";
 import Card from "../components/common/Card";
-import FoodItem from "../components/lists/ListItem";
 import Icon from "../components/common/Icon";
-import ImageInput from "../components/common/ImageInput";
-import colors from "../confiq/colors";
+
+import FoodItem from "../components/lists/ListItem";
 import ListItemSperator from "../components/lists/ListItemSperator";
 
-// import routes from "../navigation/routes";
+import colors from "../confiq/colors";
+import routes from "../navigation/routes";
 
 const foods = [
   {
@@ -88,6 +87,7 @@ export default function HomeScreen({ navigation }) {
                 name={item.name}
                 price={item.price}
                 imageURL={item.imageURL}
+                onPress={() => navigation.navigate(routes.FOOD_DETAILS, item)}
               />
             )}
           />
