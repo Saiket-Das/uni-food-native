@@ -4,5 +4,6 @@ export default Object.freeze({
   ACCOUNT: "Account",
   SIGNIN: "Signin",
   SIGNUP: "Signup",
+  WELCOME: "Welcome",
   ITEM_DESCRIPTION: "Item Description",
 });
