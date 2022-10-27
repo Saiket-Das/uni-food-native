@@ -1,5 +1,5 @@
 import React from "react";
-import { Image, StyleSheet, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 
 import Screen from "../components/common/Screen";
 import AppForm from "../components/forms/AppForm";
@@ -8,7 +8,7 @@ import SubmitButton from "../components/forms/SubmitButton";
 import ErrorMessage from "../components/forms/ErrorMessage";
 import Text from "../components/common/AppText";
 
-export default function LoginScree() {
+export default function SigninScreen() {
   return (
     <Screen style={styles.container}>
       <View style={styles.textContaier}>
@@ -53,7 +53,6 @@ const styles = StyleSheet.create({
   container: {
     margin: 25,
     justifyContent: "center",
-    // backgroundColor: "black",
   },
 
   textContaier: {

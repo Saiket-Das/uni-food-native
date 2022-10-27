@@ -10,8 +10,8 @@ export default function AppFormField({ name, ...otherProps }) {
   return (
     <>
       <AppTextInput
-        onBlur={() => setFieldTouched(name)}
-        onChange={(text) => setFieldValue(text)}
+        // onBlur={() => setFieldTouched(name)}
+        // onChange={(text) => setFieldValue(text)}
         // value={values[name]}
         {...otherProps}
       />
