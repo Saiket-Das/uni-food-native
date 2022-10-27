@@ -1,4 +1,6 @@
 import { FlatList, ScrollView, StyleSheet, View } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import navigationTheme from "./app/navigation/navigationTheme";
 
 // import Button from "./app/components/common/AppButton";
 // import Text from "./app/components/common/AppText";
@@ -16,13 +18,11 @@ import Screen from "./app/components/common/Screen";
 
 // import ActivityIndicator from "./app/components/common/ActivityIndicator";
 
-import { NavigationContainer } from "@react-navigation/native";
-import navigationTheme from "./app/navigation/navigationTheme";
-
 import HomeScreen from "./app/screens/HomeScreen";
 import AccountScreen from "./app/screens/AccountScreen";
 import AddFood from "./app/screens/AddFoodScreen";
 import AppNavigator from "./app/navigation/AppNavigator";
+import WelcomeScreen from "./app/screens/WelcomeScreen";
 
 const foods = [
   {
@@ -148,7 +148,8 @@ export default function App() {
     // <AddFood />
     // <AccountScreen />
     <NavigationContainer theme={navigationTheme}>
-      <AppNavigator />
+      {/* <AppNavigator /> */}
+      <WelcomeScreen />
     </NavigationContainer>
   );
 }
