@@ -5,24 +5,19 @@ import Screen from "../components/common/Screen";
 import AppForm from "../components/forms/AppForm";
 import AppFormField from "../components/forms/AppFormField";
 import SubmitButton from "../components/forms/SubmitButton";
-import ErrorMessage from "../components/forms/ErrorMessage";
 import Text from "../components/common/AppText";
 
 export default function SignupScreen() {
   return (
     <Screen style={styles.container}>
       <View style={styles.textContaier}>
-        <Text style={{ fontWeight: "700", fontSize: "40" }}>Welcome back</Text>
-        <Text style={{ fontSize: "20" }}>Sign in to contiune</Text>
+        <Text style={{ fontWeight: "700", fontSize: "45" }}>
+          Hi! Unitarians
+        </Text>
+        <Text style={{ fontSize: "20" }}>Sign up to enjoy the app</Text>
       </View>
 
       <AppForm>
-        <ErrorMessage
-          error="Invalid email and/or password"
-          // visible={loginFailed}
-          visible={true}
-        />
-
         <AppFormField
           name="name"
           icon="account"
@@ -53,7 +48,7 @@ export default function SignupScreen() {
           textContentType="password"
         />
 
-        <SubmitButton title="SIGN IN" />
+        <SubmitButton title="SIGN UP" />
       </AppForm>
     </Screen>
   );

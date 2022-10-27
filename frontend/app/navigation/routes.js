@@ -5,5 +5,5 @@ export default Object.freeze({
   SIGNIN: "Signin",
   SIGNUP: "Signup",
   WELCOME: "Welcome",
-  ITEM_DESCRIPTION: "Item Description",
+  FOOD_DETAILS: "Food Details",
 });

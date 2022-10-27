@@ -12,7 +12,7 @@ export default function SigninScreen() {
   return (
     <Screen style={styles.container}>
       <View style={styles.textContaier}>
-        <Text style={{ fontWeight: "700", fontSize: "40" }}>Welcome back</Text>
+        <Text style={{ fontWeight: "700", fontSize: "45" }}>Welcome back</Text>
         <Text style={{ fontSize: "20" }}>Sign in to contiune</Text>
       </View>
 

@@ -2,7 +2,7 @@ import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 
 import HomeScreen from "../screens/HomeScreen";
-import AccountScreen from "../screens/AccountScreen";
+import FoodDetailsScreen from "../screens/FoodDetailsScreen";
 
 const Stack = createStackNavigator();
 
@@ -16,7 +16,7 @@ export default function HomeNavigator() {
           headerShown: false,
         }}
       />
-      <Stack.Screen name="Account" component={AccountScreen} />
+      <Stack.Screen name="Account" component={FoodDetailsScreen} />
     </Stack.Navigator>
   );
 }

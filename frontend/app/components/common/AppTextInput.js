@@ -4,9 +4,14 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import defaultStyles from "../../confiq/styles";
 
-export default function AppTextInput({ icon, width = "100%", ...otherProps }) {
+export default function AppTextInput({
+  icon,
+  width = "100%",
+  height,
+  ...otherProps
+}) {
   return (
-    <View style={[styles.container, { width }]}>
+    <View style={[styles.container, { width }, { height }]}>
       {icon && (
         <MaterialCommunityIcons
           name={icon}
@@ -17,7 +22,7 @@ export default function AppTextInput({ icon, width = "100%", ...otherProps }) {
       )}
       <TextInput
         placeholderTextColor={defaultStyles.colors.black}
-        style={[defaultStyles.text, { width }]}
+        style={[defaultStyles.text, { width }, { height }]}
         {...otherProps}
       />
     </View>
