@@ -12,7 +12,7 @@ export default function AppFormField({ name, ...otherProps }) {
       <AppTextInput
         onBlur={() => setFieldTouched(name)}
         onChange={(text) => setFieldValue(text)}
-        value={values[name]}
+        // value={values[name]}
         {...otherProps}
       />
       <ErrorMessage error={errors[name]} visible={touched[name]} />

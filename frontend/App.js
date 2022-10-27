@@ -24,6 +24,7 @@ import AddFood from "./app/screens/AddFoodScreen";
 import AppNavigator from "./app/navigation/AppNavigator";
 import WelcomeScreen from "./app/screens/WelcomeScreen";
 import AuthNavigator from "./app/navigation/AuthNaviagator";
+import SigninScreen from "./app/screens/SigninScreen";
 
 const foods = [
   {
@@ -151,6 +152,7 @@ export default function App() {
     <NavigationContainer theme={navigationTheme}>
       {/* <AppNavigator /> */}
       <AuthNavigator />
+      {/* <SigninScreen /> */}
     </NavigationContainer>
   );
 }
