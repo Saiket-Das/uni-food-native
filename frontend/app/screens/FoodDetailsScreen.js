@@ -9,6 +9,14 @@ export default function FoodDescriptionScree({ route }) {
   return (
     <View>
       <View>
+        <View
+          style={{
+            backgroundColor: "white",
+            position: "absolute",
+            width: "100%",
+            height: 350,
+          }}
+        ></View>
         <Image
           style={styles.image}
           source={{ uri: food.imageURL }}
