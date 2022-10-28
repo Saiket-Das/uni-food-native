@@ -2,6 +2,7 @@ import { View, Image, StyleSheet } from "react-native";
 import React from "react";
 import AppText from "../components/common/AppText";
 import Button from "../components/common/AppButton";
+import { LinearGradient } from "expo-linear-gradient";
 
 export default function FoodDescriptionScree({ route }) {
   const food = route.params;
@@ -9,18 +10,16 @@ export default function FoodDescriptionScree({ route }) {
   return (
     <View>
       <View>
-        <View
-          style={{
-            backgroundColor: "white",
-            position: "absolute",
-            width: "100%",
-            height: 350,
-          }}
-        ></View>
         <Image
           style={styles.image}
           source={{ uri: food.imageURL }}
           tint="light"
+        />
+        <LinearGradient
+          start={{ x: 0, y: 0.5 }}
+          end={{ x: 0, y: 1 }}
+          colors={["#ffffff00", "#fff"]}
+          style={styles.linearGradient}
         />
       </View>
 
@@ -50,6 +49,19 @@ const styles = StyleSheet.create({
     width: "100%",
     height: 350,
   },
+
+  linearGradient: {
+    // flex: 1,
+    // paddingLeft: 15,
+    // paddingRight: 15,
+    // borderRadius: 5
+    position: "absolute",
+    // top: 100,
+    width: "100%",
+    height: 350,
+    opacity: 1,
+  },
+
   detailsContainer: {
     margin: 20,
   },
