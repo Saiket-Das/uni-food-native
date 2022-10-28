@@ -1,8 +1,12 @@
-import { View, Image, StyleSheet } from "react-native";
 import React from "react";
+import { View, Image, StyleSheet, TouchableOpacity } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
+
 import AppText from "../components/common/AppText";
 import Button from "../components/common/AppButton";
-import { LinearGradient } from "expo-linear-gradient";
+import Icon from "../components/common/Icon";
+import colors from "../confiq/colors";
+import QuantityIcon from "../components/common/QuantityIcon";
 
 export default function FoodDescriptionScree({ route }) {
   const food = route.params;
@@ -30,12 +34,17 @@ export default function FoodDescriptionScree({ route }) {
 
         <View style={styles.descriptionContainer}>
           <AppText style={{ fontWeight: "700" }}>DESCRIPTION</AppText>
-          <AppText style={{ fontSize: 16 }}>{food.description}</AppText>
+          <AppText style={{ fontSize: 16 }} numberOfLines={5}>
+            {food.description}
+          </AppText>
         </View>
 
         <View style={styles.descriptionContainer}>
           <AppText style={{ fontWeight: "700" }}>QUANTITY</AppText>
-          <AppText style={{ fontSize: 16 }}>Items</AppText>
+          <View style={styles.itemQuantity}>
+            <AppText style={{ fontSize: 16 }}>Items</AppText>
+            <View style={styles.icons}></View>
+          </View>
         </View>
 
         <Button title="Add to cart" />
@@ -51,15 +60,9 @@ const styles = StyleSheet.create({
   },
 
   linearGradient: {
-    // flex: 1,
-    // paddingLeft: 15,
-    // paddingRight: 15,
-    // borderRadius: 5
     position: "absolute",
-    // top: 100,
     width: "100%",
     height: 350,
-    opacity: 1,
   },
 
   detailsContainer: {
@@ -68,5 +71,15 @@ const styles = StyleSheet.create({
 
   descriptionContainer: {
     marginTop: 25,
+  },
+
+  itemQuantity: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+  },
+
+  icons: {
+    flexDirection: "row",
   },
 });
