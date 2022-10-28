@@ -2,11 +2,11 @@ import { View, StyleSheet, ScrollView, FlatList } from "react-native";
 import React from "react";
 
 import Screen from "../components/common/Screen";
+import Avatar from "../components/common/Avatar";
 import TextInput from "../components/common/AppTextInput";
 import Text from "../components/common/AppText";
 import Card from "../components/common/Card";
 import Icon from "../components/common/Icon";
-
 import FoodItem from "../components/lists/ListItem";
 import ListItemSperator from "../components/lists/ListItemSperator";
 
@@ -61,6 +61,8 @@ const foods = [
 export default function HomeScreen({ navigation }) {
   return (
     <Screen style={{ backgroundColor: colors.primary }}>
+      {/* -------> SEARCH BAR  */}
+      <View style={styles.avatarContainer}></View>
       <View style={styles.searchContainer}>
         <TextInput
           icon="text-search"
@@ -73,6 +75,7 @@ export default function HomeScreen({ navigation }) {
         <Icon name="filter-variant" size={40} />
       </View>
       <ScrollView showsVerticalScrollIndicator={false} style={{ margin: 15 }}>
+        {/* -------> STUDENTS FAVOURITE  */}
         <View>
           <Text style={{ fontWeight: "700", fontSize: 22, marginVertical: 10 }}>
             Students favourite
@@ -94,6 +97,7 @@ export default function HomeScreen({ navigation }) {
           />
         </View>
 
+        {/* -------> ALL ITEMS  */}
         <View>
           <Text style={{ fontWeight: "700", marginVertical: 10 }}>
             All items
@@ -119,6 +123,15 @@ export default function HomeScreen({ navigation }) {
 }
 
 const styles = StyleSheet.create({
+  avatarContainer: {
+    width: "100%",
+    backgroundColor: colors.primary,
+    // flexDirection: "row",
+    // justifyContent: "space-between",
+    // alignItems: "center",
+    paddingHorizontal: 15,
+  },
+
   searchContainer: {
     width: "100%",
     backgroundColor: colors.primary,
