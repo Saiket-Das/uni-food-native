@@ -119,14 +119,6 @@ export default function HomeScreen({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  // style={styles.container}
-  // container: {
-  //   flex: 1,
-  //   backgroundColor: "#fff",
-  //   alignItems: "center",
-  //   justifyContent: "center",
-  // },
-
   searchContainer: {
     width: "100%",
     backgroundColor: colors.primary,
