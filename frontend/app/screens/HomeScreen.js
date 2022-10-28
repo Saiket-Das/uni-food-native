@@ -60,18 +60,19 @@ const foods = [
 
 export default function HomeScreen({ navigation }) {
   return (
-    <Screen>
+    <Screen style={{ backgroundColor: colors.primary }}>
+      <View style={styles.searchContainer}>
+        <TextInput
+          icon="text-search"
+          iconSize={18}
+          iconColor={colors.darkGray}
+          placeholder="Search.."
+          width="85%"
+          height={45}
+        />
+        <Icon name="filter-variant" size={40} />
+      </View>
       <ScrollView showsVerticalScrollIndicator={false} style={{ margin: 15 }}>
-        <View style={styles.buttonContainer}>
-          <TextInput
-            Icon="text-search"
-            placeholder="Enter your email"
-            width="85%"
-            height={45}
-          />
-          <Icon name="filter-variant" size={40} />
-        </View>
-
         <View>
           <Text style={{ fontWeight: "700", fontSize: 22, marginVertical: 10 }}>
             Students favourite
@@ -126,11 +127,13 @@ const styles = StyleSheet.create({
   //   justifyContent: "center",
   // },
 
-  buttonContainer: {
+  searchContainer: {
     width: "100%",
+    backgroundColor: colors.primary,
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
+    paddingHorizontal: 15,
   },
 
   card: {

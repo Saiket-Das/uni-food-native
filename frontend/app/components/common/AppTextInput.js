@@ -6,6 +6,8 @@ import defaultStyles from "../../confiq/styles";
 
 export default function AppTextInput({
   icon,
+  iconSize = 20,
+  iconColor = defaultStyles.colors.primary,
   width = "100%",
   height,
   ...otherProps
@@ -15,8 +17,8 @@ export default function AppTextInput({
       {icon && (
         <MaterialCommunityIcons
           name={icon}
-          size={20}
-          color={defaultStyles.colors.primary}
+          size={iconSize}
+          color={iconColor}
           style={styles.icon}
         />
       )}
