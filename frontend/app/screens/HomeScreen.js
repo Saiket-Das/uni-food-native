@@ -62,7 +62,19 @@ export default function HomeScreen({ navigation }) {
   return (
     <Screen style={{ backgroundColor: colors.primary }}>
       {/* -------> SEARCH BAR  */}
-      <View style={styles.avatarContainer}></View>
+      <View style={styles.avatarContainer}>
+        <Avatar imageURL="https://images.unsplash.com/photo-1548142813-c348350df52b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=389&q=80" />
+        <Text
+          style={{
+            fontWeight: "500",
+            paddingHorizontal: 15,
+            fontSize: 16,
+            color: colors.white,
+          }}
+        >
+          Welcome Ahan
+        </Text>
+      </View>
       <View style={styles.searchContainer}>
         <TextInput
           icon="text-search"
@@ -126,9 +138,8 @@ const styles = StyleSheet.create({
   avatarContainer: {
     width: "100%",
     backgroundColor: colors.primary,
-    // flexDirection: "row",
-    // justifyContent: "space-between",
-    // alignItems: "center",
+    flexDirection: "row",
+    alignItems: "center",
     paddingHorizontal: 15,
   },
 
