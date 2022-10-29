@@ -10,6 +10,7 @@ import * as ImagePicker from "expo-image-picker";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import colors from "../../confiq/colors";
+import AppText from "./Avatar";
 
 export default function ImageInput() {
   const [imageUri, setImageUri] = useState(null);
@@ -62,7 +63,6 @@ export default function ImageInput() {
             size={70}
           />
         )}
-
         {imageUri && <Image source={{ uri: imageUri }} style={styles.image} />}
       </View>
     </TouchableWithoutFeedback>
@@ -72,7 +72,7 @@ export default function ImageInput() {
 const styles = StyleSheet.create({
   container: {
     width: "100%",
-    height: 233,
+    height: 220,
     backgroundColor: colors.light,
     alignItems: "center",
     justifyContent: "center",
