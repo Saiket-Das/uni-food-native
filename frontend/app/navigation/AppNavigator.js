@@ -2,11 +2,14 @@ import React from "react";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
-import HomeScreen from "../screens/HomeScreen";
-import AddFoodScreen from "../screens/AddFoodScreen";
-import AddFoodButton from "./AddFoodButton";
 import HomeNavigator from "./HomeNavigator";
 import AccountScreen from "../screens/AccountScreen";
+
+import HomeScreen from "../screens/HomeScreen";
+import AddFoodScreen from "../screens/AddFoodScreen";
+import OrderListScreen from "../screens/OrderListScreen";
+
+import AddFoodButton from "./AddFoodButton";
 
 const Tab = createBottomTabNavigator();
 
@@ -54,7 +57,7 @@ export default function AppNavigator() {
       />
       <Tab.Screen
         name="Favourite"
-        component={HomeScreen}
+        component={OrderListScreen}
         options={{
           tabBarIcon: ({ size, color }) => (
             <MaterialCommunityIcons name="heart" size={size} color={color} />

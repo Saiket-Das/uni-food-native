@@ -15,6 +15,7 @@ export default function ListItem({
   imageUri,
   title,
   subTitle,
+  quantity,
   price,
   IconComponent,
   icon,
@@ -38,19 +39,29 @@ export default function ListItem({
               {subTitle}
             </Text>
           )}
+          {quantity && (
+            <Text
+              style={{ fontSize: 16, color: colors.darkGray }}
+              numberOfLines={1}
+            >
+              {quantity}x
+            </Text>
+          )}
           {price && (
             <Text style={{ fontWeight: "700" }}>RM{price.toFixed(2)}</Text>
           )}
         </View>
 
-        <TouchableOpacity>
-          <Icon
-            name={icon}
-            size={size}
-            backgroundColor={backgroundColor}
-            iconColor={iconColor}
-          />
-        </TouchableOpacity>
+        {icon && (
+          <TouchableOpacity>
+            <Icon
+              name={icon}
+              size={size}
+              backgroundColor={backgroundColor}
+              iconColor={iconColor}
+            />
+          </TouchableOpacity>
+        )}
       </View>
     </TouchableWithoutFeedback>
   );
@@ -61,9 +72,14 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
     padding: 10,
+    margin: 10,
     backgroundColor: colors.light,
-    // alignItems: "flex-end",
+    alignItems: "flex-end",
     borderRadius: 10,
+    shadowColor: "#171717",
+    shadowOffset: { width: -2, height: 4 },
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
   },
 
   image: {

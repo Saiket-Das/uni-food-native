@@ -7,13 +7,18 @@ import FormField from "../components/forms/AppFormField";
 import SubmitButton from "../components/forms/SubmitButton";
 import Text from "../components/common/AppText";
 import ImageInput from "../components/common/ImageInput";
+import colors from "../confiq/colors";
 
 export default function AddFood() {
   return (
     <Screen style={styles.container}>
       <View style={styles.textContaier}>
-        {/* <Text style={{ fontWeight: "700", fontSize: "45" }}>Add new food</Text> */}
-        <Text style={{ fontSize: "20" }}>Add new food</Text>
+        <Text
+          style={{ fontWeight: "700", fontSize: "30", color: colors.primary }}
+        >
+          Add new food
+        </Text>
+        {/* <Text style={{ fontSize: "20" }}>Add new food</Text> */}
       </View>
 
       <AppForm>
@@ -50,7 +55,9 @@ const styles = StyleSheet.create({
   },
 
   textContaier: {
-    marginBottom: 20,
+    marginBottom: 15,
+    // flexDirection: "row",
+    // justifyContent: "center",
   },
 
   nameContainer: {

@@ -126,7 +126,7 @@ export default function HomeScreen({ navigation }) {
                 icon="plus"
               />
             )}
-            ItemSeparatorComponent={ListItemSperator}
+            // ItemSeparatorComponent={ListItemSperator}
           />
         </View>
       </ScrollView>
