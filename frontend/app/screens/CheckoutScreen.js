@@ -7,6 +7,7 @@ import Text from "../components/common/AppText";
 import Button from "../components/common/AppButton";
 import FoodItem from "../components/lists/ListItem";
 import ListItemSperator from "../components/lists/ListItemSperator";
+import routes from "../navigation/routes";
 
 const foods = [
   {
@@ -67,7 +68,7 @@ const foods = [
     __v: 0,
   },
 ];
-export default function OrderList() {
+export default function OrderList({ navigation }) {
   return (
     <Screen style={{ backgroundColor: colors.primary }}>
       <View style={styles.container}>
@@ -114,8 +115,10 @@ export default function OrderList() {
               )}
             />
           </View>
-
-          <Button title="Checkout" />
+          <Button
+            title="Checkout"
+            onPress={() => navigation.navigate(routes.PAYMENT)}
+          />
         </View>
       </ScrollView>
     </Screen>

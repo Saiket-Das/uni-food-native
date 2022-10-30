@@ -3,13 +3,14 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
 import HomeNavigator from "./HomeNavigator";
+import CheckoutNavigator from "./CheckoutNavigator";
 import AccountScreen from "../screens/AccountScreen";
 
 import HomeScreen from "../screens/HomeScreen";
 import AddFoodScreen from "../screens/AddFoodScreen";
-import CheckoutScreen from "../screens/CheckoutScreen";
 
 import AddFoodButton from "./AddFoodButton";
+import routes from "./routes";
 
 const Tab = createBottomTabNavigator();
 
@@ -40,11 +41,13 @@ export default function AppNavigator() {
         }}
       />
       <Tab.Screen
-        name="Add Food"
+        name="addFood"
         component={AddFoodScreen}
         options={({ navigation }) => ({
           tabBarButton: () => (
-            <AddFoodButton onPress={() => navigation.navigate("Add Food")} />
+            <AddFoodButton
+              onPress={() => navigation.navigate(routes.ADDFOOD)}
+            />
           ),
           tabBarIcon: ({ size, color }) => (
             <MaterialCommunityIcons
@@ -53,11 +56,12 @@ export default function AppNavigator() {
               color={color}
             />
           ),
+          title: "Add Food",
         })}
       />
       <Tab.Screen
         name="Favourite"
-        component={CheckoutScreen}
+        component={CheckoutNavigator}
         options={{
           tabBarIcon: ({ size, color }) => (
             <MaterialCommunityIcons name="heart" size={size} color={color} />
