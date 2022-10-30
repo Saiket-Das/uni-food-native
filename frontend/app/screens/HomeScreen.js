@@ -86,7 +86,10 @@ export default function HomeScreen({ navigation }) {
         />
         <Icon name="filter-variant" size={40} />
       </View>
-      <ScrollView showsVerticalScrollIndicator={false} style={{ margin: 15 }}>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        style={{ marginHorizontal: 15 }}
+      >
         {/* -------> STUDENTS FAVOURITE  */}
         <View>
           <Text style={{ fontWeight: "700", fontSize: 22, marginVertical: 10 }}>

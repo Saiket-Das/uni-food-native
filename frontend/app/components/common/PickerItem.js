@@ -1,9 +1,8 @@
 import { StyleSheet, TouchableOpacity, View } from "react-native";
 import React from "react";
-
-import colors from "../../confiq/colors";
 import Text from "./AppText";
 import Icon from "./Icon";
+import colors from "../../confiq/colors";
 
 export default function PickerItem({ item, onPress }) {
   return (
