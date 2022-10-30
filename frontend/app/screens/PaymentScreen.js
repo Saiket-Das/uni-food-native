@@ -1,12 +1,16 @@
-import { View, Text, StyleSheet } from "react-native";
+import { View, StyleSheet } from "react-native";
 import React from "react";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
+
 import FormPicker from "../components/forms/AppFormPicker";
-import NumberPickerItem from "../components/common/NumberPickerItem";
 import AppForm from "../components/forms/AppForm";
 
 import colors from "../confiq/colors";
+import defaultStyles from "../confiq/styles";
 
+import NumberPickerItem from "../components/common/NumberPickerItem";
 import Screen from "../components/common/Screen";
+import Text from "../components/common/AppText";
 
 const tablenumbers = [
   {
@@ -65,9 +69,7 @@ export default function OrderDone() {
     <Screen>
       <View style={{ margin: 10 }}>
         <View style={styles.totalContainer}>
-          <View>
-            <Text style={{ fontWeight: "600", fontSize: "20" }}>Table No</Text>
-          </View>
+          <Text style={{ fontWeight: "700", fontSize: "15" }}>TABLE NO</Text>
 
           <AppForm>
             <FormPicker
@@ -78,6 +80,15 @@ export default function OrderDone() {
               placeholder="Table No"
             />
           </AppForm>
+
+          <Text style={{ fontWeight: "700", fontSize: "15", marginTop: 15 }}>
+            PAYMENT METHOD
+          </Text>
+
+          <View style={styles.cashContainer}>
+            <MaterialCommunityIcons name="cash-multiple" size={21} />
+            <Text style={{ marginHorizontal: 10 }}>Cash</Text>
+          </View>
         </View>
       </View>
     </Screen>
@@ -102,14 +113,13 @@ const styles = StyleSheet.create({
     padding: 20,
   },
 
-  itemContainer: {
-    backgroundColor: colors.white,
-    marginTop: 15,
-    borderRadius: 10,
-  },
-
-  totalSubtotal: {
+  cashContainer: {
     flexDirection: "row",
-    justifyContent: "space-between",
+    backgroundColor: colors.light,
+    borderColor: colors.primary,
+    borderWidth: 1,
+    padding: 14,
+    borderRadius: 10,
+    marginTop: 8,
   },
 });

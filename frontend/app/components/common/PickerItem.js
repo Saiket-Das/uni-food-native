@@ -8,7 +8,7 @@ export default function PickerItem({ item, onPress }) {
   return (
     <TouchableOpacity onPress={onPress}>
       <View style={styles.container}>
-        <Text style={styles.text}>{item.label}</Text>
+        <Text>{item.label}</Text>
         <Icon
           name="arrow-right"
           iconColor={colors.darkGray}
@@ -31,5 +31,4 @@ const styles = StyleSheet.create({
     marginVertical: 10,
     borderRadius: 10,
   },
-  text: {},
 });
