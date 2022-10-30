@@ -95,8 +95,6 @@ const styles = StyleSheet.create({
   },
 
   text: {
-    // flex: 1,
     width: 300,
-    // backgroundColor: "red",
   },
 });

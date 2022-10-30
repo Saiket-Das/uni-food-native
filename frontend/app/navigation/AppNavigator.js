@@ -7,7 +7,7 @@ import AccountScreen from "../screens/AccountScreen";
 
 import HomeScreen from "../screens/HomeScreen";
 import AddFoodScreen from "../screens/AddFoodScreen";
-import OrderListScreen from "../screens/OrderListScreen";
+import CheckoutScreen from "../screens/CheckoutScreen";
 
 import AddFoodButton from "./AddFoodButton";
 
@@ -57,7 +57,7 @@ export default function AppNavigator() {
       />
       <Tab.Screen
         name="Favourite"
-        component={OrderListScreen}
+        component={CheckoutScreen}
         options={{
           tabBarIcon: ({ size, color }) => (
             <MaterialCommunityIcons name="heart" size={size} color={color} />

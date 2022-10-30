@@ -72,7 +72,7 @@ export default function ImageInput() {
 const styles = StyleSheet.create({
   container: {
     width: "100%",
-    height: 220,
+    height: 200,
     backgroundColor: colors.light,
     alignItems: "center",
     justifyContent: "center",
