@@ -11,63 +11,33 @@ import colors from "../confiq/colors";
 import Screen from "../components/common/Screen";
 import Text from "../components/common/AppText";
 import ImageInput from "../components/common/ImageInput";
-import PickerItem from "../components/common/PickerItem";
+import PickerItem from "../components/common/PickerItem.js";
 
 const categories = [
   {
-    backgroundColor: "#fc5c65",
-    icon: "floor-lamp",
-    label: "Furniture",
+    label: "Malaysian",
     value: 1,
   },
   {
-    backgroundColor: "#fd9644",
-    icon: "car",
-    label: "Cars",
+    label: "Thai",
     value: 2,
   },
   {
-    backgroundColor: "#fed330",
-    icon: "camera",
-    label: "Cameras",
+    label: "Chinese",
     value: 3,
   },
   {
-    backgroundColor: "#26de81",
-    icon: "cards",
-    label: "Games",
-    value: 4,
-  },
-  {
-    backgroundColor: "#2bcbba",
-    icon: "shoe-heel",
-    label: "Clothing",
-    value: 5,
-  },
-  {
-    backgroundColor: "#45aaf2",
-    icon: "basketball",
-    label: "Sports",
+    label: "Indian",
     value: 6,
   },
   {
-    backgroundColor: "#4b7bec",
-    icon: "headphones",
-    label: "Movies & Music",
-    value: 7,
+    label: "Indonesian",
+    value: 4,
   },
-  {
-    backgroundColor: "#a55eea",
-    icon: "book-open-variant",
-    label: "Books",
-    value: 8,
-  },
-  {
-    backgroundColor: "#778ca3",
-    icon: "application",
-    label: "Other",
-    value: 9,
-  },
+  // {
+  //   label: "Vi",
+  //   value: 5,
+  // },
 ];
 
 export default function AddFood() {
@@ -94,11 +64,10 @@ export default function AddFood() {
 
         <FormPicker
           items={categories}
-          name="category"
-          numberOfColumns={3}
+          name="cusine"
+          numberOfColumns={1}
           PickerItemComponent={PickerItem}
-          placeholder="Category"
-          width="50%"
+          placeholder="Cusine"
         />
 
         <FormField
