@@ -81,6 +81,7 @@ const styles = StyleSheet.create({
     backgroundColor: defaultStyles.colors.light,
     flexDirection: "row",
     alignItems: "center",
+    justifyContent: "space-between",
     borderRadius: 15,
     padding: 15,
     marginVertical: 10,
