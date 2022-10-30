@@ -1,4 +1,4 @@
-import { View, StyleSheet, FlatList } from "react-native";
+import { View, StyleSheet, FlatList, ScrollView } from "react-native";
 import React from "react";
 
 import colors from "../confiq/colors";
@@ -51,6 +51,21 @@ const foods = [
     updatedAt: "2022-10-23T16:46:49.201Z",
     __v: 0,
   },
+
+  {
+    _id: "63556ff9e0732b4e93544a40c",
+    name: "Roti Canai",
+    description:
+      "Roti canai is a traditional Malaysian pan-fried flatbread made with flour, water, eggs, and fat. The dough for roti canai is repeatedly folded, so the final product has a layered texture, a soft interior, and a crispy outer layer.",
+    price: 1.5,
+    imageURL:
+      "https://img.freepik.com/free-photo/pakistani-food-wooden-board-flat-lay_23-2148825095.jpg?w=1060&t=st=1666543522~exp=1666544122~hmac=1e3bfcf31b911845239cfced3b6dd6668e155e5ad0ee7392f27550876a504c29",
+    available: "yes",
+    orderCount: 0,
+    createdAt: "2022-10-23T16:46:49.201Z",
+    updatedAt: "2022-10-23T16:46:49.201Z",
+    __v: 0,
+  },
 ];
 export default function OrderList() {
   return (
@@ -63,43 +78,46 @@ export default function OrderList() {
         </Text>
       </View>
 
-      <View style={{ margin: 10 }}>
-        <View style={styles.totalContainer}>
-          <View>
-            <View style={styles.totalSubtotal}>
-              <Text style={{ color: colors.darkGray }}>Subtotal</Text>
-              <Text style={{ color: colors.darkGray }}>RM30.00</Text>
-            </View>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <View style={{ margin: 10 }}>
+          <View style={styles.totalContainer}>
+            <View>
+              <View style={styles.totalSubtotal}>
+                <Text style={{ color: colors.darkGray }}>Subtotal</Text>
+                <Text style={{ color: colors.darkGray }}>RM30.00</Text>
+              </View>
 
-            <ListItemSperator style={{ marginVertical: 10 }} />
-            <View style={styles.totalSubtotal}>
-              <Text style={{ fontWeight: "600", fontSize: "22" }}>Total</Text>
-              <Text style={{ fontWeight: "600", fontSize: "22" }}>RM30.00</Text>
+              <ListItemSperator style={{ marginVertical: 10 }} />
+              <View style={styles.totalSubtotal}>
+                <Text style={{ fontWeight: "600", fontSize: "22" }}>Total</Text>
+                <Text style={{ fontWeight: "600", fontSize: "22" }}>
+                  RM30.00
+                </Text>
+              </View>
+              <View></View>
             </View>
-            <View></View>
           </View>
-        </View>
 
-        <View style={styles.itemContainer}>
-          <FlatList
-            vertical={true}
-            scrollEnabled={false}
-            data={foods}
-            keyExtractor={(listing) => listing._id}
-            renderItem={({ item }) => (
-              <FoodItem
-                title={item.name}
-                quantity={item.price}
-                price={item.price}
-                imageUri={item.imageURL}
-              />
-            )}
-            // ItemSeparatorComponent={ListItemSperator}
-          />
-        </View>
+          <View style={styles.itemContainer}>
+            <FlatList
+              vertical={true}
+              scrollEnabled={false}
+              data={foods}
+              keyExtractor={(listing) => listing._id}
+              renderItem={({ item }) => (
+                <FoodItem
+                  title={item.name}
+                  quantity={item.price}
+                  price={item.price}
+                  imageUri={item.imageURL}
+                />
+              )}
+            />
+          </View>
 
-        <Button title="Add to cart" />
-      </View>
+          <Button title="Checkout" />
+        </View>
+      </ScrollView>
     </Screen>
   );
 }
