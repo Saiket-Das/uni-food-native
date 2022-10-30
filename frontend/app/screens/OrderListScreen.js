@@ -1,9 +1,10 @@
 import { View, StyleSheet, FlatList } from "react-native";
 import React from "react";
 
-import Screen from "../components/common/Screen";
 import colors from "../confiq/colors";
+import Screen from "../components/common/Screen";
 import Text from "../components/common/AppText";
+import Button from "../components/common/AppButton";
 import FoodItem from "../components/lists/ListItem";
 import ListItemSperator from "../components/lists/ListItemSperator";
 
@@ -55,47 +56,49 @@ export default function OrderList() {
   return (
     <Screen style={{ backgroundColor: colors.primary }}>
       <View style={styles.container}>
-        <View style={styles.textContaier}>
-          <Text
-            style={{ fontWeight: "700", fontSize: "30", color: colors.white }}
-          >
-            Order
-          </Text>
-        </View>
+        <Text
+          style={{ fontWeight: "700", fontSize: "30", color: colors.white }}
+        >
+          Order
+        </Text>
       </View>
 
-      <View style={styles.totalContainer}>
-        <View>
-          <View style={styles.totalSubtotal}>
-            <Text style={{ color: colors.darkGray }}>Subtotal</Text>
-            <Text style={{ color: colors.darkGray }}>RM30.00</Text>
-          </View>
+      <View style={{ margin: 10 }}>
+        <View style={styles.totalContainer}>
+          <View>
+            <View style={styles.totalSubtotal}>
+              <Text style={{ color: colors.darkGray }}>Subtotal</Text>
+              <Text style={{ color: colors.darkGray }}>RM30.00</Text>
+            </View>
 
-          <ListItemSperator style={{ marginVertical: 10 }} />
-          <View style={styles.totalSubtotal}>
-            <Text style={{ fontWeight: "600", fontSize: "22" }}>Total</Text>
-            <Text style={{ fontWeight: "600", fontSize: "22" }}>RM30.00</Text>
+            <ListItemSperator style={{ marginVertical: 10 }} />
+            <View style={styles.totalSubtotal}>
+              <Text style={{ fontWeight: "600", fontSize: "22" }}>Total</Text>
+              <Text style={{ fontWeight: "600", fontSize: "22" }}>RM30.00</Text>
+            </View>
+            <View></View>
           </View>
-          <View></View>
         </View>
-      </View>
 
-      <View style={styles.itemContainer}>
-        <FlatList
-          vertical={true}
-          scrollEnabled={false}
-          data={foods}
-          keyExtractor={(listing) => listing._id}
-          renderItem={({ item }) => (
-            <FoodItem
-              title={item.name}
-              quantity={item.price}
-              price={item.price}
-              imageUri={item.imageURL}
-            />
-          )}
-          // ItemSeparatorComponent={ListItemSperator}
-        />
+        <View style={styles.itemContainer}>
+          <FlatList
+            vertical={true}
+            scrollEnabled={false}
+            data={foods}
+            keyExtractor={(listing) => listing._id}
+            renderItem={({ item }) => (
+              <FoodItem
+                title={item.name}
+                quantity={item.price}
+                price={item.price}
+                imageUri={item.imageURL}
+              />
+            )}
+            // ItemSeparatorComponent={ListItemSperator}
+          />
+        </View>
+
+        <Button title="Add to cart" />
       </View>
     </Screen>
   );
@@ -110,7 +113,7 @@ const styles = StyleSheet.create({
 
   totalContainer: {
     backgroundColor: colors.white,
-    margin: 20,
+    margin: 10,
     borderRadius: 10,
     shadowColor: "#171717",
     shadowOffset: { width: -2, height: 4 },
@@ -121,7 +124,7 @@ const styles = StyleSheet.create({
 
   itemContainer: {
     backgroundColor: colors.white,
-    margin: 20,
+    marginTop: 15,
     borderRadius: 10,
   },
 
