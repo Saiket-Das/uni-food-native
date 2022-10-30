@@ -8,4 +8,5 @@ export default Object.freeze({
   FOOD_DETAILS: "foodDetails",
   CHECKOUT: "checkout",
   PAYMENT: "payment",
+  ORDER_PLACED: "orderPlaced",
 });

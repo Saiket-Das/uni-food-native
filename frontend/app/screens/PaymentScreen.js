@@ -6,11 +6,12 @@ import FormPicker from "../components/forms/AppFormPicker";
 import AppForm from "../components/forms/AppForm";
 
 import colors from "../confiq/colors";
-import defaultStyles from "../confiq/styles";
 
 import NumberPickerItem from "../components/common/NumberPickerItem";
 import Screen from "../components/common/Screen";
 import Text from "../components/common/AppText";
+import Button from "../components/common/AppButton";
+import routes from "../navigation/routes";
 
 const tablenumbers = [
   {
@@ -64,32 +65,34 @@ const tablenumbers = [
   },
 ];
 
-export default function OrderDone() {
+export default function OrderDone({ navigation }) {
   return (
     <Screen>
-      <View style={{ margin: 10 }}>
-        <View style={styles.totalContainer}>
-          <Text style={{ fontWeight: "700", fontSize: "15" }}>TABLE NO</Text>
+      <View style={styles.container}>
+        <Text style={{ fontWeight: "700", fontSize: "15" }}>TABLE NO</Text>
 
-          <AppForm>
-            <FormPicker
-              items={tablenumbers}
-              name="tableno"
-              numberOfColumns={3}
-              PickerItemComponent={NumberPickerItem}
-              placeholder="Table No"
-            />
-          </AppForm>
+        <AppForm>
+          <FormPicker
+            items={tablenumbers}
+            name="tableno"
+            numberOfColumns={3}
+            PickerItemComponent={NumberPickerItem}
+            placeholder="Table No"
+          />
+        </AppForm>
 
-          <Text style={{ fontWeight: "700", fontSize: "15", marginTop: 15 }}>
-            PAYMENT METHOD
-          </Text>
+        <Text style={{ fontWeight: "700", fontSize: "15", marginTop: 15 }}>
+          PAYMENT METHOD
+        </Text>
 
-          <View style={styles.cashContainer}>
-            <MaterialCommunityIcons name="cash-multiple" size={21} />
-            <Text style={{ marginHorizontal: 10 }}>Cash</Text>
-          </View>
+        <View style={styles.cashContainer}>
+          <MaterialCommunityIcons name="cash-multiple" size={21} />
+          <Text style={{ marginHorizontal: 10 }}>Cash</Text>
         </View>
+        <Button
+          title="Payment"
+          onPress={() => navigation.navigate(routes.ORDER_PLACED)}
+        />
       </View>
     </Screen>
   );
@@ -97,19 +100,13 @@ export default function OrderDone() {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 15,
-    justifyContent: "center",
-    backgroundColor: colors.primary,
-  },
-
-  totalContainer: {
     backgroundColor: colors.white,
-    margin: 10,
+    margin: 20,
     borderRadius: 10,
     shadowColor: "#171717",
-    shadowOffset: { width: -2, height: 4 },
+    shadowOffset: { x: -4, y: -4 },
     shadowOpacity: 0.2,
-    shadowRadius: 3,
+    shadowRadius: 8,
     padding: 20,
   },
 
@@ -121,5 +118,6 @@ const styles = StyleSheet.create({
     padding: 14,
     borderRadius: 10,
     marginTop: 8,
+    marginBottom: 20,
   },
 });

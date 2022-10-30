@@ -1,9 +1,11 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 
+import colors from "../confiq/colors";
+
 import CheckoutScreen from "../screens/CheckoutScreen";
 import PaymentScreen from "../screens/PaymentScreen";
-import colors from "../confiq/colors";
+import OrderPlacedScreen from "../screens/OrderPlacedScreen";
 
 const Stack = createStackNavigator();
 
@@ -29,6 +31,12 @@ export default function CheckoutNavigator() {
         }}
         name="payment"
         component={PaymentScreen}
+      />
+
+      <Stack.Screen
+        name="orderPlaced"
+        component={OrderPlacedScreen}
+        options={{ headerShown: false }}
       />
     </Stack.Navigator>
   );
