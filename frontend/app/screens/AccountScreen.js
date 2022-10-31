@@ -63,6 +63,47 @@ export default function AccountScreen({ navigation }) {
           </View>
         </View>
       </View>
+
+      <View style={styles.item}>
+        <ListItem
+          title="Settings"
+          IconComponent={
+            <Icon
+              name="format-list-bulleted"
+              size={44}
+              backgroundColor={colors.secondary}
+            />
+          }
+        />
+      </View>
+
+      <View style={styles.item}>
+        <ListItem
+          title="Logout"
+          IconComponent={
+            <Icon
+              name="logout"
+              size={44}
+              backgroundColor="#ffe66d"
+              // onPress={() => logOut()}
+            />
+          }
+        />
+      </View>
+
+      <View style={styles.item}>
+        <ListItem
+          title="Logout"
+          IconComponent={
+            <Icon
+              name="logout"
+              size={44}
+              backgroundColor="#ffe66d"
+              // onPress={() => logOut()}
+            />
+          }
+        />
+      </View>
     </Screen>
   );
 }
