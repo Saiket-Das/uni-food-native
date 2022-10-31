@@ -31,6 +31,38 @@ export default function AccountScreen({ navigation }) {
           Order
         </Text>
       </View>
+
+      <View style={styles.profileContainer}>
+        <View style={styles.profile}>
+          <Image
+            style={styles.image}
+            source={require("../assets/images/avatar.jpg")}
+          />
+
+          <View style={styles.detailsContainer}>
+            <Text style={{ fontWeight: "600" }} numberOfLines={1}>
+              Ahan Bryan
+            </Text>
+
+            <Text style={{ color: colors.darkGray }}>ahanbryan@gmail.com</Text>
+          </View>
+        </View>
+        <View>
+          <ListItemSeprator style={{ marginVertical: 10 }} />
+          <View style={styles.notificationContainer}>
+            <Text style={{ fontWeight: "600", color: colors.darkGray }}>
+              Notification
+            </Text>
+            <Switch
+              // style={{ width: 20, height: 10 }}
+              style={{ transform: [{ scaleX: 0.9 }, { scaleY: 0.9 }] }}
+              trackColor={{ false: colors.black, true: colors.primary }}
+              onValueChange={toggleSwitch}
+              value={isEnabled}
+            />
+          </View>
+        </View>
+      </View>
     </Screen>
   );
 }
