@@ -52,28 +52,13 @@ const foods = [
     updatedAt: "2022-10-23T16:46:49.201Z",
     __v: 0,
   },
-
-  {
-    _id: "63556ff9e0732b4e93544a40c",
-    name: "Roti Canai",
-    description:
-      "Roti canai is a traditional Malaysian pan-fried flatbread made with flour, water, eggs, and fat. The dough for roti canai is repeatedly folded, so the final product has a layered texture, a soft interior, and a crispy outer layer.",
-    price: 1.5,
-    imageURL:
-      "https://img.freepik.com/free-photo/pakistani-food-wooden-board-flat-lay_23-2148825095.jpg?w=1060&t=st=1666543522~exp=1666544122~hmac=1e3bfcf31b911845239cfced3b6dd6668e155e5ad0ee7392f27550876a504c29",
-    available: "yes",
-    orderCount: 0,
-    createdAt: "2022-10-23T16:46:49.201Z",
-    updatedAt: "2022-10-23T16:46:49.201Z",
-    __v: 0,
-  },
 ];
 export default function OrderList({ navigation }) {
   return (
     <Screen style={{ backgroundColor: colors.primary }}>
       <View style={styles.container}>
         <Text
-          style={{ fontWeight: "700", fontSize: "30", color: colors.white }}
+          style={{ fontWeight: "800", fontSize: "30", color: colors.white }}
         >
           Order
         </Text>

@@ -1,5 +1,6 @@
 import { FlatList, Image, StyleSheet, Switch, View } from "react-native";
 import React, { useState } from "react";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import colors from "../confiq/colors";
 
@@ -21,15 +22,12 @@ export default function AccountScreen({ navigation }) {
     <Screen style={{ backgroundColor: colors.primary }}>
       <View style={styles.container}>
         <Text
-          style={{ fontWeight: "700", fontSize: "30", color: colors.white }}
+          style={{ fontWeight: "800", fontSize: "30", color: colors.white }}
         >
-          Order
+          Profile
         </Text>
-        <Text
-          style={{ fontWeight: "700", fontSize: "30", color: colors.white }}
-        >
-          Order
-        </Text>
+
+        <Text style={{ fontWeight: "500", color: colors.white }}>Edit</Text>
       </View>
 
       <View style={styles.profileContainer}>
@@ -129,6 +127,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
     justifyContent: "space-between",
+    alignItems: "center",
     padding: 15,
     backgroundColor: colors.primary,
   },
@@ -142,7 +141,7 @@ const styles = StyleSheet.create({
 
   profileContainer: {
     backgroundColor: colors.white,
-    margin: 20,
+    margin: 15,
     marginBottom: 50,
     borderRadius: 10,
     shadowColor: "#171717",

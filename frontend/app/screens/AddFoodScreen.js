@@ -42,65 +42,60 @@ const categories = [
 
 export default function AddFood() {
   return (
-    <Screen style={styles.container}>
-      <View style={styles.textContaier}>
+    <Screen style={{ backgroundColor: colors.primary }}>
+      <View style={styles.container}>
         <Text
-          style={{ fontWeight: "700", fontSize: "30", color: colors.primary }}
+          style={{ fontWeight: "800", fontSize: "30", color: colors.white }}
         >
           Add new food
         </Text>
-        {/* <Text style={{ fontSize: "20" }}>Add new food</Text> */}
       </View>
 
-      <AppForm>
-        <FormField name="title" placeholder="Title" />
+      <View style={styles.formContainer}>
+        <AppForm>
+          <FormField name="title" placeholder="Title" />
 
-        <FormField
-          keyboardType="numeric"
-          maxLength={8}
-          name="price"
-          placeholder="Price"
-        />
+          <FormField
+            keyboardType="numeric"
+            maxLength={8}
+            name="price"
+            placeholder="Price"
+          />
 
-        <FormPicker
-          items={categories}
-          name="cusine"
-          numberOfColumns={1}
-          PickerItemComponent={PickerItem}
-          placeholder="Cusine"
-        />
+          <FormPicker
+            items={categories}
+            name="cusine"
+            numberOfColumns={1}
+            PickerItemComponent={PickerItem}
+            placeholder="Cusine"
+          />
 
-        <FormField
-          maxLength={255}
-          multiline
-          name="description"
-          numberOfLines={3}
-          placeholder="Description"
-          height={120}
-        />
+          <FormField
+            maxLength={255}
+            multiline
+            name="description"
+            numberOfLines={3}
+            placeholder="Description"
+            height={120}
+          />
 
-        <ImageInput />
+          <ImageInput />
 
-        <SubmitButton title="SIGN UP" />
-      </AppForm>
+          <SubmitButton title="SIGN UP" />
+        </AppForm>
+      </View>
     </Screen>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    margin: 25,
+    padding: 15,
     justifyContent: "center",
+    backgroundColor: colors.primary,
   },
-
-  textContaier: {
-    marginBottom: 15,
-    // flexDirection: "row",
-    // justifyContent: "center",
-  },
-
-  nameContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
+  formContainer: {
+    margin: 15,
+    justifyContent: "center",
   },
 });
