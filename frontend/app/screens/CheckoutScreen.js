@@ -95,7 +95,6 @@ export default function OrderList({ navigation }) {
                   RM30.00
                 </Text>
               </View>
-              <View></View>
             </View>
           </View>
 

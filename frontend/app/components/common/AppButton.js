@@ -24,7 +24,6 @@ export default function AppButton({
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: colors.primary,
     width: "100%",
     borderRadius: 8,
     justifyContent: "center",

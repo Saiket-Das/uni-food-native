@@ -9,8 +9,8 @@ import routes from "../navigation/routes";
 export default function OrderPlacedScreen({ navigation }) {
   return (
     <View style={styles.container}>
-      <Text>OrderPlacedScreen</Text>
-      <Text>OrderPlacedScreen</Text>
+      {/* <Text>OrderPlacedScreen</Text>
+      <Text>OrderPlacedScreen</Text> */}
 
       <Button
         title="Payment"
@@ -27,5 +27,6 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     backgroundColor: colors.primary,
+    padding: 15,
   },
 });

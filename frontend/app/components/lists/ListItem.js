@@ -13,6 +13,7 @@ import colors from "../../confiq/colors";
 
 export default function ListItem({
   imageUri,
+  image,
   title,
   subTitle,
   quantity,
@@ -26,7 +27,11 @@ export default function ListItem({
   return (
     <TouchableWithoutFeedback>
       <View style={styles.container}>
-        {imageUri && <Image style={styles.image} source={{ uri: imageUri }} />}
+        {imageUri && (
+          <Image style={styles.imageUri} source={{ uri: imageUri }} />
+        )}
+        {image && <Image style={styles.image} source={image} />}
+
         {IconComponent}
 
         <View style={styles.detailsContainer}>
@@ -74,7 +79,7 @@ const styles = StyleSheet.create({
     padding: 10,
     margin: 10,
     backgroundColor: colors.light,
-    alignItems: "flex-end",
+    // alignItems: "flex-end",
     borderRadius: 10,
     shadowColor: "#171717",
     shadowOffset: { width: -2, height: 4 },
@@ -82,10 +87,16 @@ const styles = StyleSheet.create({
     shadowRadius: 3,
   },
 
-  image: {
+  imageUri: {
     width: 80,
     height: 80,
     borderRadius: 6,
+  },
+
+  image: {
+    width: 70,
+    height: 70,
+    borderRadius: 35,
   },
 
   detailsContainer: {
