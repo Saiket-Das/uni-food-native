@@ -134,8 +134,7 @@ const styles = StyleSheet.create({
 
   profile: {
     flexDirection: "row",
-    alignItems: "center",
-    // padding: 10,
+    alignItems: "flex-end",
     backgroundColor: colors.white,
   },
 
@@ -151,14 +150,14 @@ const styles = StyleSheet.create({
     padding: 20,
   },
 
-  detailsContainer: {
-    marginLeft: 20,
+  image: {
+    width: 60,
+    height: 60,
+    borderRadius: 30,
   },
 
-  image: {
-    width: 70,
-    height: 70,
-    borderRadius: 35,
+  detailsContainer: {
+    marginLeft: 15,
   },
 
   itemContainer: {
