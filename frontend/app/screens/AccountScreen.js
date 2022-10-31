@@ -50,7 +50,12 @@ export default function AccountScreen({ navigation }) {
         <View>
           <ListItemSeprator style={{ marginVertical: 10 }} />
           <View style={styles.notificationContainer}>
-            <Text style={{ fontWeight: "600", color: colors.darkGray }}>
+            <Text
+              style={{
+                fontWeight: "600",
+                color: isEnabled ? colors.dark : colors.darkGray,
+              }}
+            >
               Notification
             </Text>
             <Switch
@@ -69,7 +74,7 @@ export default function AccountScreen({ navigation }) {
           title="Settings"
           IconComponent={
             <Icon
-              name="format-list-bulleted"
+              name="account-settings"
               size={44}
               backgroundColor={colors.secondary}
             />
@@ -79,14 +84,22 @@ export default function AccountScreen({ navigation }) {
 
       <View style={styles.item}>
         <ListItem
-          title="Logout"
+          title="Terms of use"
           IconComponent={
             <Icon
-              name="logout"
+              name="exclamation-thick"
               size={44}
-              backgroundColor="#ffe66d"
-              // onPress={() => logOut()}
+              backgroundColor="#00CA9D"
             />
+          }
+        />
+      </View>
+
+      <View style={styles.item}>
+        <ListItem
+          title="Privacy policy"
+          IconComponent={
+            <Icon name="lock" size={44} backgroundColor="#f7753e" />
           }
         />
       </View>
