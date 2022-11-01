@@ -1,4 +1,11 @@
-import { FlatList, Image, StyleSheet, Switch, View } from "react-native";
+import {
+  FlatList,
+  Image,
+  StyleSheet,
+  Switch,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import React, { useState } from "react";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
@@ -11,7 +18,7 @@ import Icon from "../components/common/Icon";
 import ListItemSeprator from "../components/lists/ListItemSperator";
 // import useAuth from "../auth/useAuth";
 
-export default function AccountScreen({ navigation }) {
+export default function AccountScreen() {
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
 
@@ -26,8 +33,9 @@ export default function AccountScreen({ navigation }) {
         >
           Profile
         </Text>
-
-        <Text style={{ fontWeight: "500", color: colors.white }}>Edit</Text>
+        <TouchableOpacity>
+          <Text style={{ fontWeight: "500", color: colors.white }}>Edit</Text>
+        </TouchableOpacity>
       </View>
 
       <View style={styles.profileContainer}>
