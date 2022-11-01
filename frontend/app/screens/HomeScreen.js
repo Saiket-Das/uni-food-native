@@ -12,6 +12,7 @@ import FoodItem from "../components/lists/ListItem";
 import colors from "../confiq/colors";
 import routes from "../navigation/routes";
 
+import useApi from "../hooks/useApi";
 import foodApi from "../api/food";
 
 const foods = [
@@ -59,15 +60,21 @@ const foods = [
   },
 ];
 
-const getFoods = useApi(foodApi.getFoods);
-
-useEffect(() => {
-  getListingsApi.request();
-}, []);
-
-console.log(getFoods);
-
 export default function HomeScreen({ navigation }) {
+  // const {
+  //   data: foodData,
+  //   loading: foodLoading,
+  //   request: loadFoods,
+  // } = useApi(foodApi.getFoods);
+
+  const getFoodsApi = useApi(foodApi.getFoods);
+
+  useEffect(() => {
+    getFoodsApi.request();
+  }, []);
+
+  console.log("Get all food", getFoodsApi);
+
   return (
     <Screen style={{ backgroundColor: colors.primary }}>
       {/* -------> SEARCH BAR  */}
@@ -168,21 +175,3 @@ const styles = StyleSheet.create({
     padding: 20,
   },
 });
-
-{
-  /* <FoodItem
-title="Logout"
-IconComponent={
-  <Icon
-    name="logout"
-    size={40}
-    backgroundColor="#ffe66d"
-    // onPress={() => logOut()}
-  />
-}
-icon="chevron-right"
-size={40}
-iconColor={colors.dark}
-backgroundColor={colors.light}
-/> */
-}

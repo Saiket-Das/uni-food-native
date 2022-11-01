@@ -1,7 +1,9 @@
 import client from "./client";
+// console.log(client);
 
 const endpoint = "/food";
 
-const getFoods = () => client.get(endpoint);
-
-export default getFoods;
+const getFoods = async () => {
+  return await client.get(`/lsitings`);
+};
+export default { getFoods };
