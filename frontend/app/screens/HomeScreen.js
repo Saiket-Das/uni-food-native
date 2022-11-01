@@ -1,5 +1,5 @@
 import { View, StyleSheet, ScrollView, FlatList } from "react-native";
-import React from "react";
+import React, { useEffect } from "react";
 
 import Screen from "../components/common/Screen";
 import Avatar from "../components/common/Avatar";
@@ -8,10 +8,11 @@ import Text from "../components/common/AppText";
 import Card from "../components/common/Card";
 import Icon from "../components/common/Icon";
 import FoodItem from "../components/lists/ListItem";
-import ListItemSperator from "../components/lists/ListItemSperator";
 
 import colors from "../confiq/colors";
 import routes from "../navigation/routes";
+
+import foodApi from "../api/food";
 
 const foods = [
   {
@@ -57,6 +58,14 @@ const foods = [
     __v: 0,
   },
 ];
+
+const getFoods = useApi(foodApi.getFoods);
+
+useEffect(() => {
+  getListingsApi.request();
+}, []);
+
+console.log(getFoods);
 
 export default function HomeScreen({ navigation }) {
   return (
