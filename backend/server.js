@@ -31,6 +31,6 @@ app.use("/api/order", orderRoutes);
 app.use(notFound);
 app.use(errorHandler);
 
-app.listen(port, function () {
+app.listen(port, "192.168.10.154", function () {
   console.log(`Unifood is running on ${port}`.yellow);
 });
