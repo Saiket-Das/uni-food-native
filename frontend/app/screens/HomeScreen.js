@@ -62,18 +62,18 @@ const foods = [
 
 export default function HomeScreen({ navigation }) {
   // const {
-  //   data: foodData,
+  //   message: foodData,
   //   loading: foodLoading,
   //   request: loadFoods,
   // } = useApi(foodApi.getFoods);
 
-  const getFoodsApi = useApi(foodApi.getFoods);
-
   useEffect(() => {
-    getFoodsApi.request();
+    foodData.request();
   }, []);
 
-  console.log("Get all food", getFoodsApi);
+  const foodData = useApi(foodApi.getFoods);
+
+  console.log("Get all food", foodData);
 
   return (
     <Screen style={{ backgroundColor: colors.primary }}>

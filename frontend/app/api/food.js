@@ -4,6 +4,6 @@ import client from "./client";
 const endpoint = "/food";
 
 const getFoods = async () => {
-  return await client.get(`/lsitings`);
+  return await client.get(`/food`);
 };
 export default { getFoods };
