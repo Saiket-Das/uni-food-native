@@ -6,4 +6,8 @@ const getFoods = async () => {
   return await client.get(endpoint, { timeout: 2 });
 };
 
-export default { getFoods };
+const addFood = async (data) => {
+  await client.post(endpoint, data);
+};
+
+export default { getFoods, addFood };
