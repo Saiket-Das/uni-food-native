@@ -143,6 +143,7 @@ export default function HomeScreen({ navigation }) {
                 price={item.price}
                 imageUri={item.imageURL}
                 icon="plus"
+                backgroundColor={colors.white}
               />
             )}
             // ItemSeparatorComponent={ListItemSperator}

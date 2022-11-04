@@ -26,7 +26,7 @@ export default function ListItem({
 }) {
   return (
     <TouchableWithoutFeedback>
-      <View style={styles.container}>
+      <View style={[styles.container, { backgroundColor }]}>
         {imageUri && (
           <Image style={styles.imageUri} source={{ uri: imageUri }} />
         )}
