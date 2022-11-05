@@ -20,7 +20,7 @@ export default function ListItem({
   price,
   IconComponent,
   icon,
-  backgroundColor,
+  backgroundColor = colors.light,
   iconColor,
   size = 28,
 }) {
