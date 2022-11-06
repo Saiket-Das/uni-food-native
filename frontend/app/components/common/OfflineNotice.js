@@ -8,18 +8,18 @@ import { useNetInfo } from "@react-native-community/netinfo";
 export default function OfflineNotice() {
   const netInfo = useNetInfo();
 
-  if (netInfo === "unknown" && netInfo.isInternetReachable === true) {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.text}>No Internet Connection</Text>
-      </View>
-    );
-  }
-  return null;
+  //   if (netInfo === "unknown" && netInfo.isInternetReachable === true) {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.text}>No Internet Connection</Text>
+    </View>
+  );
+  //   }
+  //   return null;
 }
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: colors.primary,
+    backgroundColor: colors.danger,
     width: "100%",
     height: 50,
     position: "absolute",
