@@ -115,13 +115,13 @@ export default function HomeScreen({ navigation }) {
             horizontal
             showsHorizontalScrollIndicator={false}
             data={foods}
-            keyExtractor={(listing) => listing._id}
+            keyExtractor={(food) => food._id}
             renderItem={({ item }) => (
               <Card
                 style={styles.card}
                 name={item.name}
                 price={item.price}
-                imageURL={item.imageURL}
+                imageUri={item.imageURL}
                 onPress={() => navigation.navigate(routes.FOOD_DETAILS, item)}
               />
             )}
@@ -135,7 +135,7 @@ export default function HomeScreen({ navigation }) {
           </Text>
           <FlatList
             data={foods}
-            keyExtractor={(listing) => listing._id}
+            keyExtractor={(food) => food._id}
             renderItem={({ item }) => (
               <FoodItem
                 title={item.name}
@@ -144,6 +144,7 @@ export default function HomeScreen({ navigation }) {
                 imageUri={item.imageURL}
                 icon="plus"
                 backgroundColor={colors.white}
+                onPress={() => navigation.navigate(routes.FOOD_DETAILS, item)}
               />
             )}
             // ItemSeparatorComponent={ListItemSperator}

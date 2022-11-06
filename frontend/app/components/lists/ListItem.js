@@ -17,15 +17,17 @@ export default function ListItem({
   title,
   subTitle,
   quantity,
+  backgroundColor = colors.light,
   price,
   IconComponent,
   icon,
-  backgroundColor = colors.light,
-  iconColor,
+  iconColor = colors.light,
+  iconBackgroundColor = colors.primary,
   size = 28,
+  onPress,
 }) {
   return (
-    <TouchableWithoutFeedback>
+    <TouchableWithoutFeedback onPress={onPress}>
       <View style={[styles.container, { backgroundColor }]}>
         {imageUri && (
           <Image style={styles.imageUri} source={{ uri: imageUri }} />
@@ -62,7 +64,7 @@ export default function ListItem({
             <Icon
               name={icon}
               size={size}
-              backgroundColor={backgroundColor}
+              backgroundColor={iconBackgroundColor}
               iconColor={iconColor}
             />
           </TouchableOpacity>
@@ -79,7 +81,7 @@ const styles = StyleSheet.create({
     padding: 10,
     margin: 10,
     backgroundColor: colors.light,
-    // alignItems: "flex-end",
+    alignItems: "flex-end",
     borderRadius: 10,
     shadowColor: "#171717",
     shadowOffset: { width: -2, height: 4 },

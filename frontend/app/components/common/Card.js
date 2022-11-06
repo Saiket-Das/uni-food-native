@@ -11,11 +11,11 @@ import Text from "./AppText";
 import Icon from "./Icon";
 import colors from "../../confiq/colors";
 
-export default function Card({ name, price, imageURL, onPress }) {
+export default function Card({ name, price, imageUri, onPress }) {
   return (
     <TouchableWithoutFeedback onPress={onPress}>
       <View style={styles.card}>
-        <Image style={styles.image} tint="light" source={{ uri: imageURL }} />
+        <Image style={styles.image} tint="light" source={{ uri: imageUri }} />
 
         <View style={styles.detailsConTainer}>
           <View style={styles.textConTainer}>
