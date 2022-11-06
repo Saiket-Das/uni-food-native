@@ -51,7 +51,7 @@ export default function AddFood() {
         </Text>
       </View>
 
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.formContainer}>
           <AppForm>
             <FormField name="title" placeholder="Title" />

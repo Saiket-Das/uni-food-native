@@ -90,13 +90,9 @@ export default function AccountScreen() {
 
       <View style={styles.item}>
         <ListItem
-          title="Terms of use"
+          title="Messages"
           IconComponent={
-            <Icon
-              name="exclamation-thick"
-              size={44}
-              backgroundColor="#00CA9D"
-            />
+            <Icon name="chat" size={44} backgroundColor="#f7753e" />
           }
         />
       </View>
@@ -105,7 +101,7 @@ export default function AccountScreen() {
         <ListItem
           title="Privacy policy"
           IconComponent={
-            <Icon name="lock" size={44} backgroundColor="#f7753e" />
+            <Icon name="lock" size={44} backgroundColor="#64c8f0" />
           }
         />
       </View>
@@ -117,7 +113,7 @@ export default function AccountScreen() {
             <Icon
               name="logout"
               size={44}
-              backgroundColor="#ffe66d"
+              backgroundColor="#ffd623"
               // onPress={() => logOut()}
             />
           }
