@@ -1,5 +1,5 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, ScrollView } from "react-native";
 
 import AppForm from "../components/forms/AppForm";
 import FormField from "../components/forms/AppFormField";
@@ -51,39 +51,41 @@ export default function AddFood() {
         </Text>
       </View>
 
-      <View style={styles.formContainer}>
-        <AppForm>
-          <FormField name="title" placeholder="Title" />
+      <ScrollView>
+        <View style={styles.formContainer}>
+          <AppForm>
+            <FormField name="title" placeholder="Title" />
 
-          <FormField
-            keyboardType="numeric"
-            maxLength={8}
-            name="price"
-            placeholder="Price"
-          />
+            <FormField
+              keyboardType="numeric"
+              maxLength={8}
+              name="price"
+              placeholder="Price"
+            />
 
-          <FormPicker
-            items={categories}
-            name="cusine"
-            numberOfColumns={1}
-            PickerItemComponent={PickerItem}
-            placeholder="Cusine"
-          />
+            <FormPicker
+              items={categories}
+              name="cusine"
+              numberOfColumns={1}
+              PickerItemComponent={PickerItem}
+              placeholder="Cusine"
+            />
 
-          <FormField
-            maxLength={255}
-            multiline
-            name="description"
-            numberOfLines={3}
-            placeholder="Description"
-            height={120}
-          />
+            <FormField
+              maxLength={255}
+              multiline
+              name="description"
+              numberOfLines={3}
+              placeholder="Description"
+              height={120}
+            />
 
-          <ImageInput />
+            <ImageInput />
 
-          <SubmitButton title="SIGN UP" />
-        </AppForm>
-      </View>
+            <SubmitButton title="SIGN UP" />
+          </AppForm>
+        </View>
+      </ScrollView>
     </Screen>
   );
 }
