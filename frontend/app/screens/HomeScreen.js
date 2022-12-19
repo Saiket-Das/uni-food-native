@@ -1,5 +1,5 @@
-import { View, StyleSheet, ScrollView, FlatList } from "react-native";
 import React, { useEffect } from "react";
+import { View, StyleSheet, ScrollView, FlatList } from "react-native";
 
 import Screen from "../components/common/Screen";
 import Avatar from "../components/common/Avatar";
@@ -14,6 +14,9 @@ import routes from "../navigation/routes";
 
 import useApi from "../hooks/useApi";
 import foodApi from "../api/food";
+import AppButton from "../components/common/AppButton";
+import AppText from "../components/common/AppText";
+import ActivityIndicator from "../components/common/ActivityIndicator";
 
 const foods = [
   {
@@ -67,91 +70,103 @@ export default function HomeScreen({ navigation }) {
   //   request: loadFoods,
   // } = useApi(foodApi.getFoods);
 
-  useEffect(() => {
-    foodData.request();
-  }, []);
-
   const foodData = useApi(foodApi.getFoods);
 
   console.log("Get all food", foodData);
 
   return (
-    <Screen style={{ backgroundColor: colors.primary }}>
-      {/* -------> SEARCH BAR  */}
-      <View style={styles.avatarContainer}>
-        <Avatar imageURL="https://images.unsplash.com/photo-1548142813-c348350df52b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=389&q=80" />
-        <Text
-          style={{
-            fontWeight: "500",
-            paddingHorizontal: 15,
-            fontSize: 16,
-            color: colors.white,
-          }}
-        >
-          Welcome Ahan
-        </Text>
-      </View>
-      <View style={styles.searchContainer}>
-        <TextInput
-          icon="text-search"
-          iconSize={18}
-          iconColor={colors.darkGray}
-          placeholder="Search.."
-          width="85%"
-          height={45}
-        />
-        <Icon name="filter-variant" size={40} />
-      </View>
-      <ScrollView
-        showsVerticalScrollIndicator={false}
-        style={{ marginHorizontal: 15 }}
-      >
-        {/* -------> STUDENTS FAVOURITE  */}
-        <View>
-          <Text style={{ fontWeight: "700", fontSize: 22, marginVertical: 10 }}>
-            Students favourite
-          </Text>
-          <FlatList
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            data={foods}
-            keyExtractor={(food) => food._id}
-            renderItem={({ item }) => (
-              <Card
-                style={styles.card}
-                name={item.name}
-                price={item.price}
-                imageUri={item.imageURL}
-                onPress={() => navigation.navigate(routes.FOOD_DETAILS, item)}
-              />
-            )}
-          />
-        </View>
+    <>
+      {/* <ActivityIndicator visible={foodData.loading} /> */}
 
-        {/* -------> ALL ITEMS  */}
-        <View>
-          <Text style={{ fontWeight: "700", marginVertical: 10 }}>
-            All items
-          </Text>
-          <FlatList
-            data={foods}
-            keyExtractor={(food) => food._id}
-            renderItem={({ item }) => (
-              <FoodItem
-                title={item.name}
-                subTitle={item.description}
-                price={item.price}
-                imageUri={item.imageURL}
-                icon="plus"
-                backgroundColor={colors.white}
-                onPress={() => navigation.navigate(routes.FOOD_DETAILS, item)}
-              />
-            )}
-            // ItemSeparatorComponent={ListItemSperator}
+      <Screen style={{ backgroundColor: colors.primary }}>
+        {/* {foodData.error && ( */}
+        <>
+          <AppText>Couldn't retrieve the listings.</AppText>
+          <AppButton
+            marginVertical={50}
+            title="Retry"
+            // onPress={foodData.request}
           />
+        </>
+        {/* )} */}
+        {/* -------> SEARCH BAR  */}
+        <View style={styles.avatarContainer}>
+          <Avatar imageURL="https://images.unsplash.com/photo-1548142813-c348350df52b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=389&q=80" />
+          <Text
+            style={{
+              fontWeight: "500",
+              paddingHorizontal: 15,
+              fontSize: 16,
+              color: colors.white,
+            }}
+          >
+            Welcome Ahan
+          </Text>
         </View>
-      </ScrollView>
-    </Screen>
+        <View style={styles.searchContainer}>
+          <TextInput
+            icon="text-search"
+            iconSize={18}
+            iconColor={colors.darkGray}
+            placeholder="Search.."
+            width="85%"
+            height={45}
+          />
+          <Icon name="filter-variant" size={40} />
+        </View>
+        <ScrollView
+          showsVerticalScrollIndicator={false}
+          style={{ marginHorizontal: 15 }}
+        >
+          {/* -------> STUDENTS FAVOURITE  */}
+          <View>
+            <Text
+              style={{ fontWeight: "700", fontSize: 22, marginVertical: 10 }}
+            >
+              Students favourite
+            </Text>
+            <FlatList
+              horizontal
+              showsHorizontalScrollIndicator={false}
+              data={foods}
+              keyExtractor={(food) => food._id}
+              renderItem={({ item }) => (
+                <Card
+                  style={styles.card}
+                  name={item.name}
+                  price={item.price}
+                  imageUri={item.imageURL}
+                  onPress={() => navigation.navigate(routes.FOOD_DETAILS, item)}
+                />
+              )}
+            />
+          </View>
+
+          {/* -------> ALL ITEMS  */}
+          <View>
+            <Text style={{ fontWeight: "700", marginVertical: 10 }}>
+              All items
+            </Text>
+            <FlatList
+              data={foods}
+              keyExtractor={(food) => food._id}
+              renderItem={({ item }) => (
+                <FoodItem
+                  title={item.name}
+                  subTitle={item.description}
+                  price={item.price}
+                  imageUri={item.imageURL}
+                  icon="plus"
+                  backgroundColor={colors.white}
+                  onPress={() => navigation.navigate(routes.FOOD_DETAILS, item)}
+                />
+              )}
+              // ItemSeparatorComponent={ListItemSperator}
+            />
+          </View>
+        </ScrollView>
+      </Screen>
+    </>
   );
 }
 
@@ -177,3 +192,10 @@ const styles = StyleSheet.create({
     padding: 20,
   },
 });
+
+// useEffect(() => {
+//   // foodData.request();
+//   fetch("http://192.168.10.56:5000/api/food")
+//     .then((res) => res.json())
+//     .then((data) => console.log(data));
+// }, []);

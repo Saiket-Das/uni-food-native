@@ -4,9 +4,7 @@ const addFood = async (data) => {
   await client.post("/api/food", data);
 };
 
-const getFoods = async () => {
-  return await client.get("/api/food", { timeout: 2 });
-};
+const getFoods = () => client.get("/api/food");
 
 const getStudentsFavouriteFood = async () => {
   return await client.get("/api/food/favourite");

@@ -5,6 +5,4 @@ const apiClient = create({
   baseURL: setting.apiUrl,
 });
 
-console.log("apiClient", apiClient);
-
 export default apiClient;

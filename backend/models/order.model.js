@@ -15,11 +15,11 @@ const orderSchema = mongoose.Schema(
           required: true,
           ref: "Food",
         },
-        name: {
+        foodName: {
           type: String,
           required: true,
         },
-        qty: { type: Number, required: true },
+        quantity: { type: Number, required: true },
         price: { type: Number, required: true },
       },
     ],
