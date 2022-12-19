@@ -31,9 +31,9 @@ const foodSchema = mongoose.Schema(
     },
 
     available: {
-      type: String,
-      enum: ["yes", "no"],
-      default: "yes",
+      type: Boolean,
+      enum: [true, false],
+      default: true,
     },
 
     orderCount: {
