@@ -79,16 +79,17 @@ export default function HomeScreen({ navigation }) {
       {/* <ActivityIndicator visible={foodData.loading} /> */}
 
       <Screen style={{ backgroundColor: colors.primary }}>
-        {/* {foodData.error && ( */}
+        {/*  {foodData.error && (
         <>
           <AppText>Couldn't retrieve the listings.</AppText>
           <AppButton
             marginVertical={50}
             title="Retry"
-            // onPress={foodData.request}
+            onPress={foodData.request}
           />
         </>
-        {/* )} */}
+        )}  */}
+
         {/* -------> SEARCH BAR  */}
         <View style={styles.avatarContainer}>
           <Avatar imageURL="https://images.unsplash.com/photo-1548142813-c348350df52b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=389&q=80" />
@@ -114,6 +115,7 @@ export default function HomeScreen({ navigation }) {
           />
           <Icon name="filter-variant" size={40} />
         </View>
+
         <ScrollView
           showsVerticalScrollIndicator={false}
           style={{ marginHorizontal: 15 }}

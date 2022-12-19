@@ -1,5 +1,5 @@
 export default Object.freeze({
-  Homme: "Home",
+  HOME: "Home",
   ADDFOOD: "addFood",
   ACCOUNT: "Account",
   SIGNIN: "Signin",

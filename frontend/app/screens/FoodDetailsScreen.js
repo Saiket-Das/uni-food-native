@@ -1,23 +1,45 @@
 import React from "react";
-import { View, Image, StyleSheet } from "react-native";
+import { View, Image, StyleSheet, TouchableOpacity } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 
 import AppText from "../components/common/AppText";
 import Button from "../components/common/AppButton";
 import colors from "../confiq/colors";
 import QuantityIcon from "../components/common/QuantityIcon";
+import Icon from "../components/common/Icon";
+import routes from "../navigation/routes";
 
-export default function FoodDescriptionScree({ route }) {
+export default function FoodDetailsScreen({ route, navigation }) {
   const food = route.params;
 
   return (
     <View>
       <View>
+        <TouchableOpacity
+          // style={styles.iconButton}
+          onPress={() => {
+            navigation.navigate(routes.Homme);
+          }}
+          style={{
+            height: 0,
+            position: "absolute",
+            flexDirection: "row",
+            bottom: 0,
+          }}
+        >
+          <Icon
+            name="arrow-left"
+            size={70}
+            backgroundColor="#fff"
+            iconColor={colors.primary}
+          />
+        </TouchableOpacity>
         <Image
           style={styles.image}
           source={{ uri: food.imageURL }}
           tint="light"
         />
+
         <LinearGradient
           start={{ x: 0, y: 0.5 }}
           end={{ x: 0, y: 1 }}
