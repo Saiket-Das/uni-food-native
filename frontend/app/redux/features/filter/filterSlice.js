@@ -10,7 +10,11 @@ const filterSlice = createSlice({
   name: "filter",
   initialState,
 
-  reducers: {},
+  reducers: {
+    toggle: (state) => {
+      state.available = !available.stock;
+    },
+  },
 });
 
 export default filterSlice.reducer;
