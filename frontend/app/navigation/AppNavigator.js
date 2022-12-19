@@ -59,6 +59,7 @@ export default function AppNavigator() {
         name="Cart"
         component={CheckoutNavigator}
         options={{
+          tabBarBadge: 3,
           tabBarIcon: ({ size, color }) => (
             <MaterialCommunityIcons name="cart" size={size} color={color} />
           ),
