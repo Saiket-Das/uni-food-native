@@ -28,15 +28,11 @@ export default function AppNavigator() {
       />
 
       <Tab.Screen
-        name="Location"
+        name="Favourite"
         component={HomeScreen}
         options={{
           tabBarIcon: ({ size, color }) => (
-            <MaterialCommunityIcons
-              name="map-marker"
-              size={size}
-              color={color}
-            />
+            <MaterialCommunityIcons name="heart" size={size} color={color} />
           ),
         }}
       />
@@ -60,11 +56,11 @@ export default function AppNavigator() {
         })}
       />
       <Tab.Screen
-        name="Favourite"
+        name="Cart"
         component={CheckoutNavigator}
         options={{
           tabBarIcon: ({ size, color }) => (
-            <MaterialCommunityIcons name="heart" size={size} color={color} />
+            <MaterialCommunityIcons name="cart" size={size} color={color} />
           ),
         }}
       />

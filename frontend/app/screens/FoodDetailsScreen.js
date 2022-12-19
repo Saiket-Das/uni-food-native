@@ -6,34 +6,13 @@ import AppText from "../components/common/AppText";
 import Button from "../components/common/AppButton";
 import colors from "../confiq/colors";
 import QuantityIcon from "../components/common/QuantityIcon";
-import Icon from "../components/common/Icon";
-import routes from "../navigation/routes";
 
-export default function FoodDetailsScreen({ route, navigation }) {
+export default function FoodDetailsScreen({ route }) {
   const food = route.params;
 
   return (
     <View>
       <View>
-        <TouchableOpacity
-          // style={styles.iconButton}
-          onPress={() => {
-            navigation.navigate(routes.Homme);
-          }}
-          style={{
-            height: 0,
-            position: "absolute",
-            flexDirection: "row",
-            bottom: 0,
-          }}
-        >
-          <Icon
-            name="arrow-left"
-            size={70}
-            backgroundColor="#fff"
-            iconColor={colors.primary}
-          />
-        </TouchableOpacity>
         <Image
           style={styles.image}
           source={{ uri: food.imageURL }}
