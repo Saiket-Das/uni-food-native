@@ -63,7 +63,7 @@ export default function AppNavigator() {
         name="Cart"
         component={CheckoutNavigator}
         options={{
-          tabBarBadge: cart.length,
+          tabBarBadge: cart.length ? cart.length : undefined,
           tabBarIcon: ({ size, color }) => (
             <MaterialCommunityIcons name="cart" size={size} color={color} />
           ),
