@@ -14,9 +14,9 @@ import routes from "../navigation/routes";
 
 import useApi from "../hooks/useApi";
 import foodApi from "../api/food";
-import AppButton from "../components/common/AppButton";
-import AppText from "../components/common/AppText";
-import ActivityIndicator from "../components/common/ActivityIndicator";
+// import AppButton from "../components/common/AppButton";
+// import AppText from "../components/common/AppText";
+// import ActivityIndicator from "../components/common/ActivityIndicator";
 
 const foods = [
   {
