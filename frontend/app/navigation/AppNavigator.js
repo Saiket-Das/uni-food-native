@@ -2,6 +2,8 @@ import React from "react";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
+import { useSelector } from "react-redux";
+
 import HomeNavigator from "./HomeNavigator";
 import CheckoutNavigator from "./CheckoutNavigator";
 import AccountScreen from "../screens/AccountScreen";
@@ -14,9 +16,8 @@ import routes from "./routes";
 
 const Tab = createBottomTabNavigator();
 
-const cart = 0;
-
 export default function AppNavigator() {
+  const cart = useSelector((state) => state.cart.cart);
   return (
     <Tab.Navigator screenOptions={{ headerShown: false }}>
       <Tab.Screen
@@ -62,7 +63,7 @@ export default function AppNavigator() {
         name="Cart"
         component={CheckoutNavigator}
         options={{
-          tabBarBadge: cart,
+          tabBarBadge: cart.length,
           tabBarIcon: ({ size, color }) => (
             <MaterialCommunityIcons name="cart" size={size} color={color} />
           ),
