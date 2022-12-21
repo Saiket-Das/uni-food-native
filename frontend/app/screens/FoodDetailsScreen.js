@@ -9,7 +9,7 @@ import Button from "../components/common/AppButton";
 import colors from "../confiq/colors";
 import QuantityIcon from "../components/common/QuantityIcon";
 
-import { addToCart } from "../redux/features/cart/cartSlice";
+import { addToCart, removeFromCart } from "../redux/features/cart/cartSlice";
 
 export default function FoodDetailsScreen({ route }) {
   const food = route.params;
@@ -51,6 +51,7 @@ export default function FoodDetailsScreen({ route }) {
             <AppText style={{ fontSize: 16 }}>Items</AppText>
             <View style={styles.icons}>
               <QuantityIcon
+                onPress={() => dispatch(removeFromCart(food))}
                 name="minus"
                 size={22}
                 style={{
