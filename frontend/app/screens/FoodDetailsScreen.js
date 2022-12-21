@@ -1,14 +1,20 @@
 import React from "react";
-import { View, Image, StyleSheet, TouchableOpacity } from "react-native";
+import { View, Image, StyleSheet } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
+
+import { useDispatch } from "react-redux";
 
 import AppText from "../components/common/AppText";
 import Button from "../components/common/AppButton";
 import colors from "../confiq/colors";
 import QuantityIcon from "../components/common/QuantityIcon";
 
+import { addToCart } from "../redux/features/cart/cartSlice";
+
 export default function FoodDetailsScreen({ route }) {
   const food = route.params;
+
+  const dispatch = useDispatch();
 
   return (
     <View>
@@ -57,6 +63,7 @@ export default function FoodDetailsScreen({ route }) {
               />
 
               <QuantityIcon
+                onPress={() => dispatch(addToCart(food))}
                 name="plus"
                 size={22}
                 iconColor={colors.white}
