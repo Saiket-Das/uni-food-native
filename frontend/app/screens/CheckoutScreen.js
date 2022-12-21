@@ -12,7 +12,6 @@ import routes from "../navigation/routes";
 
 export default function OrderList({ navigation }) {
   const foodCart = useSelector((state) => state.cart.cart);
-  console.log(foodCart);
 
   return (
     <Screen style={{ backgroundColor: colors.primary }}>
