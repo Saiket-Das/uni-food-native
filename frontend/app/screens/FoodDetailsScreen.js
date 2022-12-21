@@ -1,10 +1,10 @@
 import React from "react";
-import { View, Image, StyleSheet } from "react-native";
+import { View, Image, StyleSheet, TouchableOpacity } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 
 import { useDispatch } from "react-redux";
 
-import AppText from "../components/common/AppText";
+import Text from "../components/common/AppText";
 import Button from "../components/common/AppButton";
 import colors from "../confiq/colors";
 import QuantityIcon from "../components/common/QuantityIcon";
@@ -34,34 +34,57 @@ export default function FoodDetailsScreen({ route }) {
       </View>
 
       <View style={styles.detailsContainer}>
-        <AppText style={{ fontWeight: "900", fontSize: 35 }}>
-          {food.name}
-        </AppText>
+        <Text style={{ fontWeight: "900", fontSize: 35 }}>{food.name}</Text>
 
         <View style={styles.descriptionContainer}>
-          <AppText style={{ fontWeight: "700" }}>DESCRIPTION</AppText>
-          <AppText style={{ fontSize: 16 }} numberOfLines={5}>
+          <Text style={{ fontWeight: "700" }}>DESCRIPTION</Text>
+          <Text style={{ fontSize: 16 }} numberOfLines={5}>
             {food.description}
-          </AppText>
+          </Text>
         </View>
 
         <View style={styles.descriptionContainer}>
-          <AppText style={{ fontWeight: "700" }}>QUANTITY</AppText>
+          <Text style={{ fontWeight: "700" }}>QUANTITY</Text>
           <View style={styles.itemQuantity}>
-            <AppText style={{ fontSize: 16 }}>Items</AppText>
+            <Text style={{ fontSize: 16 }}>Items</Text>
             <View style={styles.icons}>
               <QuantityIcon
                 onPress={() => dispatch(removeFromCart(food))}
                 name="minus"
                 size={22}
+                iconColor={colors.white}
                 style={{
                   paddingHorizontal: 4,
+                  paddingVertical: 2,
                   borderColor: colors.primary,
                   borderWidth: 1,
                   borderTopLeftRadius: 10,
                   borderBottomLeftRadius: 10,
+                  backgroundColor: colors.primary,
                 }}
               />
+
+              <TouchableOpacity>
+                <View
+                  style={{
+                    paddingHorizontal: 7,
+                    paddingVertical: 2,
+                    borderColor: colors.primary,
+                    borderWidth: 1,
+                    borderLeftWidth: 0,
+                  }}
+                >
+                  <Text
+                    style={{
+                      fontSize: 16,
+                      fontWeight: "600",
+                      color: colors.primary,
+                    }}
+                  >
+                    7
+                  </Text>
+                </View>
+              </TouchableOpacity>
 
               <QuantityIcon
                 onPress={() => dispatch(addToCart(food))}
@@ -70,6 +93,7 @@ export default function FoodDetailsScreen({ route }) {
                 iconColor={colors.white}
                 style={{
                   paddingHorizontal: 4,
+                  paddingVertical: 2,
                   borderColor: colors.primary,
                   borderWidth: 1,
                   borderTopRightRadius: 10,
