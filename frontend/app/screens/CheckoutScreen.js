@@ -1,5 +1,6 @@
 import { View, StyleSheet, FlatList, ScrollView } from "react-native";
 import React from "react";
+import { useSelector } from "react-redux";
 
 import colors from "../confiq/colors";
 import Screen from "../components/common/Screen";
@@ -53,7 +54,11 @@ const foods = [
     __v: 0,
   },
 ];
+
 export default function OrderList({ navigation }) {
+  const foodCart = useSelector((state) => state.cart.cart);
+  console.log(foodCart);
+
   return (
     <Screen style={{ backgroundColor: colors.primary }}>
       <View style={styles.container}>
@@ -87,12 +92,12 @@ export default function OrderList({ navigation }) {
             <FlatList
               vertical={true}
               scrollEnabled={false}
-              data={foods}
+              data={foodCart}
               keyExtractor={(listing) => listing._id}
               renderItem={({ item }) => (
                 <FoodItem
                   title={item.name}
-                  quantity={item.price}
+                  quantity={item.quantity}
                   price={item.price}
                   imageUri={item.imageURL}
                 />
