@@ -14,6 +14,8 @@ import routes from "./routes";
 
 const Tab = createBottomTabNavigator();
 
+const cart = 0;
+
 export default function AppNavigator() {
   return (
     <Tab.Navigator screenOptions={{ headerShown: false }}>
@@ -55,16 +57,18 @@ export default function AppNavigator() {
           title: "Add Food",
         })}
       />
+      {/* {cart > 0 && ( */}
       <Tab.Screen
         name="Cart"
         component={CheckoutNavigator}
         options={{
-          tabBarBadge: 3,
+          tabBarBadge: cart,
           tabBarIcon: ({ size, color }) => (
             <MaterialCommunityIcons name="cart" size={size} color={color} />
           ),
         }}
       />
+      {/* )} */}
 
       <Tab.Screen
         name="Account"
