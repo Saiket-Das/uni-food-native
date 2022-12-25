@@ -2,7 +2,7 @@ import React from "react";
 import { View, Image, StyleSheet, TouchableOpacity } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import Text from "../components/common/AppText";
 import Button from "../components/common/AppButton";
@@ -15,6 +15,13 @@ export default function FoodDetailsScreen({ route }) {
   const food = route.params;
 
   const dispatch = useDispatch();
+
+  const cart = useSelector((state) => state.cart.cart);
+
+  console.log(cart);
+
+  const quantity = cart.filter((cartFood) => cartFood._id === food._id);
+  console.log(quantity);
 
   return (
     <View>
@@ -81,7 +88,7 @@ export default function FoodDetailsScreen({ route }) {
                       color: colors.primary,
                     }}
                   >
-                    7
+                    {cartFood?.quantity}
                   </Text>
                 </View>
               </TouchableOpacity>
