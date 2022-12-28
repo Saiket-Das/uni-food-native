@@ -4,6 +4,7 @@ import { View, StyleSheet, ScrollView, FlatList } from "react-native";
 import Screen from "../components/common/Screen";
 import Avatar from "../components/common/Avatar";
 import TextInput from "../components/common/AppTextInput";
+// import AppButton from "../components/common/AppButton";
 import Text from "../components/common/AppText";
 import Card from "../components/common/Card";
 import Icon from "../components/common/Icon";
@@ -14,8 +15,6 @@ import routes from "../navigation/routes";
 
 import useApi from "../hooks/useApi";
 import foodApi from "../api/food";
-// import AppButton from "../components/common/AppButton";
-// import AppText from "../components/common/AppText";
 // import ActivityIndicator from "../components/common/ActivityIndicator";
 
 const foods = [
@@ -72,14 +71,17 @@ export default function HomeScreen({ navigation }) {
 
   const foodData = useApi(foodApi.getFoods);
 
-  console.log("Get all food", foodData);
+  useEffect(()=>{
+    foodData.request() }, [])
+
+  console.log("Get all food", foodData.data);
 
   return (
     <>
       {/* <ActivityIndicator visible={foodData.loading} /> */}
 
       <Screen style={{ backgroundColor: colors.primary }}>
-        {/*  {foodData.error && (
+         {foodData.error && (
         <>
           <AppText>Couldn't retrieve the listings.</AppText>
           <AppButton
@@ -88,9 +90,9 @@ export default function HomeScreen({ navigation }) {
             onPress={foodData.request}
           />
         </>
-        )}  */}
+        )} 
 
-        {/* -------> SEARCH BAR  */}
+      {/* -------> PROFILE BAR  */}
         <View style={styles.avatarContainer}>
           <Avatar imageURL="https://images.unsplash.com/photo-1548142813-c348350df52b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=389&q=80" />
           <Text
@@ -104,6 +106,8 @@ export default function HomeScreen({ navigation }) {
             Welcome Ahan
           </Text>
         </View>
+
+      {/* -------> SEARCH BAR  */}
         <View style={styles.searchContainer}>
           <TextInput
             icon="text-search"
@@ -130,7 +134,7 @@ export default function HomeScreen({ navigation }) {
             <FlatList
               horizontal
               showsHorizontalScrollIndicator={false}
-              data={foods}
+              data={foodData.data.data}
               keyExtractor={(food) => food._id}
               renderItem={({ item }) => (
                 <Card
@@ -150,7 +154,7 @@ export default function HomeScreen({ navigation }) {
               All items
             </Text>
             <FlatList
-              data={foods}
+              data={foodData.data.data}
               keyExtractor={(food) => food._id}
               renderItem={({ item }) => (
                 <FoodItem
