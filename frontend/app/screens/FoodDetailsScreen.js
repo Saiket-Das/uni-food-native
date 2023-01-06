@@ -18,10 +18,10 @@ export default function FoodDetailsScreen({ route }) {
 
   const cart = useSelector((state) => state.cart.cart);
 
-  console.log(cart);
+  // console.log(cart);
 
-  const quantity = cart.filter((cartFood) => cartFood._id === food._id);
-  console.log(quantity);
+  const cartFood = cart.find((cartFood) => cartFood._id === food._id);
+  // console.log('foodId', cartFood.quantity);
 
   return (
     <View>
@@ -88,7 +88,7 @@ export default function FoodDetailsScreen({ route }) {
                       color: colors.primary,
                     }}
                   >
-                    {cartFood?.quantity}
+                    {cartFood ? cartFood?.quantity: 0}
                   </Text>
                 </View>
               </TouchableOpacity>
