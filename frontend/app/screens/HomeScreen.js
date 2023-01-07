@@ -70,11 +70,19 @@ export default function HomeScreen({ navigation }) {
   // } = useApi(foodApi.getFoods);
 
   const foodData = useApi(foodApi.getFoods);
+  const favFoodData = useApi(foodApi.getStudentsFavouriteFood);
 
   useEffect(()=>{
-    foodData.request() }, [])
+    foodData.request() 
+  }, [])
 
-  console.log("Get all food", foodData);
+  useEffect(()=>{
+    favFoodData.request() 
+  }, [])
+
+  console.log(favFoodData)
+
+
 
   return (
     <>
@@ -135,7 +143,7 @@ export default function HomeScreen({ navigation }) {
             <FlatList
               horizontal
               showsHorizontalScrollIndicator={false}
-              data={foodData.data.data}
+              data={favFoodData.data.data}
               keyExtractor={(food) => food._id}
               renderItem={({ item }) => (
                 <Card
