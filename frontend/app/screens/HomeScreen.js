@@ -74,11 +74,11 @@ export default function HomeScreen({ navigation }) {
   useEffect(()=>{
     foodData.request() }, [])
 
-  console.log("Get all food", foodData.data);
+  console.log("Get all food", foodData);
 
   return (
     <>
-      <ActivityIndicator visible={foodData.loading} />
+      {/* <ActivityIndicator visible={foodData.loading} /> */}
 
       <Screen style={{ backgroundColor: colors.primary }}>
          {foodData.error && (

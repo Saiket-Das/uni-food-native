@@ -22,7 +22,6 @@ exports.addFood = async (req, res, next) => {
 // -------> Get all foods
 exports.getAllFood = async (req, res, next) => {
   try {
-    console.log("I have reached this api");
     const foods = await Food.find({});
     res.status(201).send({
       success: true,

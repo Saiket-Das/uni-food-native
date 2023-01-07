@@ -6,12 +6,15 @@ import {
   TouchableOpacity,
 } from "react-native";
 import React from "react";
+import { useDispatch } from "react-redux";
 
 import Text from "./AppText";
-import Icon from "./Icon";
+// import Icon from "./Icon";
 import colors from "../../confiq/colors";
+// import { addToCart } from "../../redux/features/cart/cartSlice";
 
 export default function Card({ name, price, imageUri, onPress }) {
+  // const dispatch = useDispatch();
   return (
     <TouchableWithoutFeedback onPress={onPress}>
       <View style={styles.card}>
@@ -25,9 +28,9 @@ export default function Card({ name, price, imageUri, onPress }) {
             </Text>
           </View>
 
-          <TouchableOpacity>
+          {/* <TouchableOpacity onPress={() => dispatch(addToCart(food))}>
             <Icon name="plus" iconColor="white" size={28} />
-          </TouchableOpacity>
+          </TouchableOpacity> */}
         </View>
       </View>
     </TouchableWithoutFeedback>

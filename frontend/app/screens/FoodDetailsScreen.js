@@ -112,7 +112,7 @@ export default function FoodDetailsScreen({ route }) {
           </View>
         </View>
 
-        <Button title="Add to cart" />
+        <Button title="Add to cart" onPress={() => dispatch(addToCart(food))}/>
       </View>
     </View>
   );
