@@ -74,7 +74,7 @@ export default function HomeScreen({ navigation }) {
   useEffect(()=>{
     foodData.request() }, [])
 
-  // console.log("Get all food", foodData.data);
+  console.log("Get all food", foodData.data);
 
   return (
     <>
@@ -124,6 +124,7 @@ export default function HomeScreen({ navigation }) {
           showsVerticalScrollIndicator={false}
           style={{ marginHorizontal: 15 }}
         >
+
           {/* -------> STUDENTS FAVOURITE  */}
           <View>
             <Text
