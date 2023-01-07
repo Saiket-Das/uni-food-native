@@ -78,7 +78,7 @@ export default function HomeScreen({ navigation }) {
 
   return (
     <>
-      {/* <ActivityIndicator visible={foodData.loading} /> */}
+      <ActivityIndicator visible={foodData.loading} />
 
       <Screen style={{ backgroundColor: colors.primary }}>
          {foodData.error && (
