@@ -72,54 +72,44 @@ export default function HomeScreen({ navigation }) {
 
   const foodData = useApi(foodApi.getFoods);
 
- 
-
-  useEffect(()=>{
-    foodData.request() 
-  }, [])
+  useEffect(() => {
+    foodData.request();
+  }, []);
 
   // console.log(favFoodData)
-
-
 
   return (
     <>
       {/* <ActivityIndicator visible={foodData.loading} /> */}
 
       <Screen style={{ backgroundColor: colors.primary }}>
-         {foodData.error && (
-        <>
-          <AppText>Couldn't retrieve the listings.</AppText>
-          <AppButton
-            marginVertical={50}
-            title="Retry"
-            onPress={foodData.request}
-          />
-        </>
-        )} 
+        {foodData.error && (
+          <>
+            <AppText>Couldn't retrieve the listings.</AppText>
+            <AppButton
+              marginVertical={50}
+              title="Retry"
+              onPress={foodData.request}
+            />
+          </>
+        )}
 
-      {/* -------> PROFILE BAR  */}
-      <ProfileBar/>  
-            <SearchBar/>
+        {/* -------> NAVBAR BAR  */}
+        <ProfileBar />
+        <SearchBar />
 
         <ScrollView
           showsVerticalScrollIndicator={false}
           style={{ marginHorizontal: 15 }}
         >
-
           {/* -------> STUDENTS FAVOURITE  */}
-          <StudentFavourite/>
-          <AllItems/>
-
-          {/* -------> ALL ITEMS  */}
-
+          <StudentFavourite />
+          <AllItems />
         </ScrollView>
       </Screen>
     </>
   );
 }
-
-
 
 // useEffect(() => {
 //   // foodData.request();

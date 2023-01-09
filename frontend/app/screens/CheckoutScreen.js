@@ -9,20 +9,14 @@ import Button from "../components/common/AppButton";
 import FoodItem from "../components/lists/ListItem";
 import ListItemSperator from "../components/lists/ListItemSperator";
 import routes from "../navigation/routes";
+import OrderHeader from "../components/Cart/OrderHeader";
 
 export default function OrderList({ navigation }) {
   const foodCart = useSelector((state) => state.cart.cart);
 
   return (
     <Screen style={{ backgroundColor: colors.primary }}>
-      <View style={styles.container}>
-        <Text
-          style={{ fontWeight: "800", fontSize: "30", color: colors.white }}
-        >
-          Order
-        </Text>
-      </View>
-
+      <OrderHeader />
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={{ margin: 10 }}>
           <View style={styles.totalContainer}>
