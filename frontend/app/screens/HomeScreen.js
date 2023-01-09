@@ -1,13 +1,9 @@
 import React, { useEffect } from "react";
-import { View, StyleSheet, ScrollView, FlatList } from "react-native";
+import { View, ScrollView, FlatList } from "react-native";
 
 import Screen from "../components/common/Screen";
-import Avatar from "../components/common/Avatar";
-import TextInput from "../components/common/AppTextInput";
-// import AppButton from "../components/common/AppButton";
 import Text from "../components/common/AppText";
-import Card from "../components/common/Card";
-import Icon from "../components/common/Icon";
+
 import FoodItem from "../components/lists/ListItem";
 
 import colors from "../confiq/colors";
@@ -18,6 +14,7 @@ import foodApi from "../api/food";
 
 import ProfileBar from "../components/home/ProfileBar";
 import SearchBar from "../components/home/SearchBar";
+import StudentFavourite from "../components/home/StudentFavourite";
 // import ActivityIndicator from "../components/common/ActivityIndicator";
 
 // const foods = [
@@ -73,14 +70,11 @@ export default function HomeScreen({ navigation }) {
   // } = useApi(foodApi.getFoods);
 
   const foodData = useApi(foodApi.getFoods);
-  const favFoodData = useApi(foodApi.getStudentsFavouriteFood);
+
+ 
 
   useEffect(()=>{
     foodData.request() 
-  }, [])
-
-  useEffect(()=>{
-    favFoodData.request() 
   }, [])
 
   // console.log(favFoodData)
@@ -114,31 +108,8 @@ export default function HomeScreen({ navigation }) {
           style={{ marginHorizontal: 15 }}
         >
 
-
-
           {/* -------> STUDENTS FAVOURITE  */}
-          <View>
-            <Text
-              style={{ fontWeight: "700", fontSize: 22, marginVertical: 10 }}
-            >
-              Students favourite
-            </Text>
-            <FlatList
-              horizontal
-              showsHorizontalScrollIndicator={false}
-              data={favFoodData.data.data}
-              keyExtractor={(food) => food._id}
-              renderItem={({ item }) => (
-                <Card
-                  style={styles.card}
-                  name={item.name}
-                  price={item.price}
-                  imageUri={item.imageURL}
-                  onPress={() => navigation.navigate(routes.FOOD_DETAILS, item)}
-                />
-              )}
-            />
-          </View>
+          <StudentFavourite/>
 
           {/* -------> ALL ITEMS  */}
           <View>
@@ -168,12 +139,7 @@ export default function HomeScreen({ navigation }) {
   );
 }
 
-const styles = StyleSheet.create({
 
-  card: {
-    padding: 20,
-  },
-});
 
 // useEffect(() => {
 //   // foodData.request();
