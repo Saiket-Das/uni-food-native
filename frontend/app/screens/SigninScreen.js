@@ -20,7 +20,7 @@ export default function SigninScreen() {
         <ErrorMessage
           error="Invalid email and/or password"
           // visible={loginFailed}
-          visible={true}
+          // visible={true}
         />
 
         <AppFormField

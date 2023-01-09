@@ -6,7 +6,7 @@ import navigationTheme from "./app/navigation/navigationTheme";
 import store from "./app/redux/store";
 
 import AppNavigator from "./app/navigation/AppNavigator";
-// import AuthNavigator from "./app/navigation/AuthNaviagator";
+import AuthNavigator from "./app/navigation/AuthNaviagator";
 // import OfflineNotice from "./app/components/common/OfflineNotice";
 
 export default function App() {

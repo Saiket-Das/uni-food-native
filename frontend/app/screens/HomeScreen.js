@@ -15,6 +15,8 @@ import routes from "../navigation/routes";
 
 import useApi from "../hooks/useApi";
 import foodApi from "../api/food";
+
+import ProfileBar from "../components/home/ProfileBar";
 // import ActivityIndicator from "../components/common/ActivityIndicator";
 
 // const foods = [
@@ -80,7 +82,7 @@ export default function HomeScreen({ navigation }) {
     favFoodData.request() 
   }, [])
 
-  console.log(favFoodData)
+  // console.log(favFoodData)
 
 
 
@@ -101,19 +103,7 @@ export default function HomeScreen({ navigation }) {
         )} 
 
       {/* -------> PROFILE BAR  */}
-        <View style={styles.avatarContainer}>
-          <Avatar imageURL="https://images.unsplash.com/photo-1548142813-c348350df52b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=389&q=80" />
-          <Text
-            style={{
-              fontWeight: "500",
-              paddingHorizontal: 15,
-              fontSize: 16,
-              color: colors.white,
-            }}
-          >
-            Welcome Ahan
-          </Text>
-        </View>
+       <ProfileBar/>
 
       {/* -------> SEARCH BAR  */}
         <View style={styles.searchContainer}>
@@ -186,13 +176,13 @@ export default function HomeScreen({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  avatarContainer: {
-    width: "100%",
-    backgroundColor: colors.primary,
-    flexDirection: "row",
-    alignItems: "center",
-    paddingHorizontal: 15,
-  },
+  // avatarContainer: {
+  //   width: "100%",
+  //   backgroundColor: colors.primary,
+  //   flexDirection: "row",
+  //   alignItems: "center",
+  //   paddingHorizontal: 15,
+  // },
 
   searchContainer: {
     width: "100%",
