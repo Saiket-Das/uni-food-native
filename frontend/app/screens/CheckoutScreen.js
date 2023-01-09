@@ -10,6 +10,7 @@ import FoodItem from "../components/lists/ListItem";
 import ListItemSperator from "../components/lists/ListItemSperator";
 import routes from "../navigation/routes";
 import OrderHeader from "../components/Cart/OrderHeader";
+import TotalAmount from "../components/Cart/TotalAmount";
 
 export default function OrderList({ navigation }) {
   const foodCart = useSelector((state) => state.cart.cart);
@@ -19,22 +20,7 @@ export default function OrderList({ navigation }) {
       <OrderHeader />
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={{ margin: 10 }}>
-          <View style={styles.totalContainer}>
-            <View>
-              <View style={styles.totalSubtotal}>
-                <Text style={{ color: colors.darkGray }}>Subtotal</Text>
-                <Text style={{ color: colors.darkGray }}>RM30.00</Text>
-              </View>
-
-              <ListItemSperator style={{ marginVertical: 10 }} />
-              <View style={styles.totalSubtotal}>
-                <Text style={{ fontWeight: "600", fontSize: "22" }}>Total</Text>
-                <Text style={{ fontWeight: "600", fontSize: "22" }}>
-                  RM30.00
-                </Text>
-              </View>
-            </View>
-          </View>
+          <TotalAmount />
 
           <View style={styles.itemContainer}>
             <FlatList
