@@ -17,6 +17,7 @@ import useApi from "../hooks/useApi";
 import foodApi from "../api/food";
 
 import ProfileBar from "../components/home/ProfileBar";
+import SearchBar from "../components/home/SearchBar";
 // import ActivityIndicator from "../components/common/ActivityIndicator";
 
 // const foods = [
@@ -103,25 +104,17 @@ export default function HomeScreen({ navigation }) {
         )} 
 
       {/* -------> PROFILE BAR  */}
-       <ProfileBar/>
-
-      {/* -------> SEARCH BAR  */}
-        <View style={styles.searchContainer}>
-          <TextInput
-            icon="text-search"
-            iconSize={18}
-            iconColor={colors.darkGray}
-            placeholder="Search.."
-            width="85%"
-            height={45}
-          />
-          <Icon name="filter-variant" size={40} />
-        </View>
+      <ProfileBar/>  
+      
+      {/* -------> SEARCH BAR  */}    
+      <SearchBar/>
 
         <ScrollView
           showsVerticalScrollIndicator={false}
           style={{ marginHorizontal: 15 }}
         >
+
+
 
           {/* -------> STUDENTS FAVOURITE  */}
           <View>
@@ -176,22 +169,6 @@ export default function HomeScreen({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  // avatarContainer: {
-  //   width: "100%",
-  //   backgroundColor: colors.primary,
-  //   flexDirection: "row",
-  //   alignItems: "center",
-  //   paddingHorizontal: 15,
-  // },
-
-  searchContainer: {
-    width: "100%",
-    backgroundColor: colors.primary,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    paddingHorizontal: 15,
-  },
 
   card: {
     padding: 20,
