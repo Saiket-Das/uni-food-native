@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import FoodItem from "../lists/ListItem";
 import colors from "../../confiq/colors";
 
-export default function OrderLists() {
+export default function OrderList() {
   const foodCart = useSelector((state) => state.cart.cart);
 
   return (

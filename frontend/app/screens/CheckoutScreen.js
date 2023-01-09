@@ -1,4 +1,4 @@
-import { View, StyleSheet, FlatList, ScrollView } from "react-native";
+import { View, StyleSheet, ScrollView } from "react-native";
 import React from "react";
 
 import colors from "../confiq/colors";
@@ -7,7 +7,8 @@ import Button from "../components/common/AppButton";
 
 import OrderHeader from "../components/cart/OrderHeader";
 import TotalAmount from "../components/cart/TotalAmount";
-import OrderLists from "../components/cart/OrderList";
+import OrderList from "../components/cart/OrderList";
+import routes from "../navigation/routes";
 
 export default function CartScreen({ navigation }) {
   return (
@@ -17,7 +18,7 @@ export default function CartScreen({ navigation }) {
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={{ margin: 10 }}>
           <TotalAmount />
-          <OrderLists />
+          <OrderList />
 
           <Button
             title="Checkout"
