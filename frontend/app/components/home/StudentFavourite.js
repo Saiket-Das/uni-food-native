@@ -6,8 +6,9 @@ import foodApi from "../../api/food";
 
 import Text from "../common/AppText";
 import Card from "../common/Card";
+import routes from "../../navigation/routes";
 
-export default function StudentFavourite() {
+export default function StudentFavourite({ navigation }) {
   const favFoodData = useApi(foodApi.getStudentsFavouriteFood);
 
   useEffect(() => {

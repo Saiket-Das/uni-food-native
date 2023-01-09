@@ -1,19 +1,11 @@
-import {
-  Image,
-  StyleSheet,
-  Switch,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { StyleSheet, View } from "react-native";
 import React, { useState } from "react";
 
 import colors from "../confiq/colors";
 
 import Screen from "../components/common/Screen";
-import Text from "../components/common/AppText";
 import ListItem from "../components/lists/ListItem";
 import Icon from "../components/common/Icon";
-import ListItemSeprator from "../components/lists/ListItemSperator";
 import ProfileHeader from "../components/account/ProfileHeader";
 import MyProfileDetails from "../components/account/MyProfileDetails";
 // import useAuth from "../auth/useAuth";

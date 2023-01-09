@@ -8,8 +8,9 @@ import FoodItem from "../lists/ListItem";
 import Text from "../common/AppText";
 
 import colors from "../../confiq/colors";
+import routes from "../../navigation/routes";
 
-export default function AllItems() {
+export default function AllItems({ navigation }) {
   const foodData = useApi(foodApi.getFoods);
 
   useEffect(() => {

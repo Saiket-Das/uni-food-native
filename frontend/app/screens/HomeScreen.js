@@ -103,8 +103,8 @@ export default function HomeScreen({ navigation }) {
           style={{ marginHorizontal: 15 }}
         >
           {/* -------> STUDENTS FAVOURITE  */}
-          <StudentFavourite />
-          <AllItems />
+          <StudentFavourite navigation={navigation} />
+          <AllItems navigation={navigation} />
         </ScrollView>
       </Screen>
     </>
