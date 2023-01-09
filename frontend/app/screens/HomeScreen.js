@@ -15,6 +15,7 @@ import foodApi from "../api/food";
 import ProfileBar from "../components/home/ProfileBar";
 import SearchBar from "../components/home/SearchBar";
 import StudentFavourite from "../components/home/StudentFavourite";
+import AllItems from "../components/home/FoodItems";
 // import ActivityIndicator from "../components/common/ActivityIndicator";
 
 // const foods = [
@@ -99,9 +100,7 @@ export default function HomeScreen({ navigation }) {
 
       {/* -------> PROFILE BAR  */}
       <ProfileBar/>  
-      
-      {/* -------> SEARCH BAR  */}    
-      <SearchBar/>
+            <SearchBar/>
 
         <ScrollView
           showsVerticalScrollIndicator={false}
@@ -110,29 +109,10 @@ export default function HomeScreen({ navigation }) {
 
           {/* -------> STUDENTS FAVOURITE  */}
           <StudentFavourite/>
+          <AllItems/>
 
           {/* -------> ALL ITEMS  */}
-          <View>
-            <Text style={{ fontWeight: "700", marginVertical: 10 }}>
-              All items
-            </Text>
-            <FlatList
-              data={foodData.data.data}
-              keyExtractor={(food) => food._id}
-              renderItem={({ item }) => (
-                <FoodItem
-                  title={item.name}
-                  subTitle={item.description}
-                  price={item.price}
-                  imageUri={item.imageURL}
-                  icon="plus"
-                  backgroundColor={colors.white}
-                  onPress={() => navigation.navigate(routes.FOOD_DETAILS, item)}
-                />
-              )}
-              // ItemSeparatorComponent={ListItemSperator}
-            />
-          </View>
+
         </ScrollView>
       </Screen>
     </>
