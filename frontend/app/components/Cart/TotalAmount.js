@@ -25,12 +25,6 @@ export default function TotalAmount() {
 }
 
 const styles = StyleSheet.create({
-  container: {
-    padding: 15,
-    justifyContent: "center",
-    backgroundColor: colors.primary,
-  },
-
   totalContainer: {
     backgroundColor: colors.white,
     margin: 10,
@@ -40,12 +34,6 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.2,
     shadowRadius: 3,
     padding: 20,
-  },
-
-  itemContainer: {
-    backgroundColor: colors.white,
-    marginTop: 15,
-    borderRadius: 10,
   },
 
   totalSubtotal: {

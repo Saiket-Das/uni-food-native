@@ -5,7 +5,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { useSelector } from "react-redux";
 
 import HomeNavigator from "./HomeNavigator";
-import CheckoutNavigator from "./CheckoutNavigator";
+import CartScreen from "./CheckoutNavigator";
 import AccountScreen from "../screens/AccountScreen";
 
 import HomeScreen from "../screens/HomeScreen";
@@ -61,7 +61,7 @@ export default function AppNavigator() {
       {/* {cart > 0 && ( */}
       <Tab.Screen
         name="Cart"
-        component={CheckoutNavigator}
+        component={CartScreen}
         options={{
           tabBarBadge: cart.length ? cart.length : undefined,
           tabBarIcon: ({ size, color }) => (
