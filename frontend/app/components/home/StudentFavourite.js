@@ -28,9 +28,8 @@ export default function StudentFavourite({ navigation }) {
         renderItem={({ item }) => (
           <Card
             style={styles.card}
-            name={item.name}
-            price={item.price}
-            imageUri={item.imageURL}
+            food={item}
+            // imageUri={item.imageURL}
             onPress={() => navigation.navigate(routes.FOOD_DETAILS, item)}
           />
         )}

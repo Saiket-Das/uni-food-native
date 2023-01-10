@@ -9,28 +9,34 @@ import React from "react";
 import { useDispatch } from "react-redux";
 
 import Text from "./AppText";
-// import Icon from "./Icon";
+import Icon from "./Icon";
 import colors from "../../confiq/colors";
-// import { addToCart } from "../../redux/features/cart/cartSlice";
+import { addToCart } from "../../redux/features/cart/cartSlice";
 
-export default function Card({ name, price, imageUri, onPress }) {
-  // const dispatch = useDispatch();
+export default function Card({ food, onPress }) {
+  const dispatch = useDispatch();
+
+  console.log(food);
   return (
     <TouchableWithoutFeedback onPress={onPress}>
       <View style={styles.card}>
-        <Image style={styles.image} tint="light" source={{ uri: imageUri }} />
+        <Image
+          style={styles.image}
+          tint="light"
+          source={{ uri: food.imageURL }}
+        />
 
         <View style={styles.detailsConTainer}>
           <View style={styles.textConTainer}>
-            <Text style={{ fontWeight: "500" }}>{name}</Text>
+            <Text style={{ fontWeight: "500" }}>{food?.name}</Text>
             <Text style={{ fontWeight: "800", marginTop: 5 }}>
-              RM{price.toFixed(2)}
+              RM{food?.price.toFixed(2)}
             </Text>
           </View>
 
-          {/* <TouchableOpacity onPress={() => dispatch(addToCart(food))}>
+          <TouchableOpacity onPress={(food) => dispatch(addToCart(food))}>
             <Icon name="plus" iconColor="white" size={28} />
-          </TouchableOpacity> */}
+          </TouchableOpacity>
         </View>
       </View>
     </TouchableWithoutFeedback>
