@@ -12,7 +12,7 @@ export default function SearchBar() {
         icon="find-replace"
         iconSize={18}
         iconColor={colors.darkGray}
-        placeholder="Search.."
+        placeholder="Search"
         width="100%"
         height={45}
       />

@@ -35,10 +35,11 @@ const styles = StyleSheet.create({
     backgroundColor: colors.primary,
     flexDirection: "row",
     justifyContent: "space-between",
+    alignItems: "center",
+    paddingHorizontal: 15,
   },
   avatarContainer: {
     flexDirection: "row",
     alignItems: "center",
-    paddingHorizontal: 15,
   },
 });

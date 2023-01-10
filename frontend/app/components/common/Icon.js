@@ -8,6 +8,7 @@ export default function Icon({
   backgroundColor = colors.primary,
   size = 50,
   iconColor = "#fff",
+  ...otherProps
 }) {
   return (
     <View
@@ -19,6 +20,7 @@ export default function Icon({
         alignItems: "center",
         borderRadius: size / 2,
       }}
+      {...otherProps}
     >
       <MaterialCommunityIcons name={name} color={iconColor} size={size * 0.5} />
     </View>
