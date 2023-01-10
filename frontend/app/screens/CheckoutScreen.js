@@ -32,33 +32,3 @@ export default function CartScreen({ navigation }) {
     </Screen>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    padding: 15,
-    justifyContent: "center",
-    backgroundColor: colors.primary,
-  },
-
-  totalContainer: {
-    backgroundColor: colors.white,
-    margin: 10,
-    borderRadius: 10,
-    shadowColor: "#171717",
-    shadowOffset: { width: -2, height: 4 },
-    shadowOpacity: 0.2,
-    shadowRadius: 3,
-    padding: 20,
-  },
-
-  itemContainer: {
-    backgroundColor: colors.white,
-    marginTop: 15,
-    borderRadius: 10,
-  },
-
-  totalSubtotal: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-  },
-});
