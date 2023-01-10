@@ -18,6 +18,8 @@ const Tab = createBottomTabNavigator();
 
 export default function AppNavigator() {
   const cart = useSelector((state) => state.cart.cart);
+
+  const user = "admn";
   return (
     <Tab.Navigator screenOptions={{ headerShown: false }}>
       <Tab.Screen
@@ -39,26 +41,28 @@ export default function AppNavigator() {
           ),
         }}
       />
-      <Tab.Screen
-        name="addFood"
-        component={AddFoodScreen}
-        options={({ navigation }) => ({
-          tabBarButton: () => (
-            <AddFoodButton
-              onPress={() => navigation.navigate(routes.ADDFOOD)}
-            />
-          ),
-          tabBarIcon: ({ size, color }) => (
-            <MaterialCommunityIcons
-              name="plus-circle"
-              size={size}
-              color={color}
-            />
-          ),
-          title: "Add Food",
-        })}
-      />
-      {/* {cart > 0 && ( */}
+      {user == "admin" && (
+        <Tab.Screen
+          name="addFood"
+          component={AddFoodScreen}
+          options={({ navigation }) => ({
+            tabBarButton: () => (
+              <AddFoodButton
+                onPress={() => navigation.navigate(routes.ADDFOOD)}
+              />
+            ),
+            tabBarIcon: ({ size, color }) => (
+              <MaterialCommunityIcons
+                name="plus-circle"
+                size={size}
+                color={color}
+              />
+            ),
+            title: "Add Food",
+          })}
+        />
+      )}
+
       <Tab.Screen
         name="Cart"
         component={CartScreen}
@@ -69,7 +73,6 @@ export default function AppNavigator() {
           ),
         }}
       />
-      {/* )} */}
 
       <Tab.Screen
         name="Account"
