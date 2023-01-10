@@ -1,13 +1,10 @@
 import { FlatList, StyleSheet, View } from "react-native";
 import React from "react";
-import { useSelector } from "react-redux";
 
 import FoodItem from "../lists/ListItem";
 import colors from "../../confiq/colors";
 
-export default function OrderList() {
-  const foodCart = useSelector((state) => state.cart.cart);
-
+export default function OrderList({ foodCart }) {
   return (
     <View style={styles.itemContainer}>
       <FlatList
