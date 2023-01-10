@@ -6,10 +6,13 @@ import colors from "../../confiq/colors";
 import ListItemSperator from "../lists/ListItemSperator";
 
 export default function TotalAmount({ foodCart }) {
-  const total = foodCart
-    .reduce((total, item) => total + item.price * item.quantity, 0)
-    .toFixed(2);
+  const subTotal = Number(
+    foodCart
+      .reduce((total, item) => total + item.price * item.quantity, 0)
+      .toFixed(2)
+  );
 
+  const total = subTotal + (subTotal * 2.5) / 100;
   // console.log("foodCart", foodCart);
   // console.log("total", total);
 
@@ -18,7 +21,12 @@ export default function TotalAmount({ foodCart }) {
       <View>
         <View style={styles.totalSubtotal}>
           <Text style={{ color: colors.darkGray }}>Subtotal</Text>
-          <Text style={{ color: colors.darkGray }}>RM{total}</Text>
+          <Text style={{ color: colors.darkGray }}>RM{subTotal}</Text>
+        </View>
+
+        <View style={styles.totalSubtotal}>
+          <Text style={{ color: colors.darkGray }}>Vat</Text>
+          <Text style={{ color: colors.darkGray }}>2.5%</Text>
         </View>
 
         <ListItemSperator style={{ marginVertical: 10 }} />
