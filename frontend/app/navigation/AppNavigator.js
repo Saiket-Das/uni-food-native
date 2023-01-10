@@ -19,7 +19,7 @@ const Tab = createBottomTabNavigator();
 export default function AppNavigator() {
   const cart = useSelector((state) => state.cart.cart);
 
-  const user = "admn";
+  const user = "user";
   return (
     <Tab.Navigator screenOptions={{ headerShown: false }}>
       <Tab.Screen
@@ -32,15 +32,18 @@ export default function AppNavigator() {
         }}
       />
 
-      <Tab.Screen
-        name="Favourite"
-        component={HomeScreen}
-        options={{
-          tabBarIcon: ({ size, color }) => (
-            <MaterialCommunityIcons name="heart" size={size} color={color} />
-          ),
-        }}
-      />
+      {user == "user" && (
+        <Tab.Screen
+          name="Favourite"
+          component={HomeScreen}
+          options={{
+            tabBarIcon: ({ size, color }) => (
+              <MaterialCommunityIcons name="heart" size={size} color={color} />
+            ),
+          }}
+        />
+      )}
+
       {user == "admin" && (
         <Tab.Screen
           name="addFood"
@@ -63,16 +66,18 @@ export default function AppNavigator() {
         />
       )}
 
-      <Tab.Screen
-        name="Cart"
-        component={CartScreen}
-        options={{
-          tabBarBadge: cart.length ? cart.length : undefined,
-          tabBarIcon: ({ size, color }) => (
-            <MaterialCommunityIcons name="cart" size={size} color={color} />
-          ),
-        }}
-      />
+      {user === "user" && (
+        <Tab.Screen
+          name="Cart"
+          component={CartScreen}
+          options={{
+            tabBarBadge: cart.length ? cart.length : undefined,
+            tabBarIcon: ({ size, color }) => (
+              <MaterialCommunityIcons name="cart" size={size} color={color} />
+            ),
+          }}
+        />
+      )}
 
       <Tab.Screen
         name="Account"
