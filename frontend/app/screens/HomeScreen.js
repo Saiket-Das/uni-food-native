@@ -1,14 +1,9 @@
 import React, { useEffect } from "react";
-import { View, ScrollView, FlatList } from "react-native";
+import { ScrollView } from "react-native";
 
 import Screen from "../components/common/Screen";
-import Text from "../components/common/AppText";
-
-import FoodItem from "../components/lists/ListItem";
 
 import colors from "../config/colors";
-import routes from "../navigation/routes";
-
 import useApi from "../hooks/useApi";
 import foodApi from "../api/food";
 
@@ -16,7 +11,7 @@ import ProfileBar from "../components/home/ProfileBar";
 import SearchBar from "../components/home/SearchBar";
 import StudentFavourite from "../components/home/StudentFavourite";
 import AllItems from "../components/home/FoodItems";
-// import ActivityIndicator from "../components/common/ActivityIndicator";
+import ActivityIndicator from "../components/common/ActivityIndicator";
 
 // const foods = [
 //   {
@@ -76,11 +71,9 @@ export default function HomeScreen({ navigation }) {
     foodData.request();
   }, []);
 
-  // console.log(favFoodData)
-
   return (
     <>
-      {/* <ActivityIndicator visible={foodData.loading} /> */}
+      <ActivityIndicator visible={foodData.loading} />
 
       <Screen style={{ backgroundColor: colors.primary }}>
         {foodData.error && (
@@ -111,10 +104,3 @@ export default function HomeScreen({ navigation }) {
     </>
   );
 }
-
-// useEffect(() => {
-//   // foodData.request();
-//   fetch("http://192.168.10.56:5000/api/food")
-//     .then((res) => res.json())
-//     .then((data) => console.log(data));
-// }, []);
