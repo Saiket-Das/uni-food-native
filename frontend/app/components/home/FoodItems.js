@@ -18,7 +18,7 @@ export default function AllItems({ navigation }) {
   }, []);
 
   return (
-    <View>
+    <View style={{ marginHorizontal: 15 }}>
       <Text style={{ fontWeight: "700", marginVertical: 10 }}>All items</Text>
       <FlatList
         data={foodData.data.data}

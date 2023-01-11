@@ -37,6 +37,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     paddingHorizontal: 15,
+    paddingBottom: 10,
   },
   avatarContainer: {
     flexDirection: "row",

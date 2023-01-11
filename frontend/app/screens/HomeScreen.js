@@ -96,12 +96,13 @@ export default function HomeScreen({ navigation }) {
 
         {/* -------> NAVBAR BAR  */}
         <ProfileBar />
-        <SearchBar />
 
         <ScrollView
           showsVerticalScrollIndicator={false}
-          style={{ marginHorizontal: 15 }}
+          // style={{ marginHorizontal: 15 }}
         >
+          <SearchBar />
+
           {/* -------> STUDENTS FAVOURITE  */}
           <StudentFavourite navigation={navigation} />
           <AllItems navigation={navigation} />

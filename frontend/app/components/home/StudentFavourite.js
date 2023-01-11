@@ -16,7 +16,7 @@ export default function StudentFavourite({ navigation }) {
   }, []);
 
   return (
-    <View>
+    <View style={{ marginHorizontal: 15 }}>
       <Text style={{ fontWeight: "700", fontSize: 22, marginVertical: 10 }}>
         Students favourite
       </Text>
