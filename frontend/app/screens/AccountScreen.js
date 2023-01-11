@@ -1,7 +1,7 @@
 import { StyleSheet, View } from "react-native";
 import React, { useState } from "react";
 
-import colors from "../confiq/colors";
+import colors from "../config/colors";
 
 import Screen from "../components/common/Screen";
 import ListItem from "../components/lists/ListItem";

@@ -2,7 +2,7 @@ import { View, StyleSheet } from "react-native";
 import React from "react";
 
 import Text from "../common/AppText";
-import colors from "../../confiq/colors";
+import colors from "../../config/colors";
 import ListItemSperator from "../lists/ListItemSperator";
 
 export default function TotalAmount({ foodCart }) {

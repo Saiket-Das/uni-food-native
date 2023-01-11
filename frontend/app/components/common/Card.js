@@ -10,7 +10,7 @@ import React from "react";
 
 import Text from "./AppText";
 // import Icon from "./Icon";
-import colors from "../../confiq/colors";
+import colors from "../../config/colors";
 // import { addToCart } from "../../redux/features/cart/cartSlice";
 
 export default function Card({ food, onPress }) {

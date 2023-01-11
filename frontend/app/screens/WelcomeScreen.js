@@ -1,6 +1,6 @@
 import { View, StyleSheet, Image } from "react-native";
 import React from "react";
-import colors from "../confiq/colors";
+import colors from "../config/colors";
 import Button from "../components/common/AppButton";
 import routes from "../navigation/routes";
 

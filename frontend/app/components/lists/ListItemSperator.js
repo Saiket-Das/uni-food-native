@@ -1,6 +1,6 @@
 import { View, Text, StyleSheet } from "react-native";
 import React from "react";
-import colors from "../../confiq/colors";
+import colors from "../../config/colors";
 
 export default function ListItemSperator({ style }) {
   return <View style={[style, styles.separator]}></View>;

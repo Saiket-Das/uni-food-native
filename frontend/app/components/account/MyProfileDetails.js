@@ -2,7 +2,7 @@ import { Image, StyleSheet, Switch, View } from "react-native";
 import React from "react";
 
 import Text from "../common/AppText";
-import colors from "../../confiq/colors";
+import colors from "../../config/colors";
 
 import ListItemSeprator from "../lists/ListItemSperator";
 

@@ -9,7 +9,7 @@ import React from "react";
 
 import Text from "../common/AppText";
 import Icon from "../common/Icon";
-import colors from "../../confiq/colors";
+import colors from "../../config/colors";
 
 export default function ListItem({
   imageUri,

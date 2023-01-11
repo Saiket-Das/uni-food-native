@@ -2,7 +2,7 @@ import { StyleSheet, View } from "react-native";
 import React from "react";
 
 import Text from "../common/AppText";
-import colors from "../../confiq/colors";
+import colors from "../../config/colors";
 
 export default function OrderHeader() {
   return (

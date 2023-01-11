@@ -6,7 +6,7 @@ import FormField from "../components/forms/AppFormField";
 import FormPicker from "../components/forms/AppFormPicker";
 import SubmitButton from "../components/forms/SubmitButton";
 
-import colors from "../confiq/colors";
+import colors from "../config/colors";
 
 import Screen from "../components/common/Screen";
 import Text from "../components/common/AppText";

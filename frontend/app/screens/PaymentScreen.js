@@ -5,7 +5,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import FormPicker from "../components/forms/AppFormPicker";
 import AppForm from "../components/forms/AppForm";
 
-import colors from "../confiq/colors";
+import colors from "../config/colors";
 
 import NumberPickerItem from "../components/common/NumberPickerItem";
 import Screen from "../components/common/Screen";

@@ -6,7 +6,7 @@ import Text from "../components/common/AppText";
 
 import FoodItem from "../components/lists/ListItem";
 
-import colors from "../confiq/colors";
+import colors from "../config/colors";
 import routes from "../navigation/routes";
 
 import useApi from "../hooks/useApi";

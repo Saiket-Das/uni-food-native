@@ -1,5 +1,5 @@
 import { create } from "apisauce";
-import setting from "../confiq/setting";
+import setting from "../config/setting";
 
 const apiClient = create({
   baseURL: setting.apiUrl,

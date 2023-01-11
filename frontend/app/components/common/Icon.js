@@ -1,7 +1,7 @@
 import { View } from "react-native";
 import React from "react";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import colors from "../../confiq/colors";
+import colors from "../../config/colors";
 
 export default function Icon({
   name,

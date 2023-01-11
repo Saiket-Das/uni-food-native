@@ -1,7 +1,7 @@
 import { View, TouchableOpacity } from "react-native";
 import React from "react";
 
-import colors from "../../confiq/colors";
+import colors from "../../config/colors";
 import { AntDesign } from "@expo/vector-icons";
 
 export default function QuantityIcon({

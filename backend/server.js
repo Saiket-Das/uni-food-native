@@ -1,5 +1,5 @@
 require("dotenv").config();
-const dbConnection = require("./confiq/db");
+const dbConnection = require("./config/db");
 const { notFound, errorHandler } = require("./middlewares/error");
 
 const express = require("express");

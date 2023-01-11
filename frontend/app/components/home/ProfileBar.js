@@ -4,7 +4,7 @@ import React from "react";
 import Text from "../common/AppText";
 import Avatar from "../common/Avatar";
 
-import colors from "../../confiq/colors";
+import colors from "../../config/colors";
 import Icon from "../common/Icon";
 
 export default function ProfileBar() {

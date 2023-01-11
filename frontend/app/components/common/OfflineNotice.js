@@ -1,7 +1,7 @@
 import { StyleSheet, View } from "react-native";
 import React from "react";
 import Text from "./AppText";
-import colors from "../../confiq/colors";
+import colors from "../../config/colors";
 import Constants from "expo-constants";
 import { useNetInfo } from "@react-native-community/netinfo";
 

@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import Text from "../components/common/AppText";
 import Button from "../components/common/AppButton";
-import colors from "../confiq/colors";
+import colors from "../config/colors";
 import QuantityIcon from "../components/common/QuantityIcon";
 
 import { addToCart, removeFromCart } from "../redux/features/cart/cartSlice";
@@ -88,7 +88,7 @@ export default function FoodDetailsScreen({ route }) {
                       color: colors.primary,
                     }}
                   >
-                    {cartFood ? cartFood?.quantity: 0}
+                    {cartFood ? cartFood?.quantity : 0}
                   </Text>
                 </View>
               </TouchableOpacity>
@@ -112,7 +112,7 @@ export default function FoodDetailsScreen({ route }) {
           </View>
         </View>
 
-        <Button title="Add to cart" onPress={() => dispatch(addToCart(food))}/>
+        <Button title="Add to cart" onPress={() => dispatch(addToCart(food))} />
       </View>
     </View>
   );

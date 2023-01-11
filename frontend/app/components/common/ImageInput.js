@@ -9,7 +9,7 @@ import React, { useEffect, useState } from "react";
 import * as ImagePicker from "expo-image-picker";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-import colors from "../../confiq/colors";
+import colors from "../../config/colors";
 import AppText from "./Avatar";
 
 export default function ImageInput() {

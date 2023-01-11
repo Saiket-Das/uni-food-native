@@ -1,7 +1,7 @@
 import { View, ScrollView } from "react-native";
 import React from "react";
 
-import colors from "../confiq/colors";
+import colors from "../config/colors";
 import Screen from "../components/common/Screen";
 import Button from "../components/common/AppButton";
 

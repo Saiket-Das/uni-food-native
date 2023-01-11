@@ -7,7 +7,7 @@ import foodApi from "../../api/food";
 import FoodItem from "../lists/ListItem";
 import Text from "../common/AppText";
 
-import colors from "../../confiq/colors";
+import colors from "../../config/colors";
 import routes from "../../navigation/routes";
 
 export default function AllItems({ navigation }) {

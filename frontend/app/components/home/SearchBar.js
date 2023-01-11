@@ -3,7 +3,7 @@ import React from "react";
 
 import TextInput from "../common/AppTextInput";
 // import Icon from "../common/Icon";
-import colors from "../../confiq/colors";
+import colors from "../../config/colors";
 
 export default function SearchBar() {
   return (
