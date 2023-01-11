@@ -13,8 +13,8 @@ export default function App() {
   return (
     <NavigationContainer theme={navigationTheme}>
       <Provider store={store}>
-        <AppNavigator />
-        {/* <AuthNavigator /> */}
+        {/* <AppNavigator /> */}
+        <AuthNavigator />
       </Provider>
     </NavigationContainer>
   );

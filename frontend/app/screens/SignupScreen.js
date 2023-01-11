@@ -3,7 +3,7 @@ import { View, StyleSheet } from "react-native";
 
 import Screen from "../components/common/Screen";
 import AppForm from "../components/forms/AppForm";
-import AppFormField from "../components/forms/AppFormField";
+import FormField from "../components/forms/AppFormField";
 import SubmitButton from "../components/forms/SubmitButton";
 import Text from "../components/common/AppText";
 
@@ -17,8 +17,11 @@ export default function SignupScreen() {
         <Text style={{ fontSize: "20" }}>Sign up to enjoy the app</Text>
       </View>
 
-      <AppForm>
-        <AppFormField
+      <AppForm
+        initialValues={{ name: "", email: "", password: "" }}
+        onSubmit={(values) => console.log(values)}
+      >
+        <FormField
           name="name"
           icon="account"
           placeholder="Full name"
@@ -28,7 +31,7 @@ export default function SignupScreen() {
           textContentType="emailAddress"
         />
 
-        <AppFormField
+        <FormField
           name="email"
           icon="email"
           placeholder="Email"
@@ -38,7 +41,7 @@ export default function SignupScreen() {
           textContentType="emailAddress"
         />
 
-        <AppFormField
+        <FormField
           name="password"
           icon="lock"
           placeholder="Password"
@@ -48,7 +51,7 @@ export default function SignupScreen() {
           textContentType="password"
         />
 
-        <SubmitButton title="SIGN UP" />
+        <SubmitButton title="Register" />
       </AppForm>
     </Screen>
   );

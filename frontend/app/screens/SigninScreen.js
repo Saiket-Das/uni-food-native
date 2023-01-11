@@ -2,11 +2,12 @@ import React from "react";
 import { StyleSheet, View } from "react-native";
 
 import Screen from "../components/common/Screen";
-import AppForm from "../components/forms/AppForm";
-import AppFormField from "../components/forms/AppFormField";
+import Text from "../components/common/AppText";
+
+import Form from "../components/forms/AppForm";
+import FormField from "../components/forms/AppFormField";
 import SubmitButton from "../components/forms/SubmitButton";
 import ErrorMessage from "../components/forms/ErrorMessage";
-import Text from "../components/common/AppText";
 
 export default function SigninScreen() {
   return (
@@ -16,14 +17,17 @@ export default function SigninScreen() {
         <Text style={{ fontSize: "20" }}>Sign in to contiune</Text>
       </View>
 
-      <AppForm>
+      <Form
+        initialValues={{ email: "", password: "" }}
+        onSubmit={(values) => console.log("VVVValues ----------->", values)}
+      >
         <ErrorMessage
           error="Invalid email and/or password"
           // visible={loginFailed}
           // visible={true}
         />
 
-        <AppFormField
+        <FormField
           name="email"
           icon="email"
           placeholder="Email"
@@ -33,7 +37,7 @@ export default function SigninScreen() {
           textContentType="emailAddress"
         />
 
-        <AppFormField
+        <FormField
           name="password"
           icon="lock"
           placeholder="Password"
@@ -44,7 +48,7 @@ export default function SigninScreen() {
         />
 
         <SubmitButton title="SIGN IN" />
-      </AppForm>
+      </Form>
     </Screen>
   );
 }
