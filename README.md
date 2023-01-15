@@ -18,7 +18,10 @@
 * Colors
 
 ### Frontend 
-*  
+* Redux & Redux toolkit
+* Expo constants
+* React navigation
+* Formik
 
 ## User Interface
  Coming soon
