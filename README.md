@@ -5,7 +5,7 @@
 * Node JS
 * Expo
 
-## NPM Packages Used
+## npm Packages Used
 ### Backend 
 * Express 
 * Cors
