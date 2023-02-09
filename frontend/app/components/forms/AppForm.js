@@ -4,7 +4,7 @@ import { Formik } from "formik";
 export default function AppForm({
   initialValues,
   onSubmit,
-  // validationSchema,
+  validationSchema,
   children,
 }) {
   console.log("initialValues", initialValues);
@@ -13,7 +13,7 @@ export default function AppForm({
     <Formik
       initialValues={initialValues}
       onSubmit={onSubmit}
-      // validationSchema={validationSchema}
+      validationSchema={validationSchema}
     >
       {() => <>{children}</>}
     </Formik>

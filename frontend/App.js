@@ -7,15 +7,21 @@ import store from "./app/redux/store";
 
 import AppNavigator from "./app/navigation/AppNavigator";
 import AuthNavigator from "./app/navigation/AuthNaviagator";
+import AuthContext from "./app/auth/context";
+import { useState } from "react";
 // import OfflineNotice from "./app/components/common/OfflineNotice";
 
 export default function App() {
+  const [user, setUser] = useState();
+
   return (
-    <NavigationContainer theme={navigationTheme}>
-      <Provider store={store}>
-        {/* <AppNavigator /> */}
-        <AuthNavigator />
-      </Provider>
-    </NavigationContainer>
+    <AuthContext.Provider value={{ user, setUser }}>
+      <NavigationContainer theme={navigationTheme}>
+        <Provider store={store}>
+          {/* <AppNavigator /> */}
+          <AuthNavigator />
+        </Provider>
+      </NavigationContainer>
+    </AuthContext.Provider>
   );
 }

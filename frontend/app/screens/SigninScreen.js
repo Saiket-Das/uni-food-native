@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { StyleSheet, View } from "react-native";
+import * as Yup from "yup";
 
 import Screen from "../components/common/Screen";
 import Text from "../components/common/AppText";
@@ -9,10 +10,17 @@ import FormField from "../components/forms/AppFormField";
 import SubmitButton from "../components/forms/SubmitButton";
 import ErrorMessage from "../components/forms/ErrorMessage";
 
-// import useApi from "../hooks/useApi";
-// import authApi from "../api/auth";
+import useAuth from "../auth/useAuth";
+
+const validationSchema = Yup.object().shape({
+  email: Yup.string().required().email().label("Email"),
+  password: Yup.string().required().min(4).label("Password"),
+});
 
 export default function SigninScreen() {
+  const { login } = useAuth();
+  const [loginFailed, setLoginFailed] = useState(false);
+
   return (
     <Screen style={styles.container}>
       <View style={styles.textContaier}>
@@ -22,7 +30,9 @@ export default function SigninScreen() {
 
       <Form
         initialValues={{ email: "", password: "" }}
-        onSubmit={(values) => console.log("VVVValues ----------->", values)}
+        onSubmit={(values) =>
+          console.log("Email & Password Values ----------->", values)
+        }
       >
         <ErrorMessage
           error="Invalid email and/or password"
