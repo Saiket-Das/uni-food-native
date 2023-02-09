@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, View } from "react-native";
 
 import Screen from "../components/common/Screen";
@@ -8,6 +8,9 @@ import Form from "../components/forms/AppForm";
 import FormField from "../components/forms/AppFormField";
 import SubmitButton from "../components/forms/SubmitButton";
 import ErrorMessage from "../components/forms/ErrorMessage";
+
+// import useApi from "../hooks/useApi";
+// import authApi from "../api/auth";
 
 export default function SigninScreen() {
   return (
@@ -24,7 +27,7 @@ export default function SigninScreen() {
         <ErrorMessage
           error="Invalid email and/or password"
           // visible={loginFailed}
-          // visible={true}
+          visible={false}
         />
 
         <FormField
