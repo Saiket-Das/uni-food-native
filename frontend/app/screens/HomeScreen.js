@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { ScrollView } from "react-native";
+import { ScrollView, View } from "react-native";
 
 import Screen from "../components/common/Screen";
 
@@ -81,29 +81,43 @@ export default function HomeScreen({ navigation }) {
         <ActivityIndicator visible={foodData.loading} />
       ) : (
         <Screen style={{ backgroundColor: colors.primary }}>
-          {foodData.error && (
-            <>
-              <Text>Couldn't retrieve the listings.</Text>
+          {foodData.error ? (
+            <View
+              style={{
+                flex: 1,
+                justifyContent: "center",
+                alignItems: "center",
+                marginHorizontal: 15,
+              }}
+            >
+              <Text tyle={{ fontWeight: "600" }}>
+                Couldn't retrieve the food list
+              </Text>
+              <Text tyle={{ fontWeight: "600" }}>Try again</Text>
+
               <Button
-                marginVertical={50}
+                marginVertical={30}
                 title="Retry"
                 onPress={foodData.request}
               />
+            </View>
+          ) : (
+            <>
+              <ProfileBar />
+              <SearchBar />
+
+              <ScrollView
+                showsVerticalScrollIndicator={false}
+                // style={{ marginHorizontal: 15 }}
+              >
+                {/* -------> Students Favourite  */}
+                <StudentFavourite navigation={navigation} />
+
+                {/* -------> All items  */}
+                <AllItems navigation={navigation} />
+              </ScrollView>
             </>
           )}
-
-          {/* -------> NAVBAR BAR  */}
-          <ProfileBar />
-          <SearchBar />
-
-          <ScrollView
-            showsVerticalScrollIndicator={false}
-            // style={{ marginHorizontal: 15 }}
-          >
-            {/* -------> STUDENTS FAVOURITE  */}
-            <StudentFavourite navigation={navigation} />
-            <AllItems navigation={navigation} />
-          </ScrollView>
         </Screen>
       )}
     </>

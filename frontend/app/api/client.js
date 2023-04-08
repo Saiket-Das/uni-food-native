@@ -1,6 +1,6 @@
-import axios from "axios";
+import apisauce from "apisauce";
 
-const apiClient = axios.create({
+const apiClient = apisauce.create({
   baseURL: "http://192.168.10.56:5000",
 });
 
