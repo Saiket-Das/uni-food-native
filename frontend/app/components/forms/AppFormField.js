@@ -8,13 +8,11 @@ export default function AppFormField({ name, ...otherProps }) {
   const { values, touched, errors, setFieldValue, setFieldTouched } =
     useFormikContext();
 
-  console.log();
-
   return (
     <>
       <AppTextInput
         onBlur={() => setFieldTouched(name)}
-        onChange={(text) => setFieldValue(name, text)}
+        onChangeText={(text) => setFieldValue(name, text)}
         value={values[name]}
         {...otherProps}
       />

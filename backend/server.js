@@ -5,7 +5,6 @@ const { notFound, errorHandler } = require("./middlewares/error");
 const express = require("express");
 const cors = require("cors");
 const app = express();
-const port = process.env.PORT || 8000;
 
 // ------> Middleware
 app.use(cors());
@@ -31,12 +30,7 @@ app.use("/api/order", orderRoutes);
 app.use(notFound);
 app.use(errorHandler);
 
-app.listen(
-  port,
-  process.env.WIFI_IP_ADDRESS,
-  //   process.env.DATA_IP_ADDRESS ||
-  //   process.env.ALOK_WIFI,
-  function () {
-    console.log(`Unifood is running on ${port}`.yellow);
-  }
-);
+const port = process.env.PORT || 8000;
+app.listen(port, process.env.WIFI_IP_ADDRESS, function () {
+  console.log(`Unifood is running on ${port}`.yellow);
+});

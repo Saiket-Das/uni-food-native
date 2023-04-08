@@ -11,6 +11,7 @@ import SubmitButton from "../components/forms/SubmitButton";
 import ErrorMessage from "../components/forms/ErrorMessage";
 
 import useAuth from "../auth/useAuth";
+import authApi from "../api/auth";
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().required().email().label("Email"),
@@ -21,6 +22,15 @@ export default function SigninScreen() {
   const { login } = useAuth();
   const [loginFailed, setLoginFailed] = useState(false);
 
+  const handleSubmit = async ({ email, password }) => {
+    // console.log("email & Password", email, password);
+    const result = await authApi.signin(email, password);
+    if (result.ok) setLoginFailed(true);
+    setLoginFailed(false);
+
+    login(result.data);
+  };
+
   return (
     <Screen style={styles.container}>
       <View style={styles.textContaier}>
@@ -30,23 +40,21 @@ export default function SigninScreen() {
 
       <Form
         initialValues={{ email: "", password: "" }}
-        onSubmit={(values) =>
-          console.log("Email & Password Values ----------->", values)
-        }
+        onSubmit={handleSubmit}
+        validationSchema={validationSchema}
       >
         <ErrorMessage
           error="Invalid email and/or password"
-          // visible={loginFailed}
-          visible={false}
+          visible={loginFailed}
         />
 
         <FormField
           name="email"
-          icon="email"
-          placeholder="Email"
           autoCapitalize="none"
           autoCorrect={false}
+          icon="email"
           keyboardType="email-address"
+          placeholder="Email"
           textContentType="emailAddress"
         />
 

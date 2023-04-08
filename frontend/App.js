@@ -13,13 +13,17 @@ import { useState } from "react";
 
 export default function App() {
   const [user, setUser] = useState();
+  console.log(user);
 
   return (
     <AuthContext.Provider value={{ user, setUser }}>
       <NavigationContainer theme={navigationTheme}>
         <Provider store={store}>
-          {/* <AppNavigator /> */}
-          <AuthNavigator />
+          {/* {user ? 
+            :  */}
+          <AppNavigator />
+          {/* <AuthNavigator /> */}
+          {/* } */}
         </Provider>
       </NavigationContainer>
     </AuthContext.Provider>

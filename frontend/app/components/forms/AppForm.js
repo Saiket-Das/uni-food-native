@@ -7,8 +7,6 @@ export default function AppForm({
   validationSchema,
   children,
 }) {
-  console.log("initialValues", initialValues);
-
   return (
     <Formik
       initialValues={initialValues}
