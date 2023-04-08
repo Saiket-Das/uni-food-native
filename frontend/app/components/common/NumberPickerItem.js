@@ -1,16 +1,16 @@
 import React from "react";
 import { View, StyleSheet, TouchableOpacity } from "react-native";
 import colors from "../../config/colors";
-import AppText from "./AppText";
+import Text from "./AppText";
 
 export default function CategoryPickerItem({ item, onPress }) {
   return (
     <View style={styles.container}>
       <TouchableOpacity onPress={onPress}>
         <View style={styles.itemContainer}>
-          <AppText style={{ color: colors.white, fontWeight: "700" }}>
+          <Text style={{ color: colors.white, fontWeight: "700" }}>
             {item.label}
-          </AppText>
+          </Text>
         </View>
       </TouchableOpacity>
     </View>

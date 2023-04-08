@@ -7,6 +7,9 @@ import colors from "../config/colors";
 import useApi from "../hooks/useApi";
 import foodApi from "../api/food";
 
+import Text from "../components/common/AppText";
+import Button from "../components/common/AppButton";
+
 import ProfileBar from "../components/home/ProfileBar";
 import SearchBar from "../components/home/SearchBar";
 import StudentFavourite from "../components/home/StudentFavourite";
@@ -69,38 +72,40 @@ export default function HomeScreen({ navigation }) {
 
   useEffect(() => {
     foodData.request();
+    console.log(foodData.data);
   }, []);
 
   return (
     <>
-      <ActivityIndicator visible={foodData.loading} />
+      {foodData.loading ? (
+        <ActivityIndicator visible={foodData.loading} />
+      ) : (
+        <Screen style={{ backgroundColor: colors.primary }}>
+          {foodData.error && (
+            <>
+              <Text>Couldn't retrieve the listings.</Text>
+              <Button
+                marginVertical={50}
+                title="Retry"
+                onPress={foodData.request}
+              />
+            </>
+          )}
 
-      <Screen style={{ backgroundColor: colors.primary }}>
-        {foodData.error && (
-          <>
-            <AppText>Couldn't retrieve the listings.</AppText>
-            <AppButton
-              marginVertical={50}
-              title="Retry"
-              onPress={foodData.request}
-            />
-          </>
-        )}
-
-        {/* -------> NAVBAR BAR  */}
-        <ProfileBar />
-
-        <ScrollView
-          showsVerticalScrollIndicator={false}
-          // style={{ marginHorizontal: 15 }}
-        >
+          {/* -------> NAVBAR BAR  */}
+          <ProfileBar />
           <SearchBar />
 
-          {/* -------> STUDENTS FAVOURITE  */}
-          <StudentFavourite navigation={navigation} />
-          <AllItems navigation={navigation} />
-        </ScrollView>
-      </Screen>
+          <ScrollView
+            showsVerticalScrollIndicator={false}
+            // style={{ marginHorizontal: 15 }}
+          >
+            {/* -------> STUDENTS FAVOURITE  */}
+            <StudentFavourite navigation={navigation} />
+            <AllItems navigation={navigation} />
+          </ScrollView>
+        </Screen>
+      )}
     </>
   );
 }

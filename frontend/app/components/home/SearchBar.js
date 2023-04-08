@@ -4,7 +4,7 @@ import React from "react";
 import TextInput from "../common/AppTextInput";
 import Icon from "../common/Icon";
 import colors from "../../config/colors";
-import AppText from "../common/AppText";
+import Text from "../common/AppText";
 
 export default function SearchBar() {
   return (
@@ -26,7 +26,7 @@ export default function SearchBar() {
             backgroundColor={colors.white}
             iconColor={colors.darkGray}
           />
-          <AppText>Search</AppText>
+          <Text>Search</Text>
         </View>
       </TouchableWithoutFeedback>
     </View>

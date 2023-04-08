@@ -1,8 +1,7 @@
-import { create } from "apisauce";
-import setting from "../config/setting";
+import axios from "axios";
 
-const apiClient = create({
-  baseURL: setting.apiUrl,
+const apiClient = axios.create({
+  baseURL: "http://192.168.10.56:5000",
 });
 
 export default apiClient;

@@ -4,21 +4,18 @@ const setting = {
   dev: {
     // apiUrl: "http://localhost:5000",
     // apiUrl: "http://192.168.10.154:5000",
-    // apiUrl: "http://192.168.10.56:5000",
     apiUrl: "http://192.168.10.56:5000",
   },
 
   staging: {
     // apiUrl: "http://localhost:5000",
     // apiUrl: "http://192.168.10.154:5000",
-    // apiUrl: "http://192.168.10.56:5000",
     apiUrl: "http://192.168.10.56:5000",
   },
 
   prod: {
     // apiUrl: "http://localhost:5000",
     // apiUrl: "http://192.168.10.154:5000",
-    // apiUrl: "http://192.168.10.56:5000",
     apiUrl: "http://192.168.10.56:5000",
   },
 };
