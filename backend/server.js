@@ -31,6 +31,6 @@ app.use(notFound);
 app.use(errorHandler);
 
 const port = process.env.PORT || 8000;
-app.listen(port, process.env.WIFI_IP_ADDRESS, function () {
+app.listen(port, function () {
   console.log(`Unifood is running on ${port}`.yellow);
 });
