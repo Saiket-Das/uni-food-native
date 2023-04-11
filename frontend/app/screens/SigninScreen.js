@@ -25,8 +25,6 @@ export default function SigninScreen() {
   const handleSubmit = async ({ email, password }) => {
     const result = await authApi.signin(email, password);
 
-    console.log("Result-> ", result, user);
-
     if (!result.status == "Fail") setLoginFailed(true);
     setLoginFailed(false);
 

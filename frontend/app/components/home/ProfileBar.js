@@ -6,12 +6,19 @@ import Avatar from "../common/Avatar";
 
 import colors from "../../config/colors";
 import Icon from "../common/Icon";
+import useAuth from "../../auth/useAuth";
 
 export default function ProfileBar() {
+  const { user } = useAuth();
+  console.log(user);
+
+  const name = user.name.split(" ")[0];
+  // console.log(name[0].toUpperCase());
+
   return (
     <View style={styles.profileContainer}>
       <View style={styles.avatarContainer}>
-        <Avatar imageURL="https://images.unsplash.com/photo-1548142813-c348350df52b?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=389&q=80" />
+        <Avatar imageURL={user.imageURL} />
         <Text
           style={{
             fontWeight: "500",
@@ -20,7 +27,7 @@ export default function ProfileBar() {
             color: colors.white,
           }}
         >
-          Welcome Ahan
+          Welcome {name}
         </Text>
       </View>
 
