@@ -72,7 +72,6 @@ export default function HomeScreen({ navigation }) {
 
   useEffect(() => {
     foodData.request();
-    console.log(foodData.data);
   }, []);
 
   return (

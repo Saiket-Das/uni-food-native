@@ -42,8 +42,6 @@ export default function ImageInput() {
         quality: 0.5,
       });
 
-      console.log(result);
-
       if (!result.cancelled) {
         setImageUri(result.uri);
       }
