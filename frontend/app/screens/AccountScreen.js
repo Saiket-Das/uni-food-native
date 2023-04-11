@@ -8,9 +8,12 @@ import ListItem from "../components/lists/ListItem";
 import Icon from "../components/common/Icon";
 import ProfileHeader from "../components/account/ProfileHeader";
 import MyProfileDetails from "../components/account/MyProfileDetails";
-// import useAuth from "../auth/useAuth";
+
+import useAuth from "../auth/useAuth";
 
 export default function AccountScreen() {
+  const { user, logOut } = useAuth();
+
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
 
@@ -51,19 +54,15 @@ export default function AccountScreen() {
         />
       </View>
 
-      <View style={styles.item}>
-        <ListItem
-          title="Logout"
-          IconComponent={
-            <Icon
-              name="logout"
-              size={44}
-              backgroundColor="#ffd623"
-              // onPress={() => logOut()}
-            />
-          }
-        />
-      </View>
+      <View style={styles.item} onPress={() => logOut()}></View>
+
+      <ListItem
+        title="Logout"
+        onPress={() => logOut()}
+        IconComponent={
+          <Icon name="logout" size={44} backgroundColor="#ffd623" />
+        }
+      />
     </Screen>
   );
 }
@@ -115,6 +114,6 @@ const styles = StyleSheet.create({
   },
 
   item: {
-    marginHorizontal: 10,
+    marginHorizontal: 5,
   },
 });

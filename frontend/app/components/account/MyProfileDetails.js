@@ -5,8 +5,11 @@ import Text from "../common/AppText";
 import colors from "../../config/colors";
 
 import ListItemSeprator from "../lists/ListItemSperator";
+import useAuth from "../../auth/useAuth";
 
 export default function MyProfileDetails({ toggleSwitch, isEnabled }) {
+  const { user } = useAuth();
+
   return (
     <View style={styles.profileContainer}>
       <View style={styles.profile}>
@@ -17,10 +20,10 @@ export default function MyProfileDetails({ toggleSwitch, isEnabled }) {
 
         <View style={styles.detailsContainer}>
           <Text style={{ fontWeight: "600" }} numberOfLines={1}>
-            Ahan Bryan
+            {user?.name}
           </Text>
 
-          <Text style={{ color: colors.darkGray }}>ahanbryan@gmail.com</Text>
+          <Text style={{ color: colors.darkGray }}>{user?.email}</Text>
         </View>
       </View>
       <View>

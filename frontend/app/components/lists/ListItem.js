@@ -59,7 +59,7 @@ export default function ListItem({
           )}
         </View>
 
-        {icon && (
+        {/* {icon && (
           <TouchableOpacity>
             <Icon
               name={icon}
@@ -68,7 +68,7 @@ export default function ListItem({
               iconColor={iconColor}
             />
           </TouchableOpacity>
-        )}
+        )} */}
       </View>
     </TouchableWithoutFeedback>
   );
@@ -81,7 +81,7 @@ const styles = StyleSheet.create({
     padding: 10,
     margin: 10,
     backgroundColor: colors.light,
-    alignItems: "flex-end",
+    // alignItems: "flex-end",
     borderRadius: 10,
     shadowColor: "#171717",
     shadowOffset: { width: -2, height: 4 },
