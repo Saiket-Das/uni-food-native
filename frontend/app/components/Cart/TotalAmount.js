@@ -32,7 +32,9 @@ export default function TotalAmount({ foodCart }) {
         <ListItemSperator style={{ marginVertical: 10 }} />
         <View style={styles.totalSubtotal}>
           <Text style={{ fontWeight: "600", fontSize: "22" }}>Total</Text>
-          <Text style={{ fontWeight: "600", fontSize: "22" }}>RM{total}</Text>
+          <Text style={{ fontWeight: "600", fontSize: "22" }}>
+            RM{total.toFixed(2)}
+          </Text>
         </View>
       </View>
     </View>
