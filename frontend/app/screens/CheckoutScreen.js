@@ -52,3 +52,22 @@ export default function CartScreen({ navigation }) {
     </Screen>
   );
 }
+
+// {
+//   "customerId": "63542103cb0b015adfb43eb9",
+//   "orderItems": [
+//      {
+//           "_id": "635524d8a8962cac8de081e0",
+//           "name": "Milo Ais",
+//           "quantity":5,
+//           "price": 17.5
+//      },
+
+//      {
+//           "_id": "635424e06bdb24a70bf4f736",
+//           "name": "Nasi",
+//           "quantity":5,
+//           "price": 45
+//      }
+//   ]
+// }
