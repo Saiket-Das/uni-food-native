@@ -10,12 +10,12 @@ const orderSchema = mongoose.Schema(
 
     orderItems: [
       {
-        foodId: {
+        _id: {
           type: mongoose.Schema.Types.ObjectId,
           required: true,
           ref: "Food",
         },
-        foodName: {
+        name: {
           type: String,
           required: true,
         },

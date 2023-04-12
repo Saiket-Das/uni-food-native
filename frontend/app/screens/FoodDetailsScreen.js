@@ -14,14 +14,15 @@ import { addToCart, removeFromCart } from "../redux/features/cart/cartSlice";
 export default function FoodDetailsScreen({ route }) {
   const food = route.params;
 
+  // const orderFoodInfo = {
+  //   foodId: food._id,
+  //   foodName: food.name,
+  // }
+
   const dispatch = useDispatch();
 
   const cart = useSelector((state) => state.cart.cart);
-
-  // console.log(cart);
-
   const cartFood = cart.find((cartFood) => cartFood._id === food._id);
-  // console.log('foodId', cartFood.quantity);
 
   return (
     <View>

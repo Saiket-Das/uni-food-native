@@ -54,15 +54,15 @@ export default function AccountScreen() {
         />
       </View>
 
-      <View style={styles.item} onPress={() => logOut()}></View>
-
-      <ListItem
-        title="Logout"
-        onPress={() => logOut()}
-        IconComponent={
-          <Icon name="logout" size={44} backgroundColor="#ffd623" />
-        }
-      />
+      <View style={styles.item} onPress={() => logOut()}>
+        <ListItem
+          title="Logout"
+          onPress={() => logOut()}
+          IconComponent={
+            <Icon name="logout" size={44} backgroundColor="#ffd623" />
+          }
+        />
+      </View>
     </Screen>
   );
 }

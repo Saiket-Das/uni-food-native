@@ -1,6 +1,7 @@
 import client from "./client";
 
 const addOrder = async (data) => {
+  console.log(data);
   await client.post("/api/order", data);
 };
 
