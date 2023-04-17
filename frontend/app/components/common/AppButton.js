@@ -6,6 +6,7 @@ export default function AppButton({
   title,
   onPress,
   color = "primary",
+  textColor = "white",
   marginVertical = 20,
 }) {
   return (
@@ -17,7 +18,7 @@ export default function AppButton({
       ]}
       onPress={onPress}
     >
-      <Text style={styles.text}>{title}</Text>
+      <Text style={[styles.text, { color: textColor }]}>{title}</Text>
     </TouchableOpacity>
   );
 }

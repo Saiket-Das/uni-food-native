@@ -1,0 +1,51 @@
+{
+  "cli": {
+    "version": ">= 3.9.2"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal",
+      "ios": {
+        "resourceClass": "m-medium"
+      }
+    },
+    "preview": {
+      "distribution": "internal",
+      "ios": {
+        "resourceClass": "m-medium"
+      },
+      "android": {
+        "buildType": "apk"
+      }
+    },
+    "production": {
+      "ios": {
+        "resourceClass": "m-medium"
+      }
+    },
+    "androidapk": {
+      "android": {
+        "buildType": "apk"
+      }
+    }
+  },
+  "submit": {
+    "production": {}
+  }
+}
+
+// https://expo.dev/accounts/saiketdas05/projects/frontend/builds/38dd4b74-8010-4f47-9b1a-011f6747e160
+
+// Waiting for build to complete. You can press Ctrl+C to exit.
+//   Build queued...
+
+// Start builds sooner in the priority queue.
+// Sign up for EAS Production or Enterprise at https://expo.dev/accounts/saiketdas05/settings/subscriptions
+
+// Waiting in Free tier queue
+// |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■|
+
+// ✔ Build finished
+// 🤖 Android app:
+// https://expo.dev/artifacts/eas/82gxDBNgdJEwcMyUkXsdMw.apk

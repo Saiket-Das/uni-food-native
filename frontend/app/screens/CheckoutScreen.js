@@ -4,7 +4,7 @@ import { useSelector } from "react-redux";
 
 import useAuth from "../auth/useAuth";
 import orderApi from "../api/order";
-// import routes from "../navigation/routes";
+import routes from "../navigation/routes";
 import colors from "../config/colors";
 
 import Screen from "../components/common/Screen";
@@ -44,8 +44,8 @@ export default function CartScreen({ navigation }) {
 
           <Button
             title="Checkout"
-            // onPress={() => navigation.navigate(routes.PAYMENT)}
-            onPress={handleAddOrder}
+            onPress={() => navigation.navigate(routes.ORDER_PLACED)}
+            // onPress={handleAddOrder}
           />
         </View>
       </ScrollView>
