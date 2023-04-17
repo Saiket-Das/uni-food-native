@@ -1,9 +1,7 @@
 import client from "./client";
 
 const addOrder = async (data) => {
-  // console.log("ORDER DATA->> ", data);
-  const result = await client.post("/api/order", data);
-  console.log("Result ->> ", result);
+  return await client.post("/api/order", data);
 };
 
 const getAllOrders = async () => {

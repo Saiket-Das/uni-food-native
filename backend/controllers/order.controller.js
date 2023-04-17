@@ -4,7 +4,6 @@ const Order = require("../models/order.model");
 // -------> Add new order (Authorization - Customer)
 exports.AddOrder = async (req, res, next) => {
   try {
-    console.log("Api hit");
     const order = await Order.create(req.body);
 
     order?.orderItems.forEach(async (item) => {
